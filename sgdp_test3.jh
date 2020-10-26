@@ -1,0 +1,196 @@
+
+
+// an ignored comment
+/** not an ignored comment */
+entity Coordonnee {
+	quartier String,
+    commune String,
+    ville String,
+    rue String,
+    numero String,
+	postalCode String,
+	prevenir String,
+    adresseMail String,
+    adressePrevenir String,
+    matriculeCreation String,
+    matriculeModif String,
+    prevenir String,
+	dateCoordonnee String
+}
+
+entity Patient {
+	departmentName String,
+     matriculePatient String,
+     sexe String,
+     etatCivil String,
+     nomt String,
+     prenom1 String,
+     prenom2 String,
+     dateNaissance String,
+     lieuNaissance String,
+     nationalite String,
+     activite String,
+     matriculeCreation String,
+     matriculeModif String,
+     dateModifPatient String,
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Administratif {
+	numeroChambre String,
+    batiment String,
+    dateEntree String,
+    commentaire String,
+    couverture String,
+	numeroSecu String,
+	nomAssurrance String,
+    coordonneeSecu String,
+    matriculeCreation String,
+    dateCreation String,
+    matriculeModif String,
+    datemodif String
+	
+    
+}
+
+/**
+ * The Employee entity.
+ */
+entity Personnel {
+	matricule String,
+	etatCivilPersonnel String,
+	email String,
+	fonction String,
+	grade String,
+	dateEntreeService String,
+    nomStatut String,
+    matriculeCreation String,
+    matriculeModif String,
+    dateModif String,
+	photoUurl Long
+}
+
+entity User {
+	login String,
+    mdp String,
+    nom String,
+    prenom String,
+    dateNaissance String,
+    genre String,
+    sexe String,
+    telephone String,
+    email String,
+    estActif Boolean,
+    dmajMdp String,
+    staConnex Boolean,
+    matriculeCreation String,
+    matriculeModif String,
+    dateCreation String,
+    dateModif String,
+    langue String,
+    
+}
+entity Rendezvous {
+	nompatient String,
+    prenompatient String,
+    dateRendezvous String,
+    heureMinute String,
+    telPortable String,
+    ville String,
+    nommedecin String,
+    commentaire String
+	
+}
+entity Habilitation {
+	libelleProfile String,
+	nomRessource String,
+	permission String,
+    typePermission String
+    }
+entity HistoriquePatient {
+	numeroDossier String,
+    nom String,
+    prenom String,    
+	matriculeUtilisateur String,
+	matriculeCreation String,
+    matriculeModif String,
+    dateCreation String,
+    dateModif String
+}
+entity Profil {
+	libelle String,
+	estActif Boolean,
+	
+}
+entity UserProfil {
+	estActif Boolean,
+	matriculeCreation String,
+	dateCreation String,
+    matriculeModif String,
+    dateModif String
+}
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+/* Relations entre entite */
+relationship OneToOne {
+	UserProfil{User} to User,
+    UserProfil{Profil} to Profil,
+    Personnel{User} to User,
+    Coordonnee{Patient} to Patient,
+    Personnel{Coordonnee} to Coordonnee,
+    Administratif{Patient} to Patient,
+    Administratif{Coordonnee} to Coordonnee,
+    HistoriquePatient{Patient} to Patient,
+    Habilitation{User} to User
+   
+}
+
+relationship ManyToMany {
+	Job{task(title)} to Task{job},
+    Personnel{Patient} to Patient{Personnel}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Employee to Job{employee},
+       
+	/**
+	* A relationship
+	*/
+	Department to
+	/**
+	* Another side of the same relationship
+	*/
+	Employee{department},
+    Patient to Rendezvous{Patient}
+}
+
+relationship ManyToOne {
+	Employee{manager} to Employee
+}
+
+// defining multiple oneToOne relationships
+
+relationship OneToOne {
+	//UserProfil{job} to Job,
+	//UserProfil{department} to Department,
+	UserProfil{employee} to Employee
+}
+
+
+// Set pagination options
+paginate UserProfil, Profil, Habilitation with infinite-scroll
+paginate User with pagination
+paginate Patient with pagination
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, User
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
