@@ -1,0 +1,367 @@
+
+entity Patient {
+	 departmentName String,
+     matriculePatient String,
+     sexe String,
+     etatCivil String,
+     nom String,
+     prenom1 String,
+     prenom2 String,
+     dateNaissance String,
+     lieuNaissance String,
+     nationalite String,
+     activite String,
+     matriculeCreation String,
+     matriculeModif String,
+     dateModifPatient String,
+}
+
+/********************************************************/
+// Partie Ambulatoire
+/********************************************************/
+/** Service Médecine Interne */
+entity TabAmbuMedInterne {
+	ledevenirPatient Issue, 
+    provenancePatient ProvenancePatient,
+    avisMedical String,
+    hypotheseDiag String,
+    traitePropose String,
+    rapportMedInterne String
+   
+}
+
+entity TabParamVitaux {
+	 dateExam ZonedDateTime,
+     ta1 Float,
+     ta2 Float,
+     pouls Float,
+     temperature Float,
+     frequence Float,
+     taille Float,
+     sa02 Float,
+     sous Float,
+     poids Float,
+     examenPhysique String,
+     examenCompl String,
+     evolution String
+     
+}
+
+/** Plainte ou anamnese */
+entity TabPlainte {
+	motif String,
+    affectActuel String,
+    antecedent String,
+    traiteHabituel String,
+    allergie String,
+    facteurRisque String
+    }
+
+/** Service Ambulation Gynéco Obstétrique */
+entity TabGyneco {
+	ordreMedical String,
+    rapportGyneco String
+    
+}
+entity TabAccouchement {
+	dateAccouche ZonedDateTime, 
+    nomBebe String,
+    prenonBebe String,
+    ageBebe Float,
+    poidsBebe String,
+    tailleBebe String,
+    ta1Bebe Float,
+    ta2Bebe Float,
+    refTabExamAppareil String,
+    concluAccouche String
+    
+}
+
+entity TabConsObst {
+	dateConsult ZonedDateTime, 
+    allaitement String,
+    poidsMere String,
+    ta1Mere Float,
+    ta2Mere Float,
+    dateEcho ZonedDateTime,
+    resumeConsObst String,
+    concluFemme String,
+        
+}
+entity TabGrossesse {
+	dateConsult ZonedDateTime, 
+    ddr String,
+    termeUs String,
+    dateOvulation ZonedDateTime,
+    ageGestationel String,
+    termCorrige String,
+    perine String,
+    bassin String,
+    ogtt String,
+    suiviPar String,
+    imc String,
+    poidsMereInitial Float,
+    poidsMereTheoriBebe Float,
+    tailleMere Float,
+    tailleTheoriBebe Float,
+    laboTri21 String,
+    resumeGrossesse String,
+    conduiteAccouche String
+    
+        
+}
+entity TabConclusion {
+	dateConclu ZonedDateTime, 
+    nomService String,
+    conclusion String
+    
+    }
+    
+entity TabSerologie {
+	dateSerologie ZonedDateTime,
+    grSang String, 
+    grSangGeni String,
+    nomService String,
+    caryotype String
+        
+}
+    entity TabExamAppareil {
+	dateExamAppareil ZonedDateTime,
+    resultatEcho String,
+    resultatRadio String,
+    resultatScanner String,
+    resultatAppareil String
+    
+    }
+/** Service Ambulatoire Médecine Urgence */
+entity TabAmbuUrgence {
+	dateArriveeUrgence ZonedDateTime,
+    dateDepartUrgence ZonedDateTime,
+    avisMedical String,
+    hypotheseDiag String,
+    ledevenirPatient LedevenirPatient, 
+    rapportUrgence String,
+   
+}
+/********************************************************/
+// Partie Hospitalisation
+/********************************************************/
+
+/** Service Hospitalisation Chirurgique */
+entity TabHospiChirurgie {
+	ordreMedical String,
+    ledevenirPatient LedevenirPatient,
+    hypotheseDiag String,
+    examCompl String
+   
+}
+
+/** Service Hospitalisation Soins Intensif */
+entity TabSoinsIntensif {
+    ledevenirPatient Povenance,
+    motifAdmission String,
+    traiteEncours  String, 
+    ordreMedical String,
+    rapportSoinsIntensif String
+    
+    }
+/********************************************************/
+
+entity TabPlanTraite {
+	traitePropose String,
+    planTherapeute String,
+    prochainRdv ZonedDateTime,
+    lieuRdv  String, 
+    evolJour String,
+    evolSynthese String,
+    nomConsultant String
+    
+}
+
+    /************************************/
+    entity Coordonnee {
+	quartier String,
+    commune String,
+    ville String,
+    rue String,
+    numero String,
+	postalCode String,
+	prevenir String,
+    adresseMail String,
+    adressePrevenir String,
+    matriculeCreation String,
+    matriculeModif String,
+    prevenir String,
+	dateCoordonnee String
+}
+
+entity Patient {
+	departmentName String,
+     matriculePatient String,
+     sexe String,
+     etatCivil String,
+     nomt String,
+     prenom1 String,
+     prenom2 String,
+     dateNaissance String,
+     lieuNaissance String,
+     nationalite String,
+     activite String,
+     matriculeCreation String,
+     matriculeModif String,
+     dateModifPatient String,
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Administratif {
+	numeroChambre String,
+    batiment String,
+    dateEntree String,
+    commentaire String,
+    couverture String,
+	numeroSecu String,
+	nomAssurrance String,
+    coordonneeSecu String,
+    matriculeCreation String,
+    dateCreation String,
+    matriculeModif String,
+    datemodif String
+	
+    
+}
+
+/**
+ * The Employee entity.
+ */
+entity Personnel {
+	matricule String,
+	etatCivilPersonnel String,
+	email String,
+	fonction String,
+	grade String,
+	dateEntreeService String,
+    nomStatut String,
+    matriculeCreation String,
+    matriculeModif String,
+    dateModif String,
+	photoUurl Long
+}
+
+entity User {
+	login String,
+    mdp String,
+    nom String,
+    prenom String,
+    dateNaissance String,
+    genre String,
+    sexe String,
+    telephone String,
+    email String,
+    estActif Boolean,
+    dmajMdp String,
+    staConnex Boolean,
+    matriculeCreation String,
+    matriculeModif String,
+    dateCreation String,
+    dateModif String,
+    langue String,
+    
+}
+entity Rendezvous {
+	nompatient String,
+    prenompatient String,
+    dateRendezvous String,
+    heureMinute String,
+    telPortable String,
+    ville String,
+    nommedecin String,
+    commentaire String
+	
+}
+
+entity HistoriquePatient {
+	numeroDossier String,
+    nom String,
+    prenom String,    
+	matriculeUtilisateur String,
+	matriculeCreation String,
+    matriculeModif String,
+    dateCreation String,
+    dateModif String
+}
+entity Profil {
+	libelle String,
+	estActif Boolean,
+	
+}
+entity UserProfil {
+	estActif Boolean,
+	matriculeCreation String,
+	dateCreation String,
+    matriculeModif String,
+    dateModif String
+}
+
+
+/********************************************************/
+
+/* Relations entre entite */
+relationship OneToOne {
+	TabAmbuMedInterne{TabParamVitaux} to TabParamVitaux,
+    TabAmbuMedInterne{TabPlainte} to TabPlainte,
+    TabAmbuMedInterne{TabConclusion} to TabConclusion,
+    TabAmbuMedInterne {LedevenirPatient} to LedevenirPatient,
+    
+    TabGyneco {TabAccouchement} to TabAccouchement,
+    TabGyneco{TabConsObst} to TabConsObst,
+    TabGyneco{TabGrossesse} to TabGrossesse,
+    TabGyneco{TabConclusion} to TabConclusion,
+    
+    TabHospiChirurgie{TabPlanTraite} to TabPlanTraite,
+    TabGrossesse{TabSerologie} to TabSerologie,
+    TabSoinsIntensif{Provenance} to Provenance,
+    TabSoinsIntensif{TabParamVitaux} to TabParamVitaux,
+      
+    UserProfil{User} to User,
+    UserProfil{Profil} to Profil,
+    User{Personnel} to Personnel,
+    Administratif{Coordonnee} to Coordonnee,
+    
+    TabHospiChirurgie{Patient} to Patient,
+    TabSoinsIntensif{Patient} to Patient,
+    TabAmbuMedInterne{Patient} to Patient,
+    TabGrossesse{Patient} to Patient,
+    TabGyneco{Patient} to Patient,
+    TabSerologie{Patient} to Patient,
+    
+    TabExamAppareil{TabExamAppareil} to Patient,
+    Personnel{Coordonnee} to Coordonnee,
+    Patient{Administratif} to Administratif,
+    Patient{HistoriquePatient} to  Historique  
+   
+  
+}
+
+relationship ManyToMany {
+	    Personnel{Patient} to Patient{Personnel}
+  }
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	    Patient to Rendezvous{Patient}
+}
+
+enum LedevenirPatient {
+    TransHopi, TransAutreHopi, Externe, Decede
+    }
+    
+enum Provenance {
+    Domicile, Urgence, Extra, Intra
+    }
+enum Language {
+    FRENCH, ENGLISH, SWAHILI, LINGALA, TSHILUBA, KIKONGO
+}
+
