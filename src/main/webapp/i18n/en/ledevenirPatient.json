@@ -1,0 +1,11 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "LedevenirPatient": {
+      "null": "",
+      "TransHopi": "TransHopi",
+      "TransAutreHopi": "TransAutreHopi",
+      "Externe": "Externe",
+      "Decede": "Decede"
+    }
+  }
+}

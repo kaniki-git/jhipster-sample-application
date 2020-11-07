@@ -1,0 +1,68 @@
+{
+  "name": "TabSerologie",
+  "fields": [
+    {
+      "fieldName": "dateSerologie",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "grSang",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grSangGeni",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "caryotype",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tarifSerologie",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "autres",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rapport",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabPatient",
+      "otherEntityRelationshipName": "tabSerologie",
+      "relationshipName": "tabPatient",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabGrossesse",
+      "otherEntityRelationshipName": "tabSerologie",
+      "relationshipName": "tabGrossesse",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabPatient",
+      "otherEntityRelationshipName": "tabSerologie",
+      "relationshipName": "tabPatient",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201107155741",
+  "entityTableName": "tab_serologie",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,23 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabSpecialite": {
+      "home": {
+        "title": "Tab Specialites",
+        "createLabel": "Create a new Tab Specialite",
+        "createOrEditLabel": "Create or edit a Tab Specialite",
+        "notFound": "No Tab Specialites found"
+      },
+      "created": "A new Tab Specialite is created with identifier {{ param }}",
+      "updated": "A Tab Specialite is updated with identifier {{ param }}",
+      "deleted": "A Tab Specialite is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Specialite {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Specialite"
+      },
+      "libelle": "Libelle",
+      "nomPersonnel": "Nom Personnel"
+    }
+  }
+}

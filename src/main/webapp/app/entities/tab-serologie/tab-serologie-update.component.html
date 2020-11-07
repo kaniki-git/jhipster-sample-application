@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-serologie-heading" jhiTranslate="jhipsterSampleApplicationApp.tabSerologie.home.createOrEditLabel">Create or edit a Tab Serologie</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabSerologie.dateSerologie" for="field_dateSerologie">Date Serologie</label>
+                    <div class="d-flex">
+                        <input id="field_dateSerologie" type="datetime-local" class="form-control" name="dateSerologie" formControlName="dateSerologie" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabSerologie.grSang" for="field_grSang">Gr Sang</label>
+                    <input type="text" class="form-control" name="grSang" id="field_grSang"
+                           formControlName="grSang"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabSerologie.grSangGeni" for="field_grSangGeni">Gr Sang Geni</label>
+                    <input type="text" class="form-control" name="grSangGeni" id="field_grSangGeni"
+                           formControlName="grSangGeni"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabSerologie.caryotype" for="field_caryotype">Caryotype</label>
+                    <input type="text" class="form-control" name="caryotype" id="field_caryotype"
+                           formControlName="caryotype"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabSerologie.tarifSerologie" for="field_tarifSerologie">Tarif Serologie</label>
+                    <div class="d-flex">
+                        <input id="field_tarifSerologie" type="datetime-local" class="form-control" name="tarifSerologie" formControlName="tarifSerologie" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabSerologie.autres" for="field_autres">Autres</label>
+                    <input type="text" class="form-control" name="autres" id="field_autres"
+                           formControlName="autres"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabSerologie.rapport" for="field_rapport">Rapport</label>
+                    <input type="text" class="form-control" name="rapport" id="field_rapport"
+                           formControlName="rapport"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabSerologie.tabPatient" for="field_tabPatient">Tab Patient</label>
+                    <select class="form-control" id="field_tabPatient" name="tabPatient" formControlName="tabPatient">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabPatientOption.id === editForm.get('tabPatient')!.value?.id ? editForm.get('tabPatient')!.value : tabPatientOption" *ngFor="let tabPatientOption of tabpatients; trackBy: trackById">{{ tabPatientOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabSerologie.tabGrossesse" for="field_tabGrossesse">Tab Grossesse</label>
+                    <select class="form-control" id="field_tabGrossesse" name="tabGrossesse" formControlName="tabGrossesse">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabGrossesseOption.id === editForm.get('tabGrossesse')!.value?.id ? editForm.get('tabGrossesse')!.value : tabGrossesseOption" *ngFor="let tabGrossesseOption of tabgrossesses; trackBy: trackById">{{ tabGrossesseOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabSerologie.tabPatient" for="field_tabPatient">Tab Patient</label>
+                    <select class="form-control" id="field_tabPatient" name="tabPatient" formControlName="tabPatient">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabPatientOption.id === editForm.get('tabPatient')!.value?.id ? editForm.get('tabPatient')!.value : tabPatientOption" *ngFor="let tabPatientOption of tabpatients; trackBy: trackById">{{ tabPatientOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+{
+  "name": "TabAdministratif",
+  "fields": [
+    {
+      "fieldName": "numeroChambre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "batiment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateEntree",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "dateSortie",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "commentaire",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "couverture",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numerosecu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomassurrance",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "coordonneesecu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomMedecinPerso",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "matriculecreation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datecreation",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "matriculemodif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datemodif",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabCoordonnee",
+      "otherEntityRelationshipName": "tabAdministratif",
+      "relationshipName": "tabCoordonnee",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201107154341",
+  "entityTableName": "tab_administratif",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

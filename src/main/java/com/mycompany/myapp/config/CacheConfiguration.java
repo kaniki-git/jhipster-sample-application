@@ -47,6 +47,35 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Authority.class.getName());
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.mycompany.myapp.domain.TabPatient.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabPatient.class.getName() + ".tabSerologies");
+            createCache(cm, com.mycompany.myapp.domain.TabAdministratif.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabCoordonnee.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabPersonnel.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabPersonnel.class.getName() + ".tabAccouchements");
+            createCache(cm, com.mycompany.myapp.domain.TabUser.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabRendezvous.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabSpecialite.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabHistoriquePatient.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabProfil.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabUserProfil.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabConsultation.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabConsultation.class.getName() + ".tabParamVitauxes");
+            createCache(cm, com.mycompany.myapp.domain.TabParamVitaux.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabAccouchement.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabAccouchement.class.getName() + ".tabPersonnels");
+            createCache(cm, com.mycompany.myapp.domain.TabGrossesse.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabGrossesse.class.getName() + ".tabExamTeches");
+            createCache(cm, com.mycompany.myapp.domain.TabGrossesse.class.getName() + ".tabSerologies");
+            createCache(cm, com.mycompany.myapp.domain.TabExamTech.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabSerologie.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabUrgence.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabUrgence.class.getName() + ".tabParamVitauxes");
+            createCache(cm, com.mycompany.myapp.domain.TabUrgence.class.getName() + ".tabConsultations");
+            createCache(cm, com.mycompany.myapp.domain.TabHospital.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TabHospital.class.getName() + ".tabParamVitauxes");
+            createCache(cm, com.mycompany.myapp.domain.TabHospital.class.getName() + ".tabExamTeches");
+            createCache(cm, com.mycompany.myapp.domain.TabHospital.class.getName() + ".tabConsultations");
             // jhipster-needle-ehcache-add-entry
         };
     }

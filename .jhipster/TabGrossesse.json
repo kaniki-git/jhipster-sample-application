@@ -1,0 +1,114 @@
+{
+  "name": "TabGrossesse",
+  "fields": [
+    {
+      "fieldName": "dateConsult",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "ddr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "termeUs",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOvulation",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "ageGestationel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "termCorrige",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "perine",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bassin",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ogtt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "suiviPar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "poidsMereInitial",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "poidsMereTheoriBebe",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tailleMere",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tailleTheoriBebe",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "laboTri21",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "resumeGrossesse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "conduiteAccouche",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rapport",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabPatient",
+      "otherEntityRelationshipName": "tabGrossesse",
+      "relationshipName": "tabPatient",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabExamTech",
+      "otherEntityRelationshipName": "tabGrossesse",
+      "relationshipName": "tabExamTech"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabSerologie",
+      "otherEntityRelationshipName": "tabGrossesse",
+      "relationshipName": "tabSerologie"
+    }
+  ],
+  "changelogDate": "20201107155541",
+  "entityTableName": "tab_grossesse",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

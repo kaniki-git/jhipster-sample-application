@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabCoordonnee">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.detail.title">Tab Coordonnee</span> {{ tabCoordonnee.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.quartier">Quartier</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.quartier }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.commune">Commune</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.commune }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.ville">Ville</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.ville }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.codeVille">Code Ville</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.codeVille }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.rue">Rue</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.rue }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.numero">Numero</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.numero }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.portable">Portable</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.portable }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.prevenir">Prevenir</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.prevenir }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.fax">Fax</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.fax }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.adresseMail">Adresse Mail</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.adresseMail }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.adressePrevenir">Adresse Prevenir</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.adressePrevenir }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.adresseLibelleLong">Adresse Libelle Long</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.adresseLibelleLong }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.matriculecreation">Matriculecreation</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.matriculecreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.datecreation">Datecreation</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.datecreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.matriculemodif">Matriculemodif</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.matriculemodif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.datemodif">Datemodif</span></dt>
+                <dd>
+                    <span>{{ tabCoordonnee.datemodif }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-coordonnee', tabCoordonnee.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

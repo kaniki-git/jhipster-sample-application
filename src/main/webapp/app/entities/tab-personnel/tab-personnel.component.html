@@ -1,0 +1,99 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.home.title">Tab Personnels</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-personnel" [routerLink]="['/tab-personnel/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.home.createLabel">
+            Create a new Tab Personnel
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabPersonnels?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.home.notFound">No tabPersonnels found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabPersonnels && tabPersonnels.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.matricule">Matricule</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.etatCivil">Etat Civil</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.typePersonnel">Type Personnel</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.activite">Activite</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.grade">Grade</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.dateentreeservice">Dateentreeservice</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.nomstatut">Nomstatut</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.matriculecreation">Matriculecreation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.datecreation">Datecreation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.matriculemodif">Matriculemodif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.datemodif">Datemodif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.tabPatient">Tab Patient</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.tabCoordonnee">Tab Coordonnee</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.tabSpecialite">Tab Specialite</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabPersonnel of tabPersonnels ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-personnel', tabPersonnel.id, 'view']">{{ tabPersonnel.id }}</a></td>
+                    <td>{{ tabPersonnel.matricule }}</td>
+                    <td>{{ tabPersonnel.etatCivil }}</td>
+                    <td>{{ tabPersonnel.typePersonnel }}</td>
+                    <td>{{ tabPersonnel.activite }}</td>
+                    <td>{{ tabPersonnel.grade }}</td>
+                    <td>{{ tabPersonnel.dateentreeservice | date:'medium' }}</td>
+                    <td>{{ tabPersonnel.nomstatut }}</td>
+                    <td>{{ tabPersonnel.matriculecreation }}</td>
+                    <td>{{ tabPersonnel.datecreation | date:'medium' }}</td>
+                    <td>{{ tabPersonnel.matriculemodif }}</td>
+                    <td>{{ tabPersonnel.datemodif | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="tabPersonnel.tabPatient">
+                            <a [routerLink]="['/tab-patient', tabPersonnel.tabPatient?.id, 'view']" >{{ tabPersonnel.tabPatient?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="tabPersonnel.tabCoordonnee">
+                            <a [routerLink]="['/tab-coordonnee', tabPersonnel.tabCoordonnee?.id, 'view']" >{{ tabPersonnel.tabCoordonnee?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="tabPersonnel.tabSpecialite">
+                            <a [routerLink]="['/tab-specialite', tabPersonnel.tabSpecialite?.id, 'view']" >{{ tabPersonnel.tabSpecialite?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-personnel', tabPersonnel.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-personnel', tabPersonnel.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabPersonnel)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

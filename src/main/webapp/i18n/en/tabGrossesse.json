@@ -1,0 +1,43 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabGrossesse": {
+      "home": {
+        "title": "Tab Grossesses",
+        "createLabel": "Create a new Tab Grossesse",
+        "createOrEditLabel": "Create or edit a Tab Grossesse",
+        "notFound": "No Tab Grossesses found"
+      },
+      "created": "A new Tab Grossesse is created with identifier {{ param }}",
+      "updated": "A Tab Grossesse is updated with identifier {{ param }}",
+      "deleted": "A Tab Grossesse is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Grossesse {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Grossesse"
+      },
+      "dateConsult": "Date Consult",
+      "ddr": "Ddr",
+      "termeUs": "Terme Us",
+      "dateOvulation": "Date Ovulation",
+      "ageGestationel": "Age Gestationel",
+      "termCorrige": "Term Corrige",
+      "perine": "Perine",
+      "bassin": "Bassin",
+      "ogtt": "Ogtt",
+      "suiviPar": "Suivi Par",
+      "imc": "Imc",
+      "poidsMereInitial": "Poids Mere Initial",
+      "poidsMereTheoriBebe": "Poids Mere Theori Bebe",
+      "tailleMere": "Taille Mere",
+      "tailleTheoriBebe": "Taille Theori Bebe",
+      "laboTri21": "Labo Tri 21",
+      "resumeGrossesse": "Resume Grossesse",
+      "conduiteAccouche": "Conduite Accouche",
+      "rapport": "Rapport",
+      "tabPatient": "Tab Patient",
+      "tabExamTech": "Tab Exam Tech",
+      "tabSerologie": "Tab Serologie"
+    }
+  }
+}

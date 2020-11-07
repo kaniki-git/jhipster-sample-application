@@ -1,0 +1,77 @@
+{
+  "name": "TabHospital",
+  "fields": [
+    {
+      "fieldName": "motifAdmission",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "evolJour",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "evolSynthese",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "plantTherapeute",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prochainRdv",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lieuRdv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "conclusionSejour",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomConsultant",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bilanAdmission",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rapport",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabParamVitaux",
+      "otherEntityRelationshipName": "tabHospital",
+      "relationshipName": "tabParamVitaux"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabExamTech",
+      "otherEntityRelationshipName": "tabHospital",
+      "relationshipName": "tabExamTech"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabConsultation",
+      "otherEntityRelationshipName": "tabHospital",
+      "relationshipName": "tabConsultation"
+    }
+  ],
+  "changelogDate": "20201107155941",
+  "javadoc": "/",
+  "entityTableName": "tab_hospital",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

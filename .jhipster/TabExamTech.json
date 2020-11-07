@@ -1,0 +1,48 @@
+{
+  "name": "TabExamTech",
+  "fields": [
+    {
+      "fieldName": "typeExamTech",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateExamTech",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "tarifExamTech",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "conclusionExamTech",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabGrossesse",
+      "otherEntityRelationshipName": "tabExamTech",
+      "relationshipName": "tabGrossesse",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabHospital",
+      "otherEntityRelationshipName": "tabExamTech",
+      "relationshipName": "tabHospital",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201107155641",
+  "entityTableName": "tab_exam_tech",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

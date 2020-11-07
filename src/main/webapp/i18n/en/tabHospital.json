@@ -1,0 +1,34 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabHospital": {
+      "home": {
+        "title": "Tab Hospitals",
+        "createLabel": "Create a new Tab Hospital",
+        "createOrEditLabel": "Create or edit a Tab Hospital",
+        "notFound": "No Tab Hospitals found"
+      },
+      "created": "A new Tab Hospital is created with identifier {{ param }}",
+      "updated": "A Tab Hospital is updated with identifier {{ param }}",
+      "deleted": "A Tab Hospital is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Hospital {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Hospital"
+      },
+      "motifAdmission": "Motif Admission",
+      "evolJour": "Evol Jour",
+      "evolSynthese": "Evol Synthese",
+      "plantTherapeute": "Plant Therapeute",
+      "prochainRdv": "Prochain Rdv",
+      "lieuRdv": "Lieu Rdv",
+      "conclusionSejour": "Conclusion Sejour",
+      "nomConsultant": "Nom Consultant",
+      "bilanAdmission": "Bilan Admission",
+      "rapport": "Rapport",
+      "tabParamVitaux": "Tab Param Vitaux",
+      "tabExamTech": "Tab Exam Tech",
+      "tabConsultation": "Tab Consultation"
+    }
+  }
+}

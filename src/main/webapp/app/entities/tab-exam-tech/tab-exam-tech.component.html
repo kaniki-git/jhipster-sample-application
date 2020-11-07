@@ -1,0 +1,79 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.home.title">Tab Exam Teches</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-exam-tech" [routerLink]="['/tab-exam-tech/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.home.createLabel">
+            Create a new Tab Exam Tech
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabExamTeches?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.home.notFound">No tabExamTeches found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabExamTeches && tabExamTeches.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.typeExamTech">Type Exam Tech</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.dateExamTech">Date Exam Tech</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.tarifExamTech">Tarif Exam Tech</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.conclusionExamTech">Conclusion Exam Tech</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.tabGrossesse">Tab Grossesse</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.tabHospital">Tab Hospital</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabExamTech of tabExamTeches ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-exam-tech', tabExamTech.id, 'view']">{{ tabExamTech.id }}</a></td>
+                    <td>{{ tabExamTech.typeExamTech }}</td>
+                    <td>{{ tabExamTech.dateExamTech | date:'medium' }}</td>
+                    <td>{{ tabExamTech.tarifExamTech | date:'medium' }}</td>
+                    <td>{{ tabExamTech.conclusionExamTech }}</td>
+                    <td>
+                        <div *ngIf="tabExamTech.tabGrossesse">
+                            <a [routerLink]="['/tab-grossesse', tabExamTech.tabGrossesse?.id, 'view']" >{{ tabExamTech.tabGrossesse?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="tabExamTech.tabHospital">
+                            <a [routerLink]="['/tab-hospital', tabExamTech.tabHospital?.id, 'view']" >{{ tabExamTech.tabHospital?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-exam-tech', tabExamTech.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-exam-tech', tabExamTech.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabExamTech)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

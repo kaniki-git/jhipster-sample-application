@@ -1,0 +1,43 @@
+{
+  "name": "TabUrgence",
+  "fields": [
+    {
+      "fieldName": "dateArriveeUrgence",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "dateDepartUrgence",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "rapportUrgence",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabParamVitaux",
+      "otherEntityRelationshipName": "tabUrgence",
+      "relationshipName": "tabParamVitaux"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabConsultation",
+      "otherEntityRelationshipName": "tabUrgence",
+      "relationshipName": "tabConsultation"
+    }
+  ],
+  "changelogDate": "20201107155841",
+  "javadoc": "Service Urgence",
+  "entityTableName": "tab_urgence",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

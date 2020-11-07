@@ -1,0 +1,94 @@
+{
+  "name": "TabUser",
+  "fields": [
+    {
+      "fieldName": "login",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mdp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateNaissance",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "genre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sexe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estActif",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "dmajMdp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "staConnex",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "matriculeCreation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "matriculeModif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateCreation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateModif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "langue",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabPersonnel",
+      "otherEntityRelationshipName": "tabUser",
+      "relationshipName": "tabPersonnel",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201107154641",
+  "entityTableName": "tab_user",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

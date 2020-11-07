@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.home.title">Tab Coordonnees</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-coordonnee" [routerLink]="['/tab-coordonnee/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.home.createLabel">
+            Create a new Tab Coordonnee
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabCoordonnees?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.home.notFound">No tabCoordonnees found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabCoordonnees && tabCoordonnees.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.quartier">Quartier</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.commune">Commune</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.ville">Ville</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.codeVille">Code Ville</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.rue">Rue</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.numero">Numero</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.telephone">Telephone</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.portable">Portable</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.prevenir">Prevenir</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.fax">Fax</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.adresseMail">Adresse Mail</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.adressePrevenir">Adresse Prevenir</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.adresseLibelleLong">Adresse Libelle Long</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.matriculecreation">Matriculecreation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.datecreation">Datecreation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.matriculemodif">Matriculemodif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.datemodif">Datemodif</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabCoordonnee of tabCoordonnees ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-coordonnee', tabCoordonnee.id, 'view']">{{ tabCoordonnee.id }}</a></td>
+                    <td>{{ tabCoordonnee.quartier }}</td>
+                    <td>{{ tabCoordonnee.commune }}</td>
+                    <td>{{ tabCoordonnee.ville }}</td>
+                    <td>{{ tabCoordonnee.codeVille }}</td>
+                    <td>{{ tabCoordonnee.rue }}</td>
+                    <td>{{ tabCoordonnee.numero }}</td>
+                    <td>{{ tabCoordonnee.telephone }}</td>
+                    <td>{{ tabCoordonnee.portable }}</td>
+                    <td>{{ tabCoordonnee.prevenir }}</td>
+                    <td>{{ tabCoordonnee.fax }}</td>
+                    <td>{{ tabCoordonnee.adresseMail }}</td>
+                    <td>{{ tabCoordonnee.adressePrevenir }}</td>
+                    <td>{{ tabCoordonnee.adresseLibelleLong }}</td>
+                    <td>{{ tabCoordonnee.matriculecreation }}</td>
+                    <td>{{ tabCoordonnee.datecreation | date:'medium' }}</td>
+                    <td>{{ tabCoordonnee.matriculemodif }}</td>
+                    <td>{{ tabCoordonnee.datemodif | date:'medium' }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-coordonnee', tabCoordonnee.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-coordonnee', tabCoordonnee.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabCoordonnee)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

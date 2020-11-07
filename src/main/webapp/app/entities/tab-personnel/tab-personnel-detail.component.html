@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabPersonnel">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.detail.title">Tab Personnel</span> {{ tabPersonnel.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.matricule">Matricule</span></dt>
+                <dd>
+                    <span>{{ tabPersonnel.matricule }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.etatCivil">Etat Civil</span></dt>
+                <dd>
+                    <span>{{ tabPersonnel.etatCivil }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.typePersonnel">Type Personnel</span></dt>
+                <dd>
+                    <span>{{ tabPersonnel.typePersonnel }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.activite">Activite</span></dt>
+                <dd>
+                    <span>{{ tabPersonnel.activite }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.grade">Grade</span></dt>
+                <dd>
+                    <span>{{ tabPersonnel.grade }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.dateentreeservice">Dateentreeservice</span></dt>
+                <dd>
+                    <span>{{ tabPersonnel.dateentreeservice }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.nomstatut">Nomstatut</span></dt>
+                <dd>
+                    <span>{{ tabPersonnel.nomstatut }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.matriculecreation">Matriculecreation</span></dt>
+                <dd>
+                    <span>{{ tabPersonnel.matriculecreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.datecreation">Datecreation</span></dt>
+                <dd>
+                    <span>{{ tabPersonnel.datecreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.matriculemodif">Matriculemodif</span></dt>
+                <dd>
+                    <span>{{ tabPersonnel.matriculemodif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.datemodif">Datemodif</span></dt>
+                <dd>
+                    <span>{{ tabPersonnel.datemodif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.tabPatient">Tab Patient</span></dt>
+                <dd>
+                    <div *ngIf="tabPersonnel.tabPatient">
+                        <a [routerLink]="['/tab-patient', tabPersonnel.tabPatient?.id, 'view']">{{ tabPersonnel.tabPatient?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.tabCoordonnee">Tab Coordonnee</span></dt>
+                <dd>
+                    <div *ngIf="tabPersonnel.tabCoordonnee">
+                        <a [routerLink]="['/tab-coordonnee', tabPersonnel.tabCoordonnee?.id, 'view']">{{ tabPersonnel.tabCoordonnee?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPersonnel.tabSpecialite">Tab Specialite</span></dt>
+                <dd>
+                    <div *ngIf="tabPersonnel.tabSpecialite">
+                        <a [routerLink]="['/tab-specialite', tabPersonnel.tabSpecialite?.id, 'view']">{{ tabPersonnel.tabSpecialite?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-personnel', tabPersonnel.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

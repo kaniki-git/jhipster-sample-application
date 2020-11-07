@@ -1,0 +1,39 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabUser": {
+      "home": {
+        "title": "Tab Users",
+        "createLabel": "Create a new Tab User",
+        "createOrEditLabel": "Create or edit a Tab User",
+        "notFound": "No Tab Users found"
+      },
+      "created": "A new Tab User is created with identifier {{ param }}",
+      "updated": "A Tab User is updated with identifier {{ param }}",
+      "deleted": "A Tab User is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab User {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab User"
+      },
+      "login": "Login",
+      "mdp": "Mdp",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "dateNaissance": "Date Naissance",
+      "genre": "Genre",
+      "sexe": "Sexe",
+      "telephone": "Telephone",
+      "email": "Email",
+      "estActif": "Est Actif",
+      "dmajMdp": "Dmaj Mdp",
+      "staConnex": "Sta Connex",
+      "matriculeCreation": "Matricule Creation",
+      "matriculeModif": "Matricule Modif",
+      "dateCreation": "Date Creation",
+      "dateModif": "Date Modif",
+      "langue": "Langue",
+      "tabPersonnel": "Tab Personnel"
+    }
+  }
+}

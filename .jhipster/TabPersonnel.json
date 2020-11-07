@@ -1,0 +1,93 @@
+{
+  "name": "TabPersonnel",
+  "fields": [
+    {
+      "fieldName": "matricule",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "etatCivil",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typePersonnel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activite",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grade",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateentreeservice",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "nomstatut",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "matriculecreation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datecreation",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "matriculemodif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datemodif",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabPatient",
+      "otherEntityRelationshipName": "tabPersonnel",
+      "relationshipName": "tabPatient",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabCoordonnee",
+      "otherEntityRelationshipName": "tabPersonnel",
+      "relationshipName": "tabCoordonnee",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabSpecialite",
+      "otherEntityRelationshipName": "tabPersonnel",
+      "relationshipName": "tabSpecialite",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "tabAccouchement",
+      "otherEntityRelationshipName": "tabPersonnel",
+      "relationshipName": "tabAccouchement",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201107154541",
+  "entityTableName": "tab_personnel",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

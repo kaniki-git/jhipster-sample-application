@@ -1,0 +1,108 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabGrossesse">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.detail.title">Tab Grossesse</span> {{ tabGrossesse.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.dateConsult">Date Consult</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.dateConsult }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.ddr">Ddr</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.ddr }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.termeUs">Terme Us</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.termeUs }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.dateOvulation">Date Ovulation</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.dateOvulation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.ageGestationel">Age Gestationel</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.ageGestationel }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.termCorrige">Term Corrige</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.termCorrige }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.perine">Perine</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.perine }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.bassin">Bassin</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.bassin }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.ogtt">Ogtt</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.ogtt }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.suiviPar">Suivi Par</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.suiviPar }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.imc">Imc</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.imc }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.poidsMereInitial">Poids Mere Initial</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.poidsMereInitial }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.poidsMereTheoriBebe">Poids Mere Theori Bebe</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.poidsMereTheoriBebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.tailleMere">Taille Mere</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.tailleMere }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.tailleTheoriBebe">Taille Theori Bebe</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.tailleTheoriBebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.laboTri21">Labo Tri 21</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.laboTri21 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.resumeGrossesse">Resume Grossesse</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.resumeGrossesse }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.conduiteAccouche">Conduite Accouche</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.conduiteAccouche }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.rapport">Rapport</span></dt>
+                <dd>
+                    <span>{{ tabGrossesse.rapport }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.tabPatient">Tab Patient</span></dt>
+                <dd>
+                    <div *ngIf="tabGrossesse.tabPatient">
+                        <a [routerLink]="['/tab-patient', tabGrossesse.tabPatient?.id, 'view']">{{ tabGrossesse.tabPatient?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-grossesse', tabGrossesse.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

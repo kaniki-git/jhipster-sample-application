@@ -1,0 +1,103 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.home.title">Tab Grossesses</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-grossesse" [routerLink]="['/tab-grossesse/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.home.createLabel">
+            Create a new Tab Grossesse
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabGrossesses?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.home.notFound">No tabGrossesses found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabGrossesses && tabGrossesses.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.dateConsult">Date Consult</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.ddr">Ddr</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.termeUs">Terme Us</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.dateOvulation">Date Ovulation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.ageGestationel">Age Gestationel</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.termCorrige">Term Corrige</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.perine">Perine</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.bassin">Bassin</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.ogtt">Ogtt</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.suiviPar">Suivi Par</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.imc">Imc</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.poidsMereInitial">Poids Mere Initial</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.poidsMereTheoriBebe">Poids Mere Theori Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.tailleMere">Taille Mere</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.tailleTheoriBebe">Taille Theori Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.laboTri21">Labo Tri 21</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.resumeGrossesse">Resume Grossesse</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.conduiteAccouche">Conduite Accouche</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.rapport">Rapport</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGrossesse.tabPatient">Tab Patient</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabGrossesse of tabGrossesses ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-grossesse', tabGrossesse.id, 'view']">{{ tabGrossesse.id }}</a></td>
+                    <td>{{ tabGrossesse.dateConsult | date:'medium' }}</td>
+                    <td>{{ tabGrossesse.ddr }}</td>
+                    <td>{{ tabGrossesse.termeUs }}</td>
+                    <td>{{ tabGrossesse.dateOvulation | date:'medium' }}</td>
+                    <td>{{ tabGrossesse.ageGestationel }}</td>
+                    <td>{{ tabGrossesse.termCorrige }}</td>
+                    <td>{{ tabGrossesse.perine }}</td>
+                    <td>{{ tabGrossesse.bassin }}</td>
+                    <td>{{ tabGrossesse.ogtt }}</td>
+                    <td>{{ tabGrossesse.suiviPar }}</td>
+                    <td>{{ tabGrossesse.imc }}</td>
+                    <td>{{ tabGrossesse.poidsMereInitial }}</td>
+                    <td>{{ tabGrossesse.poidsMereTheoriBebe }}</td>
+                    <td>{{ tabGrossesse.tailleMere }}</td>
+                    <td>{{ tabGrossesse.tailleTheoriBebe }}</td>
+                    <td>{{ tabGrossesse.laboTri21 }}</td>
+                    <td>{{ tabGrossesse.resumeGrossesse }}</td>
+                    <td>{{ tabGrossesse.conduiteAccouche }}</td>
+                    <td>{{ tabGrossesse.rapport }}</td>
+                    <td>
+                        <div *ngIf="tabGrossesse.tabPatient">
+                            <a [routerLink]="['/tab-patient', tabGrossesse.tabPatient?.id, 'view']" >{{ tabGrossesse.tabPatient?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-grossesse', tabGrossesse.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-grossesse', tabGrossesse.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabGrossesse)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
