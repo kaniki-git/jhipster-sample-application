@@ -1,0 +1,38 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabCoordonnee": {
+      "home": {
+        "title": "Tab Coordonnees",
+        "createLabel": "Create a new Tab Coordonnee",
+        "createOrEditLabel": "Create or edit a Tab Coordonnee",
+        "notFound": "No Tab Coordonnees found"
+      },
+      "created": "A new Tab Coordonnee is created with identifier {{ param }}",
+      "updated": "A Tab Coordonnee is updated with identifier {{ param }}",
+      "deleted": "A Tab Coordonnee is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Coordonnee {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Coordonnee"
+      },
+      "quartier": "Quartier",
+      "commune": "Commune",
+      "ville": "Ville",
+      "codeVille": "Code Ville",
+      "rue": "Rue",
+      "numero": "Numero",
+      "telephone": "Telephone",
+      "portable": "Portable",
+      "prevenir": "Prevenir",
+      "fax": "Fax",
+      "adresseMail": "Adresse Mail",
+      "adressePrevenir": "Adresse Prevenir",
+      "adresseLibelleLong": "Adresse Libelle Long",
+      "matriculecreation": "Matriculecreation",
+      "datecreation": "Datecreation",
+      "matriculemodif": "Matriculemodif",
+      "datemodif": "Datemodif"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabPatient">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.detail.title">Tab Patient</span> {{ tabPatient.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.matricule">Matricule</span></dt>
+                <dd>
+                    <span>{{ tabPatient.matricule }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.sexe">Sexe</span></dt>
+                <dd>
+                    <span>{{ tabPatient.sexe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.etatCivil">Etat Civil</span></dt>
+                <dd>
+                    <span>{{ tabPatient.etatCivil }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.nombreEnfant">Nombre Enfant</span></dt>
+                <dd>
+                    <span>{{ tabPatient.nombreEnfant }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.nombreGrossesse">Nombre Grossesse</span></dt>
+                <dd>
+                    <span>{{ tabPatient.nombreGrossesse }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ tabPatient.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.prenom1">Prenom 1</span></dt>
+                <dd>
+                    <span>{{ tabPatient.prenom1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.prenom2">Prenom 2</span></dt>
+                <dd>
+                    <span>{{ tabPatient.prenom2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.datenaissance">Datenaissance</span></dt>
+                <dd>
+                    <span>{{ tabPatient.datenaissance }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.lieunaissance">Lieunaissance</span></dt>
+                <dd>
+                    <span>{{ tabPatient.lieunaissance }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.nationalite">Nationalite</span></dt>
+                <dd>
+                    <span>{{ tabPatient.nationalite }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.activite">Activite</span></dt>
+                <dd>
+                    <span>{{ tabPatient.activite }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.photoUrl">Photo Url</span></dt>
+                <dd>
+                    <span>{{ tabPatient.photoUrl }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.matriculecreation">Matriculecreation</span></dt>
+                <dd>
+                    <span>{{ tabPatient.matriculecreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.datecreation">Datecreation</span></dt>
+                <dd>
+                    <span>{{ tabPatient.datecreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.matriculemodif">Matriculemodif</span></dt>
+                <dd>
+                    <span>{{ tabPatient.matriculemodif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.datemodif">Datemodif</span></dt>
+                <dd>
+                    <span>{{ tabPatient.datemodif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.tabAdministratif">Tab Administratif</span></dt>
+                <dd>
+                    <div *ngIf="tabPatient.tabAdministratif">
+                        <a [routerLink]="['/tab-administratif', tabPatient.tabAdministratif?.id, 'view']">{{ tabPatient.tabAdministratif?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabPatient.tabHistoriquePatient">Tab Historique Patient</span></dt>
+                <dd>
+                    <div *ngIf="tabPatient.tabHistoriquePatient">
+                        <a [routerLink]="['/tab-historique-patient', tabPatient.tabHistoriquePatient?.id, 'view']">{{ tabPatient.tabHistoriquePatient?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-patient', tabPatient.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabConsObst">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.detail.title">Tab Cons Obst</span> {{ tabConsObst.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.dateConsult">Date Consult</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.dateConsult }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.ddr">Ddr</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.ddr }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.termeUs">Terme Us</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.termeUs }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.dateOvulation">Date Ovulation</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.dateOvulation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.ageGestationel">Age Gestationel</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.ageGestationel }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.termCorrige">Term Corrige</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.termCorrige }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.perine">Perine</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.perine }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.bassin">Bassin</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.bassin }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.ogtt">Ogtt</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.ogtt }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.suiviPar">Suivi Par</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.suiviPar }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.imc">Imc</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.imc }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.poidsMereInitial">Poids Mere Initial</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.poidsMereInitial }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.poidsMereTheoriBebe">Poids Mere Theori Bebe</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.poidsMereTheoriBebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tailleMere">Taille Mere</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.tailleMere }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tailleTheoriBebe">Taille Theori Bebe</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.tailleTheoriBebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.laboTri21">Labo Tri 21</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.laboTri21 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.resumeGrossesse">Resume Grossesse</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.resumeGrossesse }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.conduiteAccouche">Conduite Accouche</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.conduiteAccouche }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.rapport">Rapport</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.rapport }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tabPatient">Tab Patient</span></dt>
+                <dd>
+                    <div *ngIf="tabConsObst.tabPatient">
+                        <a [routerLink]="['/tab-patient', tabConsObst.tabPatient?.id, 'view']">{{ tabConsObst.tabPatient?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-cons-obst', tabConsObst.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

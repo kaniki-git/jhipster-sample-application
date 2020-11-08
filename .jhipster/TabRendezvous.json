@@ -1,0 +1,88 @@
+{
+  "name": "TabRendezvous",
+  "fields": [
+    {
+      "fieldName": "titre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ville",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateDebut",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "dateFin",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "jourEntier",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "groupId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "arrierePlanCouleur",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "texteCouleur",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "salle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "commentaire",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "matriculecreation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datecreation",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "matriculemodif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datemodif",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabPatient",
+      "otherEntityRelationshipName": "tabRendezvous",
+      "relationshipName": "tabPatient",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabPersonnel",
+      "otherEntityRelationshipName": "tabRendezvous",
+      "relationshipName": "tabPersonnel",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201108200539",
+  "entityTableName": "tab_rendezvous",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

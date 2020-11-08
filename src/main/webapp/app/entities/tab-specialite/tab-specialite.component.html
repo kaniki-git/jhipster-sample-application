@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabSpecialite.home.title">Tab Specialites</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-specialite" [routerLink]="['/tab-specialite/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabSpecialite.home.createLabel">
+            Create a new Tab Specialite
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabSpecialites?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabSpecialite.home.notFound">No tabSpecialites found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabSpecialites && tabSpecialites.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabSpecialite.libelle">Libelle</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabSpecialite.nomPersonnel">Nom Personnel</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabSpecialite of tabSpecialites ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-specialite', tabSpecialite.id, 'view']">{{ tabSpecialite.id }}</a></td>
+                    <td>{{ tabSpecialite.libelle }}</td>
+                    <td>{{ tabSpecialite.nomPersonnel }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-specialite', tabSpecialite.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-specialite', tabSpecialite.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabSpecialite)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabExamTech": {
+      "home": {
+        "title": "Tab Exam Teches",
+        "createLabel": "Create a new Tab Exam Tech",
+        "createOrEditLabel": "Create or edit a Tab Exam Tech",
+        "notFound": "No Tab Exam Teches found"
+      },
+      "created": "A new Tab Exam Tech is created with identifier {{ param }}",
+      "updated": "A Tab Exam Tech is updated with identifier {{ param }}",
+      "deleted": "A Tab Exam Tech is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Exam Tech {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Exam Tech"
+      },
+      "typeExamTech": "Type Exam Tech",
+      "dateExamTech": "Date Exam Tech",
+      "tarifExamTech": "Tarif Exam Tech",
+      "conclusionExamTech": "Conclusion Exam Tech",
+      "tabHospital": "Tab Hospital"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabConsObst": {
+      "home": {
+        "title": "Tab Cons Obsts",
+        "createLabel": "Create a new Tab Cons Obst",
+        "createOrEditLabel": "Create or edit a Tab Cons Obst",
+        "notFound": "No Tab Cons Obsts found"
+      },
+      "created": "A new Tab Cons Obst is created with identifier {{ param }}",
+      "updated": "A Tab Cons Obst is updated with identifier {{ param }}",
+      "deleted": "A Tab Cons Obst is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Cons Obst {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Cons Obst"
+      },
+      "dateConsult": "Date Consult",
+      "ddr": "Ddr",
+      "termeUs": "Terme Us",
+      "dateOvulation": "Date Ovulation",
+      "ageGestationel": "Age Gestationel",
+      "termCorrige": "Term Corrige",
+      "perine": "Perine",
+      "bassin": "Bassin",
+      "ogtt": "Ogtt",
+      "suiviPar": "Suivi Par",
+      "imc": "Imc",
+      "poidsMereInitial": "Poids Mere Initial",
+      "poidsMereTheoriBebe": "Poids Mere Theori Bebe",
+      "tailleMere": "Taille Mere",
+      "tailleTheoriBebe": "Taille Theori Bebe",
+      "laboTri21": "Labo Tri 21",
+      "resumeGrossesse": "Resume Grossesse",
+      "conduiteAccouche": "Conduite Accouche",
+      "rapport": "Rapport",
+      "tabPatient": "Tab Patient",
+      "tabSerologie": "Tab Serologie"
+    }
+  }
+}

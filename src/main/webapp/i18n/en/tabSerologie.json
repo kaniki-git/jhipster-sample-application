@@ -1,0 +1,31 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabSerologie": {
+      "home": {
+        "title": "Tab Serologies",
+        "createLabel": "Create a new Tab Serologie",
+        "createOrEditLabel": "Create or edit a Tab Serologie",
+        "notFound": "No Tab Serologies found"
+      },
+      "created": "A new Tab Serologie is created with identifier {{ param }}",
+      "updated": "A Tab Serologie is updated with identifier {{ param }}",
+      "deleted": "A Tab Serologie is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Serologie {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Serologie"
+      },
+      "dateSerologie": "Date Serologie",
+      "grSang": "Gr Sang",
+      "grSangGeni": "Gr Sang Geni",
+      "caryotype": "Caryotype",
+      "tarifSerologie": "Tarif Serologie",
+      "autres": "Autres",
+      "rapport": "Rapport",
+      "tabPatient": "Tab Patient",
+      "tabConsObst": "Tab Cons Obst",
+      "tabPatient": "Tab Patient"
+    }
+  }
+}

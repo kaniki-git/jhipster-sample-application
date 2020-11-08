@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabExamTech">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.detail.title">Tab Exam Tech</span> {{ tabExamTech.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.typeExamTech">Type Exam Tech</span></dt>
+                <dd>
+                    <span>{{ tabExamTech.typeExamTech }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.dateExamTech">Date Exam Tech</span></dt>
+                <dd>
+                    <span>{{ tabExamTech.dateExamTech }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.tarifExamTech">Tarif Exam Tech</span></dt>
+                <dd>
+                    <span>{{ tabExamTech.tarifExamTech }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.conclusionExamTech">Conclusion Exam Tech</span></dt>
+                <dd>
+                    <span>{{ tabExamTech.conclusionExamTech }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamTech.tabHospital">Tab Hospital</span></dt>
+                <dd>
+                    <div *ngIf="tabExamTech.tabHospital">
+                        <a [routerLink]="['/tab-hospital', tabExamTech.tabHospital?.id, 'view']">{{ tabExamTech.tabHospital?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-exam-tech', tabExamTech.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

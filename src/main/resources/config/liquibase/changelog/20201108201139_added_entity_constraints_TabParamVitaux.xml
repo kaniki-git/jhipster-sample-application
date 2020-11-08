@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity TabParamVitaux.
+    -->
+    <changeSet id="20201108201139-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="tab_consultation_id"
+                                 baseTableName="tab_param_vitaux"
+                                 constraintName="fk_tab_param_vitaux_tab_consultation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tab_consultation"/>
+
+        <addForeignKeyConstraint baseColumnNames="tab_urgence_id"
+                                 baseTableName="tab_param_vitaux"
+                                 constraintName="fk_tab_param_vitaux_tab_urgence_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tab_urgence"/>
+
+        <addForeignKeyConstraint baseColumnNames="tab_hospital_id"
+                                 baseTableName="tab_param_vitaux"
+                                 constraintName="fk_tab_param_vitaux_tab_hospital_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tab_hospital"/>
+
+    </changeSet>
+</databaseChangeLog>

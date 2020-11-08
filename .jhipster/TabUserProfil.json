@@ -1,0 +1,54 @@
+{
+  "name": "TabUserProfil",
+  "fields": [
+    {
+      "fieldName": "estActif",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "matriculeCreation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateCreation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "matriculeModif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateModif",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabUser",
+      "otherEntityRelationshipName": "tabUserProfil",
+      "relationshipName": "tabUser",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabProfil",
+      "otherEntityRelationshipName": "tabUserProfil",
+      "relationshipName": "tabProfil",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201108200939",
+  "entityTableName": "tab_user_profil",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

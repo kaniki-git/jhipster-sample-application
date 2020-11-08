@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabHistoriquePatient.home.title">Tab Historique Patients</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-historique-patient" [routerLink]="['/tab-historique-patient/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabHistoriquePatient.home.createLabel">
+            Create a new Tab Historique Patient
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabHistoriquePatients?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabHistoriquePatient.home.notFound">No tabHistoriquePatients found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabHistoriquePatients && tabHistoriquePatients.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHistoriquePatient.numeroDossier">Numero Dossier</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHistoriquePatient.nom">Nom</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHistoriquePatient.prenom">Prenom</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHistoriquePatient.matriculeUtilisateur">Matricule Utilisateur</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHistoriquePatient.matriculecreation">Matriculecreation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHistoriquePatient.datecreation">Datecreation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHistoriquePatient.matriculemodif">Matriculemodif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHistoriquePatient.datemodif">Datemodif</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabHistoriquePatient of tabHistoriquePatients ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-historique-patient', tabHistoriquePatient.id, 'view']">{{ tabHistoriquePatient.id }}</a></td>
+                    <td>{{ tabHistoriquePatient.numeroDossier }}</td>
+                    <td>{{ tabHistoriquePatient.nom }}</td>
+                    <td>{{ tabHistoriquePatient.prenom }}</td>
+                    <td>{{ tabHistoriquePatient.matriculeUtilisateur }}</td>
+                    <td>{{ tabHistoriquePatient.matriculecreation }}</td>
+                    <td>{{ tabHistoriquePatient.datecreation | date:'medium' }}</td>
+                    <td>{{ tabHistoriquePatient.matriculemodif }}</td>
+                    <td>{{ tabHistoriquePatient.datemodif | date:'medium' }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-historique-patient', tabHistoriquePatient.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-historique-patient', tabHistoriquePatient.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabHistoriquePatient)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

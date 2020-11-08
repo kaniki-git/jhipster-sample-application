@@ -1,0 +1,103 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.home.title">Tab Cons Obsts</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-cons-obst" [routerLink]="['/tab-cons-obst/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.home.createLabel">
+            Create a new Tab Cons Obst
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabConsObsts?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.home.notFound">No tabConsObsts found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabConsObsts && tabConsObsts.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.dateConsult">Date Consult</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.ddr">Ddr</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.termeUs">Terme Us</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.dateOvulation">Date Ovulation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.ageGestationel">Age Gestationel</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.termCorrige">Term Corrige</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.perine">Perine</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.bassin">Bassin</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.ogtt">Ogtt</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.suiviPar">Suivi Par</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.imc">Imc</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.poidsMereInitial">Poids Mere Initial</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.poidsMereTheoriBebe">Poids Mere Theori Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tailleMere">Taille Mere</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tailleTheoriBebe">Taille Theori Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.laboTri21">Labo Tri 21</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.resumeGrossesse">Resume Grossesse</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.conduiteAccouche">Conduite Accouche</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.rapport">Rapport</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tabPatient">Tab Patient</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabConsObst of tabConsObsts ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-cons-obst', tabConsObst.id, 'view']">{{ tabConsObst.id }}</a></td>
+                    <td>{{ tabConsObst.dateConsult | date:'medium' }}</td>
+                    <td>{{ tabConsObst.ddr }}</td>
+                    <td>{{ tabConsObst.termeUs }}</td>
+                    <td>{{ tabConsObst.dateOvulation | date:'medium' }}</td>
+                    <td>{{ tabConsObst.ageGestationel }}</td>
+                    <td>{{ tabConsObst.termCorrige }}</td>
+                    <td>{{ tabConsObst.perine }}</td>
+                    <td>{{ tabConsObst.bassin }}</td>
+                    <td>{{ tabConsObst.ogtt }}</td>
+                    <td>{{ tabConsObst.suiviPar }}</td>
+                    <td>{{ tabConsObst.imc }}</td>
+                    <td>{{ tabConsObst.poidsMereInitial }}</td>
+                    <td>{{ tabConsObst.poidsMereTheoriBebe }}</td>
+                    <td>{{ tabConsObst.tailleMere }}</td>
+                    <td>{{ tabConsObst.tailleTheoriBebe }}</td>
+                    <td>{{ tabConsObst.laboTri21 }}</td>
+                    <td>{{ tabConsObst.resumeGrossesse }}</td>
+                    <td>{{ tabConsObst.conduiteAccouche }}</td>
+                    <td>{{ tabConsObst.rapport }}</td>
+                    <td>
+                        <div *ngIf="tabConsObst.tabPatient">
+                            <a [routerLink]="['/tab-patient', tabConsObst.tabPatient?.id, 'view']" >{{ tabConsObst.tabPatient?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-cons-obst', tabConsObst.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-cons-obst', tabConsObst.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabConsObst)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

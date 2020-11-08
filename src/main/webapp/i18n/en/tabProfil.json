@@ -1,0 +1,23 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabProfil": {
+      "home": {
+        "title": "Tab Profils",
+        "createLabel": "Create a new Tab Profil",
+        "createOrEditLabel": "Create or edit a Tab Profil",
+        "notFound": "No Tab Profils found"
+      },
+      "created": "A new Tab Profil is created with identifier {{ param }}",
+      "updated": "A Tab Profil is updated with identifier {{ param }}",
+      "deleted": "A Tab Profil is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Profil {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Profil"
+      },
+      "libelle": "Libelle",
+      "estActif": "Est Actif"
+    }
+  }
+}
