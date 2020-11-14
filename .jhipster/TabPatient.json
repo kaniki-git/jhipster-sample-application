@@ -1,0 +1,108 @@
+{
+  "name": "TabPatient",
+  "fields": [
+    {
+      "fieldName": "matricule",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sexe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "etatCivil",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nombreEnfant",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nombreGrossesse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datenaissance",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lieunaissance",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nationalite",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activite",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "photoUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "matriculecreation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datecreation",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "matriculemodif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datemodif",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabAdministratif",
+      "otherEntityRelationshipName": "tabPatient",
+      "relationshipName": "tabAdministratif",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabHistoriquePatient",
+      "otherEntityRelationshipName": "tabPatient",
+      "relationshipName": "tabHistoriquePatient",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabComptabilite",
+      "otherEntityRelationshipName": "tabPatient",
+      "relationshipName": "tabComptabilite"
+    }
+  ],
+  "changelogDate": "20201114110114",
+  "entityTableName": "tab_patient",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

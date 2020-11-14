@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-comptabilite-heading" jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.home.createOrEditLabel">Create or edit a Tab Comptabilite</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.nomAppareil" for="field_nomAppareil">Nom Appareil</label>
+                    <input type="text" class="form-control" name="nomAppareil" id="field_nomAppareil"
+                           formControlName="nomAppareil"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifAppareil" for="field_tarifAppareil">Tarif Appareil</label>
+                    <input type="number" class="form-control" name="tarifAppareil" id="field_tarifAppareil"
+                           formControlName="tarifAppareil"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifSpecialite" for="field_tarifSpecialite">Tarif Specialite</label>
+                    <input type="number" class="form-control" name="tarifSpecialite" id="field_tarifSpecialite"
+                           formControlName="tarifSpecialite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifConsultation" for="field_tarifConsultation">Tarif Consultation</label>
+                    <input type="number" class="form-control" name="tarifConsultation" id="field_tarifConsultation"
+                           formControlName="tarifConsultation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifChambre" for="field_tarifChambre">Tarif Chambre</label>
+                    <input type="number" class="form-control" name="tarifChambre" id="field_tarifChambre"
+                           formControlName="tarifChambre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifSejour" for="field_tarifSejour">Tarif Sejour</label>
+                    <input type="number" class="form-control" name="tarifSejour" id="field_tarifSejour"
+                           formControlName="tarifSejour"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.facturePatient" for="field_facturePatient">Facture Patient</label>
+                    <input type="number" class="form-control" name="facturePatient" id="field_facturePatient"
+                           formControlName="facturePatient"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.recette" for="field_recette">Recette</label>
+                    <input type="number" class="form-control" name="recette" id="field_recette"
+                           formControlName="recette"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tabPatient" for="field_tabPatient">Tab Patient</label>
+                    <select class="form-control" id="field_tabPatient" name="tabPatient" formControlName="tabPatient">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabPatientOption.id === editForm.get('tabPatient')!.value?.id ? editForm.get('tabPatient')!.value : tabPatientOption" *ngFor="let tabPatientOption of tabpatients; trackBy: trackById">{{ tabPatientOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

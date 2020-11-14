@@ -1,0 +1,11 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "ProvenancePatient": {
+      "null": "",
+      "Domicile": "Domicile",
+      "Urgence": "Urgence",
+      "Extra": "Extra",
+      "Intra": "Intra"
+    }
+  }
+}

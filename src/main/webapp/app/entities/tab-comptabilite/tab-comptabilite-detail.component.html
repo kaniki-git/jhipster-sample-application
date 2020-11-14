@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabComptabilite">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.detail.title">Tab Comptabilite</span> {{ tabComptabilite.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.nomAppareil">Nom Appareil</span></dt>
+                <dd>
+                    <span>{{ tabComptabilite.nomAppareil }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifAppareil">Tarif Appareil</span></dt>
+                <dd>
+                    <span>{{ tabComptabilite.tarifAppareil }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifSpecialite">Tarif Specialite</span></dt>
+                <dd>
+                    <span>{{ tabComptabilite.tarifSpecialite }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifConsultation">Tarif Consultation</span></dt>
+                <dd>
+                    <span>{{ tabComptabilite.tarifConsultation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifChambre">Tarif Chambre</span></dt>
+                <dd>
+                    <span>{{ tabComptabilite.tarifChambre }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifSejour">Tarif Sejour</span></dt>
+                <dd>
+                    <span>{{ tabComptabilite.tarifSejour }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.facturePatient">Facture Patient</span></dt>
+                <dd>
+                    <span>{{ tabComptabilite.facturePatient }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.recette">Recette</span></dt>
+                <dd>
+                    <span>{{ tabComptabilite.recette }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tabPatient">Tab Patient</span></dt>
+                <dd>
+                    <div *ngIf="tabComptabilite.tabPatient">
+                        <a [routerLink]="['/tab-patient', tabComptabilite.tabPatient?.id, 'view']">{{ tabComptabilite.tabPatient?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-comptabilite', tabComptabilite.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

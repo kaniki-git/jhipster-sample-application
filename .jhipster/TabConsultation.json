@@ -1,0 +1,127 @@
+{
+  "name": "TabConsultation",
+  "fields": [
+    {
+      "fieldName": "dateConsulte",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "provenancePatient",
+      "fieldType": "ProvenancePatient",
+      "fieldValues": "Domicile,Urgence,Extra,Intra"
+    },
+    {
+      "fieldName": "motif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "affectActuel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "antecedent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "traiteHabituel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "allergie",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tabac",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "alcool",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "facteurRisque",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hypotheseDiag",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "avisMedical",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ordreMedical",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "traitePropose",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ledevenirPatient",
+      "fieldType": "LedevenirPatient",
+      "fieldValues": "TransHopi,TransAutreHopi,Externe,Decede"
+    },
+    {
+      "fieldName": "tarifConsult",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "rapport",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabParamVitaux",
+      "otherEntityRelationshipName": "tabConsultation",
+      "relationshipName": "tabParamVitaux"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabBiologie",
+      "otherEntityRelationshipName": "tabConsultation",
+      "relationshipName": "tabBiologie"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabUrgence",
+      "otherEntityRelationshipName": "tabConsultation",
+      "relationshipName": "tabUrgence"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabExamPhys",
+      "otherEntityRelationshipName": "tabConsultation",
+      "relationshipName": "tabExamPhys"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "tabPersonnel",
+      "otherEntityRelationshipName": "tabConsultation",
+      "relationshipName": "tabPersonnel",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabHospital",
+      "otherEntityRelationshipName": "tabConsultation",
+      "relationshipName": "tabHospital",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201114111114",
+  "entityTableName": "tab_consultation",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

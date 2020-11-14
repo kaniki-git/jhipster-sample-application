@@ -1,0 +1,121 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.home.title">Tab Gynecologies</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-gynecologie" [routerLink]="['/tab-gynecologie/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.home.createLabel">
+            Create a new Tab Gynecologie
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabGynecologies?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.home.notFound">No tabGynecologies found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabGynecologies && tabGynecologies.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.dateConsult">Date Consult</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.ddr">Ddr</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.termeUs">Terme Us</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.termCorrige">Term Corrige</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.termDdr">Term Ddr</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.cycle">Cycle</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.dateOvulation">Date Ovulation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.ageGestationel">Age Gestationel</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.dateFin">Date Fin</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.testPeri">Test Peri</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.ecouvillon">Ecouvillon</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.perine">Perine</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.bassin">Bassin</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.ogtt">Ogtt</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.imc">Imc</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.poidsMereInitial">Poids Mere Initial</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.poidsMereTheoriBebe">Poids Mere Theori Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.tailleMere">Taille Mere</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.tailleTheoriBebe">Taille Theori Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.gSgMari">G Sg Mari</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.laboTri21">Labo Tri 21</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.caryotype">Caryotype</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.suiviPar">Suivi Par</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.pediatre">Pediatre</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.risqueOrl">Risque Orl</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.resumeGrossesse">Resume Grossesse</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.conduiteAccouche">Conduite Accouche</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.rapport">Rapport</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.tabAccouchement">Tab Accouchement</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabGynecologie of tabGynecologies ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-gynecologie', tabGynecologie.id, 'view']">{{ tabGynecologie.id }}</a></td>
+                    <td>{{ tabGynecologie.dateConsult | date:'medium' }}</td>
+                    <td>{{ tabGynecologie.ddr }}</td>
+                    <td>{{ tabGynecologie.termeUs }}</td>
+                    <td>{{ tabGynecologie.termCorrige }}</td>
+                    <td>{{ tabGynecologie.termDdr }}</td>
+                    <td>{{ tabGynecologie.cycle }}</td>
+                    <td>{{ tabGynecologie.dateOvulation | date:'medium' }}</td>
+                    <td>{{ tabGynecologie.ageGestationel }}</td>
+                    <td>{{ tabGynecologie.dateFin | date:'medium' }}</td>
+                    <td>{{ tabGynecologie.testPeri }}</td>
+                    <td>{{ tabGynecologie.ecouvillon }}</td>
+                    <td>{{ tabGynecologie.perine }}</td>
+                    <td>{{ tabGynecologie.bassin }}</td>
+                    <td>{{ tabGynecologie.ogtt }}</td>
+                    <td>{{ tabGynecologie.imc }}</td>
+                    <td>{{ tabGynecologie.poidsMereInitial }}</td>
+                    <td>{{ tabGynecologie.poidsMereTheoriBebe }}</td>
+                    <td>{{ tabGynecologie.tailleMere }}</td>
+                    <td>{{ tabGynecologie.tailleTheoriBebe }}</td>
+                    <td>{{ tabGynecologie.gSgMari }}</td>
+                    <td>{{ tabGynecologie.laboTri21 }}</td>
+                    <td>{{ tabGynecologie.caryotype }}</td>
+                    <td>{{ tabGynecologie.suiviPar }}</td>
+                    <td>{{ tabGynecologie.pediatre }}</td>
+                    <td>{{ tabGynecologie.risqueOrl }}</td>
+                    <td>{{ tabGynecologie.resumeGrossesse }}</td>
+                    <td>{{ tabGynecologie.conduiteAccouche }}</td>
+                    <td>{{ tabGynecologie.rapport }}</td>
+                    <td>
+                        <div *ngIf="tabGynecologie.tabAccouchement">
+                            <a [routerLink]="['/tab-accouchement', tabGynecologie.tabAccouchement?.id, 'view']" >{{ tabGynecologie.tabAccouchement?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-gynecologie', tabGynecologie.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-gynecologie', tabGynecologie.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabGynecologie)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

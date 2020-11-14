@@ -1,0 +1,72 @@
+{
+  "name": "TabParamVitaux",
+  "fields": [
+    {
+      "fieldName": "dateExam",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "ta1",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "ta2",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "pouls",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "temperature",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "frequence",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "taille",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "sa02",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "sous",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "poids",
+      "fieldType": "Float"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabConsultation",
+      "otherEntityRelationshipName": "tabParamVitaux",
+      "relationshipName": "tabConsultation",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabGynecologie",
+      "otherEntityRelationshipName": "tabParamVitaux",
+      "relationshipName": "tabGynecologie",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201114111214",
+  "entityTableName": "tab_param_vitaux",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

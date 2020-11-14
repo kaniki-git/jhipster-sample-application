@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.home.title">Tab Comptabilites</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-comptabilite" [routerLink]="['/tab-comptabilite/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.home.createLabel">
+            Create a new Tab Comptabilite
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabComptabilites?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.home.notFound">No tabComptabilites found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabComptabilites && tabComptabilites.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.nomAppareil">Nom Appareil</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifAppareil">Tarif Appareil</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifSpecialite">Tarif Specialite</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifConsultation">Tarif Consultation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifChambre">Tarif Chambre</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tarifSejour">Tarif Sejour</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.facturePatient">Facture Patient</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.recette">Recette</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabComptabilite.tabPatient">Tab Patient</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabComptabilite of tabComptabilites ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-comptabilite', tabComptabilite.id, 'view']">{{ tabComptabilite.id }}</a></td>
+                    <td>{{ tabComptabilite.nomAppareil }}</td>
+                    <td>{{ tabComptabilite.tarifAppareil }}</td>
+                    <td>{{ tabComptabilite.tarifSpecialite }}</td>
+                    <td>{{ tabComptabilite.tarifConsultation }}</td>
+                    <td>{{ tabComptabilite.tarifChambre }}</td>
+                    <td>{{ tabComptabilite.tarifSejour }}</td>
+                    <td>{{ tabComptabilite.facturePatient }}</td>
+                    <td>{{ tabComptabilite.recette }}</td>
+                    <td>
+                        <div *ngIf="tabComptabilite.tabPatient">
+                            <a [routerLink]="['/tab-patient', tabComptabilite.tabPatient?.id, 'view']" >{{ tabComptabilite.tabPatient?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-comptabilite', tabComptabilite.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-comptabilite', tabComptabilite.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabComptabilite)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabRendezvous">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.detail.title">Tab Rendezvous</span> {{ tabRendezvous.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.titre">Titre</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.titre }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.ville">Ville</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.ville }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.dateDebut">Date Debut</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.dateDebut }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.dateFin">Date Fin</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.dateFin }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.jourEntier">Jour Entier</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.jourEntier }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.groupId">Group Id</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.groupId }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.arrierePlanCouleur">Arriere Plan Couleur</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.arrierePlanCouleur }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.texteCouleur">Texte Couleur</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.texteCouleur }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.salle">Salle</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.salle }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.commentaire">Commentaire</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.commentaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.matriculecreation">Matriculecreation</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.matriculecreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.datecreation">Datecreation</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.datecreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.matriculemodif">Matriculemodif</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.matriculemodif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.datemodif">Datemodif</span></dt>
+                <dd>
+                    <span>{{ tabRendezvous.datemodif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.tabPatient">Tab Patient</span></dt>
+                <dd>
+                    <div *ngIf="tabRendezvous.tabPatient">
+                        <a [routerLink]="['/tab-patient', tabRendezvous.tabPatient?.id, 'view']">{{ tabRendezvous.tabPatient?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.tabPersonnel">Tab Personnel</span></dt>
+                <dd>
+                    <div *ngIf="tabRendezvous.tabPersonnel">
+                        <a [routerLink]="['/tab-personnel', tabRendezvous.tabPersonnel?.id, 'view']">{{ tabRendezvous.tabPersonnel?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-rendezvous', tabRendezvous.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

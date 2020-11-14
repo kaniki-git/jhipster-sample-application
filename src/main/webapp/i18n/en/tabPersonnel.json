@@ -1,0 +1,37 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabPersonnel": {
+      "home": {
+        "title": "Tab Personnels",
+        "createLabel": "Create a new Tab Personnel",
+        "createOrEditLabel": "Create or edit a Tab Personnel",
+        "notFound": "No Tab Personnels found"
+      },
+      "created": "A new Tab Personnel is created with identifier {{ param }}",
+      "updated": "A Tab Personnel is updated with identifier {{ param }}",
+      "deleted": "A Tab Personnel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Personnel {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Personnel"
+      },
+      "matricule": "Matricule",
+      "etatCivil": "Etat Civil",
+      "typePersonnel": "Type Personnel",
+      "activite": "Activite",
+      "grade": "Grade",
+      "dateentreeservice": "Dateentreeservice",
+      "nomstatut": "Nomstatut",
+      "matriculecreation": "Matriculecreation",
+      "datecreation": "Datecreation",
+      "matriculemodif": "Matriculemodif",
+      "datemodif": "Datemodif",
+      "tabPatient": "Tab Patient",
+      "tabCoordonnee": "Tab Coordonnee",
+      "tabSpecialite": "Tab Specialite",
+      "tabHospital": "Tab Hospital",
+      "tabConsultation": "Tab Consultation"
+    }
+  }
+}

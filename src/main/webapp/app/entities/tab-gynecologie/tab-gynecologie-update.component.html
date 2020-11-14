@@ -1,0 +1,205 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-gynecologie-heading" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.home.createOrEditLabel">Create or edit a Tab Gynecologie</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.dateConsult" for="field_dateConsult">Date Consult</label>
+                    <div class="d-flex">
+                        <input id="field_dateConsult" type="datetime-local" class="form-control" name="dateConsult" formControlName="dateConsult" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.ddr" for="field_ddr">Ddr</label>
+                    <input type="text" class="form-control" name="ddr" id="field_ddr"
+                           formControlName="ddr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.termeUs" for="field_termeUs">Terme Us</label>
+                    <input type="text" class="form-control" name="termeUs" id="field_termeUs"
+                           formControlName="termeUs"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.termCorrige" for="field_termCorrige">Term Corrige</label>
+                    <input type="text" class="form-control" name="termCorrige" id="field_termCorrige"
+                           formControlName="termCorrige"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.termDdr" for="field_termDdr">Term Ddr</label>
+                    <input type="text" class="form-control" name="termDdr" id="field_termDdr"
+                           formControlName="termDdr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.cycle" for="field_cycle">Cycle</label>
+                    <input type="text" class="form-control" name="cycle" id="field_cycle"
+                           formControlName="cycle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.dateOvulation" for="field_dateOvulation">Date Ovulation</label>
+                    <div class="d-flex">
+                        <input id="field_dateOvulation" type="datetime-local" class="form-control" name="dateOvulation" formControlName="dateOvulation" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.ageGestationel" for="field_ageGestationel">Age Gestationel</label>
+                    <input type="text" class="form-control" name="ageGestationel" id="field_ageGestationel"
+                           formControlName="ageGestationel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.dateFin" for="field_dateFin">Date Fin</label>
+                    <div class="d-flex">
+                        <input id="field_dateFin" type="datetime-local" class="form-control" name="dateFin" formControlName="dateFin" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.testPeri" for="field_testPeri">Test Peri</label>
+                    <input type="text" class="form-control" name="testPeri" id="field_testPeri"
+                           formControlName="testPeri"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.ecouvillon" for="field_ecouvillon">Ecouvillon</label>
+                    <input type="text" class="form-control" name="ecouvillon" id="field_ecouvillon"
+                           formControlName="ecouvillon"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.perine" for="field_perine">Perine</label>
+                    <input type="text" class="form-control" name="perine" id="field_perine"
+                           formControlName="perine"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.bassin" for="field_bassin">Bassin</label>
+                    <input type="text" class="form-control" name="bassin" id="field_bassin"
+                           formControlName="bassin"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.ogtt" for="field_ogtt">Ogtt</label>
+                    <input type="text" class="form-control" name="ogtt" id="field_ogtt"
+                           formControlName="ogtt"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.imc" for="field_imc">Imc</label>
+                    <input type="text" class="form-control" name="imc" id="field_imc"
+                           formControlName="imc"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.poidsMereInitial" for="field_poidsMereInitial">Poids Mere Initial</label>
+                    <input type="number" class="form-control" name="poidsMereInitial" id="field_poidsMereInitial"
+                           formControlName="poidsMereInitial"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.poidsMereTheoriBebe" for="field_poidsMereTheoriBebe">Poids Mere Theori Bebe</label>
+                    <input type="number" class="form-control" name="poidsMereTheoriBebe" id="field_poidsMereTheoriBebe"
+                           formControlName="poidsMereTheoriBebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.tailleMere" for="field_tailleMere">Taille Mere</label>
+                    <input type="number" class="form-control" name="tailleMere" id="field_tailleMere"
+                           formControlName="tailleMere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.tailleTheoriBebe" for="field_tailleTheoriBebe">Taille Theori Bebe</label>
+                    <input type="number" class="form-control" name="tailleTheoriBebe" id="field_tailleTheoriBebe"
+                           formControlName="tailleTheoriBebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.gSgMari" for="field_gSgMari">G Sg Mari</label>
+                    <input type="text" class="form-control" name="gSgMari" id="field_gSgMari"
+                           formControlName="gSgMari"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.laboTri21" for="field_laboTri21">Labo Tri 21</label>
+                    <input type="text" class="form-control" name="laboTri21" id="field_laboTri21"
+                           formControlName="laboTri21"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.caryotype" for="field_caryotype">Caryotype</label>
+                    <input type="text" class="form-control" name="caryotype" id="field_caryotype"
+                           formControlName="caryotype"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.suiviPar" for="field_suiviPar">Suivi Par</label>
+                    <input type="text" class="form-control" name="suiviPar" id="field_suiviPar"
+                           formControlName="suiviPar"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.pediatre" for="field_pediatre">Pediatre</label>
+                    <input type="text" class="form-control" name="pediatre" id="field_pediatre"
+                           formControlName="pediatre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.risqueOrl" for="field_risqueOrl">Risque Orl</label>
+                    <input type="text" class="form-control" name="risqueOrl" id="field_risqueOrl"
+                           formControlName="risqueOrl"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.resumeGrossesse" for="field_resumeGrossesse">Resume Grossesse</label>
+                    <input type="text" class="form-control" name="resumeGrossesse" id="field_resumeGrossesse"
+                           formControlName="resumeGrossesse"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.conduiteAccouche" for="field_conduiteAccouche">Conduite Accouche</label>
+                    <input type="text" class="form-control" name="conduiteAccouche" id="field_conduiteAccouche"
+                           formControlName="conduiteAccouche"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.rapport" for="field_rapport">Rapport</label>
+                    <input type="text" class="form-control" name="rapport" id="field_rapport"
+                           formControlName="rapport"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabGynecologie.tabAccouchement" for="field_tabAccouchement">Tab Accouchement</label>
+                    <select class="form-control" id="field_tabAccouchement" name="tabAccouchement" formControlName="tabAccouchement">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabAccouchementOption.id === editForm.get('tabAccouchement')!.value?.id ? editForm.get('tabAccouchement')!.value : tabAccouchementOption" *ngFor="let tabAccouchementOption of tabaccouchements; trackBy: trackById">{{ tabAccouchementOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

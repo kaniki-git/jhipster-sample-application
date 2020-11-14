@@ -1,0 +1,51 @@
+{
+  "name": "TabUrgence",
+  "fields": [
+    {
+      "fieldName": "dateArriveeUrgence",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "provenancePatient",
+      "fieldType": "ProvenancePatient",
+      "fieldValues": "Domicile,Urgence,Extra,Intra"
+    },
+    {
+      "fieldName": "ledevenirPatient",
+      "fieldType": "LedevenirPatient",
+      "fieldValues": "TransHopi,TransAutreHopi,Externe,Decede"
+    },
+    {
+      "fieldName": "rapportUrgence",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabAdministratif",
+      "otherEntityRelationshipName": "tabUrgence",
+      "relationshipName": "tabAdministratif",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabConsultation",
+      "otherEntityRelationshipName": "tabUrgence",
+      "relationshipName": "tabConsultation",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201114111514",
+  "javadoc": "Service Urgence",
+  "entityTableName": "tab_urgence",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

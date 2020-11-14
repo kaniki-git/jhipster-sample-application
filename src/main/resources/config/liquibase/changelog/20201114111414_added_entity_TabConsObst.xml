@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity TabConsObst.
+    -->
+    <changeSet id="20201114111414-1" author="jhipster">
+        <createTable tableName="tab_cons_obst">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="date_cons_obst" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="age_patient" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="poids" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="tas" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="tad" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="a" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="s" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="n" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="hu" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="bc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sb" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="oe" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pres" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="conclusion" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="traitement" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="suivi_par" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tab_gynecologie_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="tab_cons_obst" columnName="date_cons_obst" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20201114111414-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20201114111414-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/tab_cons_obst.csv"
+                  separator=";"
+                  tableName="tab_cons_obst">
+            <column name="id" type="numeric"/>
+            <column name="date_cons_obst" type="datetime"/>
+            <column name="age_patient" type="string"/>
+            <column name="poids" type="numeric"/>
+            <column name="tas" type="numeric"/>
+            <column name="tad" type="numeric"/>
+            <column name="a" type="numeric"/>
+            <column name="s" type="string"/>
+            <column name="n" type="string"/>
+            <column name="hu" type="string"/>
+            <column name="bc" type="string"/>
+            <column name="sb" type="string"/>
+            <column name="oe" type="string"/>
+            <column name="pres" type="string"/>
+            <column name="conclusion" type="string"/>
+            <column name="traitement" type="string"/>
+            <column name="suivi_par" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

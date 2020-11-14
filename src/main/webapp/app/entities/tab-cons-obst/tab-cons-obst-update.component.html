@@ -1,0 +1,131 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-cons-obst-heading" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.home.createOrEditLabel">Create or edit a Tab Cons Obst</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.dateConsObst" for="field_dateConsObst">Date Cons Obst</label>
+                    <div class="d-flex">
+                        <input id="field_dateConsObst" type="datetime-local" class="form-control" name="dateConsObst" formControlName="dateConsObst" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.agePatient" for="field_agePatient">Age Patient</label>
+                    <input type="text" class="form-control" name="agePatient" id="field_agePatient"
+                           formControlName="agePatient"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.poids" for="field_poids">Poids</label>
+                    <input type="number" class="form-control" name="poids" id="field_poids"
+                           formControlName="poids"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tas" for="field_tas">Tas</label>
+                    <input type="number" class="form-control" name="tas" id="field_tas"
+                           formControlName="tas"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tad" for="field_tad">Tad</label>
+                    <input type="number" class="form-control" name="tad" id="field_tad"
+                           formControlName="tad"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.a" for="field_a">A</label>
+                    <input type="number" class="form-control" name="a" id="field_a"
+                           formControlName="a"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.s" for="field_s">S</label>
+                    <input type="text" class="form-control" name="s" id="field_s"
+                           formControlName="s"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.n" for="field_n">N</label>
+                    <input type="text" class="form-control" name="n" id="field_n"
+                           formControlName="n"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.hu" for="field_hu">Hu</label>
+                    <input type="text" class="form-control" name="hu" id="field_hu"
+                           formControlName="hu"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.bc" for="field_bc">Bc</label>
+                    <input type="text" class="form-control" name="bc" id="field_bc"
+                           formControlName="bc"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.sb" for="field_sb">Sb</label>
+                    <input type="text" class="form-control" name="sb" id="field_sb"
+                           formControlName="sb"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.oe" for="field_oe">Oe</label>
+                    <input type="text" class="form-control" name="oe" id="field_oe"
+                           formControlName="oe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.pres" for="field_pres">Pres</label>
+                    <input type="text" class="form-control" name="pres" id="field_pres"
+                           formControlName="pres"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.conclusion" for="field_conclusion">Conclusion</label>
+                    <input type="text" class="form-control" name="conclusion" id="field_conclusion"
+                           formControlName="conclusion"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.traitement" for="field_traitement">Traitement</label>
+                    <input type="text" class="form-control" name="traitement" id="field_traitement"
+                           formControlName="traitement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.suiviPar" for="field_suiviPar">Suivi Par</label>
+                    <input type="text" class="form-control" name="suiviPar" id="field_suiviPar"
+                           formControlName="suiviPar"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tabGynecologie" for="field_tabGynecologie">Tab Gynecologie</label>
+                    <select class="form-control" id="field_tabGynecologie" name="tabGynecologie" formControlName="tabGynecologie">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabGynecologieOption.id === editForm.get('tabGynecologie')!.value?.id ? editForm.get('tabGynecologie')!.value : tabGynecologieOption" *ngFor="let tabGynecologieOption of tabgynecologies; trackBy: trackById">{{ tabGynecologieOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

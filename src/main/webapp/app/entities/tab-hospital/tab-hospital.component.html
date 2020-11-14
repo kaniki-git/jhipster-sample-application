@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.home.title">Tab Hospitals</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-hospital" [routerLink]="['/tab-hospital/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabHospital.home.createLabel">
+            Create a new Tab Hospital
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabHospitals?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.home.notFound">No tabHospitals found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabHospitals && tabHospitals.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.dateAdmission">Date Admission</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.motifAdmission">Motif Admission</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.provenancePatient">Provenance Patient</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.evolJour">Evol Jour</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.evolSynthese">Evol Synthese</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.plantTherapeute">Plant Therapeute</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.ledevenirPatient">Ledevenir Patient</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.prochainRdv">Prochain Rdv</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.lieuRdv">Lieu Rdv</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.conclusionSejour">Conclusion Sejour</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.nomConsultant">Nom Consultant</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.bilanAdmission">Bilan Admission</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.rapport">Rapport</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.tabPersonnel">Tab Personnel</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabHospital of tabHospitals ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-hospital', tabHospital.id, 'view']">{{ tabHospital.id }}</a></td>
+                    <td>{{ tabHospital.dateAdmission | date:'medium' }}</td>
+                    <td>{{ tabHospital.motifAdmission }}</td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplicationApp.ProvenancePatient.' + tabHospital.provenancePatient }}">{{ tabHospital.provenancePatient }}</td>
+                    <td>{{ tabHospital.evolJour }}</td>
+                    <td>{{ tabHospital.evolSynthese }}</td>
+                    <td>{{ tabHospital.plantTherapeute }}</td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplicationApp.LedevenirPatient.' + tabHospital.ledevenirPatient }}">{{ tabHospital.ledevenirPatient }}</td>
+                    <td>{{ tabHospital.prochainRdv | date:'medium' }}</td>
+                    <td>{{ tabHospital.lieuRdv }}</td>
+                    <td>{{ tabHospital.conclusionSejour }}</td>
+                    <td>{{ tabHospital.nomConsultant }}</td>
+                    <td>{{ tabHospital.bilanAdmission }}</td>
+                    <td>{{ tabHospital.rapport }}</td>
+                    <td>
+                        <span *ngFor="let tabPersonnel of tabHospital.tabPersonnels; let last = last">
+                            <a class="form-control-static" [routerLink]="['/tab-personnel', tabPersonnel?.id, 'view']">{{ tabPersonnel.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-hospital', tabHospital.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-hospital', tabHospital.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabHospital)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

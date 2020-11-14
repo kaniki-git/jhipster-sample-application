@@ -1,0 +1,153 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-consultation-heading" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.home.createOrEditLabel">Create or edit a Tab Consultation</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.dateConsulte" for="field_dateConsulte">Date Consulte</label>
+                    <div class="d-flex">
+                        <input id="field_dateConsulte" type="datetime-local" class="form-control" name="dateConsulte" formControlName="dateConsulte" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.provenancePatient" for="field_provenancePatient">Provenance Patient</label>
+                    <select class="form-control" name="provenancePatient" formControlName="provenancePatient" id="field_provenancePatient">
+                        <option value="Domicile">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Domicile' | translate }}</option>
+                        <option value="Urgence">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Urgence' | translate }}</option>
+                        <option value="Extra">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Extra' | translate }}</option>
+                        <option value="Intra">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Intra' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.motif" for="field_motif">Motif</label>
+                    <input type="text" class="form-control" name="motif" id="field_motif"
+                           formControlName="motif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.affectActuel" for="field_affectActuel">Affect Actuel</label>
+                    <input type="text" class="form-control" name="affectActuel" id="field_affectActuel"
+                           formControlName="affectActuel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.antecedent" for="field_antecedent">Antecedent</label>
+                    <input type="text" class="form-control" name="antecedent" id="field_antecedent"
+                           formControlName="antecedent"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.traiteHabituel" for="field_traiteHabituel">Traite Habituel</label>
+                    <input type="text" class="form-control" name="traiteHabituel" id="field_traiteHabituel"
+                           formControlName="traiteHabituel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.allergie" for="field_allergie">Allergie</label>
+                    <input type="text" class="form-control" name="allergie" id="field_allergie"
+                           formControlName="allergie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tabac" for="field_tabac">Tabac</label>
+                    <input type="checkbox" class="form-control" name="tabac" id="field_tabac"
+                           formControlName="tabac"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.alcool" for="field_alcool">Alcool</label>
+                    <input type="checkbox" class="form-control" name="alcool" id="field_alcool"
+                           formControlName="alcool"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.facteurRisque" for="field_facteurRisque">Facteur Risque</label>
+                    <input type="text" class="form-control" name="facteurRisque" id="field_facteurRisque"
+                           formControlName="facteurRisque"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.hypotheseDiag" for="field_hypotheseDiag">Hypothese Diag</label>
+                    <input type="text" class="form-control" name="hypotheseDiag" id="field_hypotheseDiag"
+                           formControlName="hypotheseDiag"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.avisMedical" for="field_avisMedical">Avis Medical</label>
+                    <input type="text" class="form-control" name="avisMedical" id="field_avisMedical"
+                           formControlName="avisMedical"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.ordreMedical" for="field_ordreMedical">Ordre Medical</label>
+                    <input type="text" class="form-control" name="ordreMedical" id="field_ordreMedical"
+                           formControlName="ordreMedical"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.traitePropose" for="field_traitePropose">Traite Propose</label>
+                    <input type="text" class="form-control" name="traitePropose" id="field_traitePropose"
+                           formControlName="traitePropose"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.ledevenirPatient" for="field_ledevenirPatient">Ledevenir Patient</label>
+                    <select class="form-control" name="ledevenirPatient" formControlName="ledevenirPatient" id="field_ledevenirPatient">
+                        <option value="TransHopi">{{ 'jhipsterSampleApplicationApp.LedevenirPatient.TransHopi' | translate }}</option>
+                        <option value="TransAutreHopi">{{ 'jhipsterSampleApplicationApp.LedevenirPatient.TransAutreHopi' | translate }}</option>
+                        <option value="Externe">{{ 'jhipsterSampleApplicationApp.LedevenirPatient.Externe' | translate }}</option>
+                        <option value="Decede">{{ 'jhipsterSampleApplicationApp.LedevenirPatient.Decede' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tarifConsult" for="field_tarifConsult">Tarif Consult</label>
+                    <div class="d-flex">
+                        <input id="field_tarifConsult" type="datetime-local" class="form-control" name="tarifConsult" formControlName="tarifConsult" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.rapport" for="field_rapport">Rapport</label>
+                    <input type="text" class="form-control" name="rapport" id="field_rapport"
+                           formControlName="rapport"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tabPersonnel" for="field_tabPersonnels">Tab Personnel</label>
+                    <select class="form-control" id="field_tabPersonnels" multiple name="tabPersonnels" formControlName="tabPersonnels">
+                        <option [ngValue]="getSelected(editForm.get('tabPersonnels')!.value, tabPersonnelOption)" *ngFor="let tabPersonnelOption of tabpersonnels; trackBy: trackById">{{ tabPersonnelOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tabHospital" for="field_tabHospital">Tab Hospital</label>
+                    <select class="form-control" id="field_tabHospital" name="tabHospital" formControlName="tabHospital">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabHospitalOption.id === editForm.get('tabHospital')!.value?.id ? editForm.get('tabHospital')!.value : tabHospitalOption" *ngFor="let tabHospitalOption of tabhospitals; trackBy: trackById">{{ tabHospitalOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

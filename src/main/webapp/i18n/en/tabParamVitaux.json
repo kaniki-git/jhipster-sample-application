@@ -1,0 +1,33 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabParamVitaux": {
+      "home": {
+        "title": "Tab Param Vitauxes",
+        "createLabel": "Create a new Tab Param Vitaux",
+        "createOrEditLabel": "Create or edit a Tab Param Vitaux",
+        "notFound": "No Tab Param Vitauxes found"
+      },
+      "created": "A new Tab Param Vitaux is created with identifier {{ param }}",
+      "updated": "A Tab Param Vitaux is updated with identifier {{ param }}",
+      "deleted": "A Tab Param Vitaux is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Param Vitaux {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Param Vitaux"
+      },
+      "dateExam": "Date Exam",
+      "ta1": "Ta 1",
+      "ta2": "Ta 2",
+      "pouls": "Pouls",
+      "temperature": "Temperature",
+      "frequence": "Frequence",
+      "taille": "Taille",
+      "sa02": "Sa 02",
+      "sous": "Sous",
+      "poids": "Poids",
+      "tabConsultation": "Tab Consultation",
+      "tabGynecologie": "Tab Gynecologie"
+    }
+  }
+}

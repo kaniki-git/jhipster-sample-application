@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabParamVitaux">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.detail.title">Tab Param Vitaux</span> {{ tabParamVitaux.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.dateExam">Date Exam</span></dt>
+                <dd>
+                    <span>{{ tabParamVitaux.dateExam }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.ta1">Ta 1</span></dt>
+                <dd>
+                    <span>{{ tabParamVitaux.ta1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.ta2">Ta 2</span></dt>
+                <dd>
+                    <span>{{ tabParamVitaux.ta2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.pouls">Pouls</span></dt>
+                <dd>
+                    <span>{{ tabParamVitaux.pouls }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.temperature">Temperature</span></dt>
+                <dd>
+                    <span>{{ tabParamVitaux.temperature }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.frequence">Frequence</span></dt>
+                <dd>
+                    <span>{{ tabParamVitaux.frequence }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.taille">Taille</span></dt>
+                <dd>
+                    <span>{{ tabParamVitaux.taille }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.sa02">Sa 02</span></dt>
+                <dd>
+                    <span>{{ tabParamVitaux.sa02 }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.sous">Sous</span></dt>
+                <dd>
+                    <span>{{ tabParamVitaux.sous }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.poids">Poids</span></dt>
+                <dd>
+                    <span>{{ tabParamVitaux.poids }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.tabConsultation">Tab Consultation</span></dt>
+                <dd>
+                    <div *ngIf="tabParamVitaux.tabConsultation">
+                        <a [routerLink]="['/tab-consultation', tabParamVitaux.tabConsultation?.id, 'view']">{{ tabParamVitaux.tabConsultation?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.tabGynecologie">Tab Gynecologie</span></dt>
+                <dd>
+                    <div *ngIf="tabParamVitaux.tabGynecologie">
+                        <a [routerLink]="['/tab-gynecologie', tabParamVitaux.tabGynecologie?.id, 'view']">{{ tabParamVitaux.tabGynecologie?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-param-vitaux', tabParamVitaux.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+{
+  "name": "TabPersonnel",
+  "fields": [
+    {
+      "fieldName": "matricule",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "etatCivil",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typePersonnel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activite",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grade",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateentreeservice",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "nomstatut",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "matriculecreation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datecreation",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "matriculemodif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datemodif",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabPatient",
+      "otherEntityRelationshipName": "tabPersonnel",
+      "relationshipName": "tabPatient",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tabCoordonnee",
+      "otherEntityRelationshipName": "tabPersonnel",
+      "relationshipName": "tabCoordonnee",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabSpecialite",
+      "otherEntityRelationshipName": "tabPersonnel",
+      "relationshipName": "tabSpecialite",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "tabHospital",
+      "otherEntityRelationshipName": "tabPersonnel",
+      "relationshipName": "tabHospital",
+      "otherEntityField": "id",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "tabConsultation",
+      "otherEntityRelationshipName": "tabPersonnel",
+      "relationshipName": "tabConsultation",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201114110414",
+  "entityTableName": "tab_personnel",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

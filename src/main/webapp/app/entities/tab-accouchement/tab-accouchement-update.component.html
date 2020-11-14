@@ -1,0 +1,111 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-accouchement-heading" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.home.createOrEditLabel">Create or edit a Tab Accouchement</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.dateAccouche" for="field_dateAccouche">Date Accouche</label>
+                    <div class="d-flex">
+                        <input id="field_dateAccouche" type="datetime-local" class="form-control" name="dateAccouche" formControlName="dateAccouche" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.matriculeBebe" for="field_matriculeBebe">Matricule Bebe</label>
+                    <input type="text" class="form-control" name="matriculeBebe" id="field_matriculeBebe"
+                           formControlName="matriculeBebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.sexeBebe" for="field_sexeBebe">Sexe Bebe</label>
+                    <input type="text" class="form-control" name="sexeBebe" id="field_sexeBebe"
+                           formControlName="sexeBebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.nomBebe" for="field_nomBebe">Nom Bebe</label>
+                    <input type="text" class="form-control" name="nomBebe" id="field_nomBebe"
+                           formControlName="nomBebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.prenon1Bebe" for="field_prenon1Bebe">Prenon 1 Bebe</label>
+                    <input type="text" class="form-control" name="prenon1Bebe" id="field_prenon1Bebe"
+                           formControlName="prenon1Bebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.prenon2Bebe" for="field_prenon2Bebe">Prenon 2 Bebe</label>
+                    <input type="text" class="form-control" name="prenon2Bebe" id="field_prenon2Bebe"
+                           formControlName="prenon2Bebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.nomMere" for="field_nomMere">Nom Mere</label>
+                    <input type="text" class="form-control" name="nomMere" id="field_nomMere"
+                           formControlName="nomMere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.ageBebe" for="field_ageBebe">Age Bebe</label>
+                    <input type="number" class="form-control" name="ageBebe" id="field_ageBebe"
+                           formControlName="ageBebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.ta1Bebe" for="field_ta1Bebe">Ta 1 Bebe</label>
+                    <input type="number" class="form-control" name="ta1Bebe" id="field_ta1Bebe"
+                           formControlName="ta1Bebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.ta2Bebe" for="field_ta2Bebe">Ta 2 Bebe</label>
+                    <input type="number" class="form-control" name="ta2Bebe" id="field_ta2Bebe"
+                           formControlName="ta2Bebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.poidsBebe" for="field_poidsBebe">Poids Bebe</label>
+                    <input type="text" class="form-control" name="poidsBebe" id="field_poidsBebe"
+                           formControlName="poidsBebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.tailleBebe" for="field_tailleBebe">Taille Bebe</label>
+                    <input type="text" class="form-control" name="tailleBebe" id="field_tailleBebe"
+                           formControlName="tailleBebe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.allaitement" for="field_allaitement">Allaitement</label>
+                    <input type="text" class="form-control" name="allaitement" id="field_allaitement"
+                           formControlName="allaitement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.conclusion" for="field_conclusion">Conclusion</label>
+                    <input type="text" class="form-control" name="conclusion" id="field_conclusion"
+                           formControlName="conclusion"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

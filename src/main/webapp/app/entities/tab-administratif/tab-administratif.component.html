@@ -1,0 +1,95 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.home.title">Tab Administratifs</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-administratif" [routerLink]="['/tab-administratif/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.home.createLabel">
+            Create a new Tab Administratif
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabAdministratifs?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.home.notFound">No tabAdministratifs found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabAdministratifs && tabAdministratifs.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.provenancePatient">Provenance Patient</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.numeroChambre">Numero Chambre</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.batiment">Batiment</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.dateEntree">Date Entree</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.dateSortie">Date Sortie</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.commentaire">Commentaire</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.couverture">Couverture</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.numerosecu">Numerosecu</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.nomassurrance">Nomassurrance</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.coordonneesecu">Coordonneesecu</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.nomMedecinPerso">Nom Medecin Perso</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.matriculecreation">Matriculecreation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.datecreation">Datecreation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.matriculemodif">Matriculemodif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.datemodif">Datemodif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.tabCoordonnee">Tab Coordonnee</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabAdministratif of tabAdministratifs ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-administratif', tabAdministratif.id, 'view']">{{ tabAdministratif.id }}</a></td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplicationApp.ProvenancePatient.' + tabAdministratif.provenancePatient }}">{{ tabAdministratif.provenancePatient }}</td>
+                    <td>{{ tabAdministratif.numeroChambre }}</td>
+                    <td>{{ tabAdministratif.batiment }}</td>
+                    <td>{{ tabAdministratif.dateEntree | date:'medium' }}</td>
+                    <td>{{ tabAdministratif.dateSortie | date:'medium' }}</td>
+                    <td>{{ tabAdministratif.commentaire }}</td>
+                    <td>{{ tabAdministratif.couverture }}</td>
+                    <td>{{ tabAdministratif.numerosecu }}</td>
+                    <td>{{ tabAdministratif.nomassurrance }}</td>
+                    <td>{{ tabAdministratif.coordonneesecu }}</td>
+                    <td>{{ tabAdministratif.nomMedecinPerso }}</td>
+                    <td>{{ tabAdministratif.matriculecreation }}</td>
+                    <td>{{ tabAdministratif.datecreation | date:'medium' }}</td>
+                    <td>{{ tabAdministratif.matriculemodif }}</td>
+                    <td>{{ tabAdministratif.datemodif | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="tabAdministratif.tabCoordonnee">
+                            <a [routerLink]="['/tab-coordonnee', tabAdministratif.tabCoordonnee?.id, 'view']" >{{ tabAdministratif.tabCoordonnee?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-administratif', tabAdministratif.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-administratif', tabAdministratif.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabAdministratif)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

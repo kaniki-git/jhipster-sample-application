@@ -1,0 +1,11 @@
+id;date_arrivee_urgence;provenance_patient;ledevenir_patient;rapport_urgence
+1;2020-11-14T04:59:15;Intra;Externe;archive
+2;2020-11-14T00:07:32;Extra;Decede;Cambridgeshire TCP Synergistic
+3;2020-11-13T22:09:55;Urgence;TransHopi;monitor
+4;2020-11-13T21:04:50;Urgence;TransAutreHopi;Washington Frozen RSS
+5;2020-11-14T08:48:17;Urgence;TransAutreHopi;Kwacha
+6;2020-11-13T16:18:53;Intra;Externe;Cotton Vietnam adapter
+7;2020-11-13T18:23:28;Urgence;TransAutreHopi;Cotton Avon
+8;2020-11-14T03:50:13;Intra;TransHopi;value-added Fantastic
+9;2020-11-14T09:31:52;Urgence;Decede;Money Market Account holistic Books
+10;2020-11-13T23:20:19;Urgence;Externe;Sharable

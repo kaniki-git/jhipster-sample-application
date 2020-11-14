@@ -1,0 +1,197 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-exam-phys-heading" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.home.createOrEditLabel">Create or edit a Tab Exam Phys</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.dateExamPhys" for="field_dateExamPhys">Date Exam Phys</label>
+                    <div class="d-flex">
+                        <input id="field_dateExamPhys" type="datetime-local" class="form-control" name="dateExamPhys" formControlName="dateExamPhys" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.nomAppareil" for="field_nomAppareil">Nom Appareil</label>
+                    <input type="text" class="form-control" name="nomAppareil" id="field_nomAppareil"
+                           formControlName="nomAppareil"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.tete" for="field_tete">Tete</label>
+                    <input type="text" class="form-control" name="tete" id="field_tete"
+                           formControlName="tete"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.cou" for="field_cou">Cou</label>
+                    <input type="text" class="form-control" name="cou" id="field_cou"
+                           formControlName="cou"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.bouche" for="field_bouche">Bouche</label>
+                    <input type="text" class="form-control" name="bouche" id="field_bouche"
+                           formControlName="bouche"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.thorax" for="field_thorax">Thorax</label>
+                    <input type="text" class="form-control" name="thorax" id="field_thorax"
+                           formControlName="thorax"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.ausculationCard" for="field_ausculationCard">Ausculation Card</label>
+                    <input type="text" class="form-control" name="ausculationCard" id="field_ausculationCard"
+                           formControlName="ausculationCard"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.ausculationPulmo" for="field_ausculationPulmo">Ausculation Pulmo</label>
+                    <input type="text" class="form-control" name="ausculationPulmo" id="field_ausculationPulmo"
+                           formControlName="ausculationPulmo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.souffle" for="field_souffle">Souffle</label>
+                    <input type="text" class="form-control" name="souffle" id="field_souffle"
+                           formControlName="souffle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.rate" for="field_rate">Rate</label>
+                    <input type="text" class="form-control" name="rate" id="field_rate"
+                           formControlName="rate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.bonchospame" for="field_bonchospame">Bonchospame</label>
+                    <input type="text" class="form-control" name="bonchospame" id="field_bonchospame"
+                           formControlName="bonchospame"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.percussionThorax" for="field_percussionThorax">Percussion Thorax</label>
+                    <input type="text" class="form-control" name="percussionThorax" id="field_percussionThorax"
+                           formControlName="percussionThorax"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.abdomen" for="field_abdomen">Abdomen</label>
+                    <input type="text" class="form-control" name="abdomen" id="field_abdomen"
+                           formControlName="abdomen"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.poulsFemoralG" for="field_poulsFemoralG">Pouls Femoral G</label>
+                    <input type="checkbox" class="form-control" name="poulsFemoralG" id="field_poulsFemoralG"
+                           formControlName="poulsFemoralG"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.poulsFemoralD" for="field_poulsFemoralD">Pouls Femoral D</label>
+                    <input type="checkbox" class="form-control" name="poulsFemoralD" id="field_poulsFemoralD"
+                           formControlName="poulsFemoralD"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.poulsPopliteG" for="field_poulsPopliteG">Pouls Poplite G</label>
+                    <input type="checkbox" class="form-control" name="poulsPopliteG" id="field_poulsPopliteG"
+                           formControlName="poulsPopliteG"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.poulsPopliteD" for="field_poulsPopliteD">Pouls Poplite D</label>
+                    <input type="checkbox" class="form-control" name="poulsPopliteD" id="field_poulsPopliteD"
+                           formControlName="poulsPopliteD"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.poulsPedieuxG" for="field_poulsPedieuxG">Pouls Pedieux G</label>
+                    <input type="checkbox" class="form-control" name="poulsPedieuxG" id="field_poulsPedieuxG"
+                           formControlName="poulsPedieuxG"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.poulsPedieuxD" for="field_poulsPedieuxD">Pouls Pedieux D</label>
+                    <input type="checkbox" class="form-control" name="poulsPedieuxD" id="field_poulsPedieuxD"
+                           formControlName="poulsPedieuxD"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.poulstibialPostG" for="field_poulstibialPostG">Poulstibial Post G</label>
+                    <input type="checkbox" class="form-control" name="poulstibialPostG" id="field_poulstibialPostG"
+                           formControlName="poulstibialPostG"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.poulstibialPostD" for="field_poulstibialPostD">Poulstibial Post D</label>
+                    <input type="checkbox" class="form-control" name="poulstibialPostD" id="field_poulstibialPostD"
+                           formControlName="poulstibialPostD"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.souffleAbdo" for="field_souffleAbdo">Souffle Abdo</label>
+                    <input type="checkbox" class="form-control" name="souffleAbdo" id="field_souffleAbdo"
+                           formControlName="souffleAbdo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.souffleFemoralG" for="field_souffleFemoralG">Souffle Femoral G</label>
+                    <input type="checkbox" class="form-control" name="souffleFemoralG" id="field_souffleFemoralG"
+                           formControlName="souffleFemoralG"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.souffleFemoralD" for="field_souffleFemoralD">Souffle Femoral D</label>
+                    <input type="checkbox" class="form-control" name="souffleFemoralD" id="field_souffleFemoralD"
+                           formControlName="souffleFemoralD"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.spectPeau" for="field_spectPeau">Spect Peau</label>
+                    <input type="text" class="form-control" name="spectPeau" id="field_spectPeau"
+                           formControlName="spectPeau"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.examNeuro" for="field_examNeuro">Exam Neuro</label>
+                    <input type="text" class="form-control" name="examNeuro" id="field_examNeuro"
+                           formControlName="examNeuro"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.rapport" for="field_rapport">Rapport</label>
+                    <input type="text" class="form-control" name="rapport" id="field_rapport"
+                           formControlName="rapport"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabExamPhys.tabConsultation" for="field_tabConsultation">Tab Consultation</label>
+                    <select class="form-control" id="field_tabConsultation" name="tabConsultation" formControlName="tabConsultation">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabConsultationOption.id === editForm.get('tabConsultation')!.value?.id ? editForm.get('tabConsultation')!.value : tabConsultationOption" *ngFor="let tabConsultationOption of tabconsultations; trackBy: trackById">{{ tabConsultationOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

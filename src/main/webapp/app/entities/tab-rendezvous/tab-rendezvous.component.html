@@ -1,0 +1,99 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.home.title">Tab Rendezvous</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-rendezvous" [routerLink]="['/tab-rendezvous/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.home.createLabel">
+            Create a new Tab Rendezvous
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabRendezvous?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.home.notFound">No tabRendezvous found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabRendezvous && tabRendezvous.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.titre">Titre</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.ville">Ville</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.dateDebut">Date Debut</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.dateFin">Date Fin</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.jourEntier">Jour Entier</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.groupId">Group Id</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.arrierePlanCouleur">Arriere Plan Couleur</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.texteCouleur">Texte Couleur</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.salle">Salle</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.commentaire">Commentaire</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.matriculecreation">Matriculecreation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.datecreation">Datecreation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.matriculemodif">Matriculemodif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.datemodif">Datemodif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.tabPatient">Tab Patient</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.tabPersonnel">Tab Personnel</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabRendezvous of tabRendezvous ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-rendezvous', tabRendezvous.id, 'view']">{{ tabRendezvous.id }}</a></td>
+                    <td>{{ tabRendezvous.titre }}</td>
+                    <td>{{ tabRendezvous.ville }}</td>
+                    <td>{{ tabRendezvous.dateDebut | date:'medium' }}</td>
+                    <td>{{ tabRendezvous.dateFin | date:'medium' }}</td>
+                    <td>{{ tabRendezvous.jourEntier }}</td>
+                    <td>{{ tabRendezvous.groupId }}</td>
+                    <td>{{ tabRendezvous.arrierePlanCouleur }}</td>
+                    <td>{{ tabRendezvous.texteCouleur }}</td>
+                    <td>{{ tabRendezvous.salle }}</td>
+                    <td>{{ tabRendezvous.commentaire }}</td>
+                    <td>{{ tabRendezvous.matriculecreation }}</td>
+                    <td>{{ tabRendezvous.datecreation | date:'medium' }}</td>
+                    <td>{{ tabRendezvous.matriculemodif }}</td>
+                    <td>{{ tabRendezvous.datemodif | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="tabRendezvous.tabPatient">
+                            <a [routerLink]="['/tab-patient', tabRendezvous.tabPatient?.id, 'view']" >{{ tabRendezvous.tabPatient?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="tabRendezvous.tabPersonnel">
+                            <a [routerLink]="['/tab-personnel', tabRendezvous.tabPersonnel?.id, 'view']" >{{ tabRendezvous.tabPersonnel?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-rendezvous', tabRendezvous.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-rendezvous', tabRendezvous.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabRendezvous)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

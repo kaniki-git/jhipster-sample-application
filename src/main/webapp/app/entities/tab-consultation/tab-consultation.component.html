@@ -1,0 +1,105 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.home.title">Tab Consultations</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-consultation" [routerLink]="['/tab-consultation/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.home.createLabel">
+            Create a new Tab Consultation
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabConsultations?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.home.notFound">No tabConsultations found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabConsultations && tabConsultations.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.dateConsulte">Date Consulte</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.provenancePatient">Provenance Patient</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.motif">Motif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.affectActuel">Affect Actuel</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.antecedent">Antecedent</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.traiteHabituel">Traite Habituel</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.allergie">Allergie</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tabac">Tabac</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.alcool">Alcool</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.facteurRisque">Facteur Risque</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.hypotheseDiag">Hypothese Diag</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.avisMedical">Avis Medical</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.ordreMedical">Ordre Medical</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.traitePropose">Traite Propose</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.ledevenirPatient">Ledevenir Patient</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tarifConsult">Tarif Consult</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.rapport">Rapport</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tabPersonnel">Tab Personnel</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tabHospital">Tab Hospital</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabConsultation of tabConsultations ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-consultation', tabConsultation.id, 'view']">{{ tabConsultation.id }}</a></td>
+                    <td>{{ tabConsultation.dateConsulte | date:'medium' }}</td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplicationApp.ProvenancePatient.' + tabConsultation.provenancePatient }}">{{ tabConsultation.provenancePatient }}</td>
+                    <td>{{ tabConsultation.motif }}</td>
+                    <td>{{ tabConsultation.affectActuel }}</td>
+                    <td>{{ tabConsultation.antecedent }}</td>
+                    <td>{{ tabConsultation.traiteHabituel }}</td>
+                    <td>{{ tabConsultation.allergie }}</td>
+                    <td>{{ tabConsultation.tabac }}</td>
+                    <td>{{ tabConsultation.alcool }}</td>
+                    <td>{{ tabConsultation.facteurRisque }}</td>
+                    <td>{{ tabConsultation.hypotheseDiag }}</td>
+                    <td>{{ tabConsultation.avisMedical }}</td>
+                    <td>{{ tabConsultation.ordreMedical }}</td>
+                    <td>{{ tabConsultation.traitePropose }}</td>
+                    <td jhiTranslate="{{ 'jhipsterSampleApplicationApp.LedevenirPatient.' + tabConsultation.ledevenirPatient }}">{{ tabConsultation.ledevenirPatient }}</td>
+                    <td>{{ tabConsultation.tarifConsult | date:'medium' }}</td>
+                    <td>{{ tabConsultation.rapport }}</td>
+                    <td>
+                        <span *ngFor="let tabPersonnel of tabConsultation.tabPersonnels; let last = last">
+                            <a class="form-control-static" [routerLink]="['/tab-personnel', tabPersonnel?.id, 'view']">{{ tabPersonnel.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td>
+                        <div *ngIf="tabConsultation.tabHospital">
+                            <a [routerLink]="['/tab-hospital', tabConsultation.tabHospital?.id, 'view']" >{{ tabConsultation.tabHospital?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-consultation', tabConsultation.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-consultation', tabConsultation.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabConsultation)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

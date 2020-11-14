@@ -27,6 +27,126 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-patient" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabPatient">Tab Patient</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-administratif" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabAdministratif">Tab Administratif</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-coordonnee" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabCoordonnee">Tab Coordonnee</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-personnel" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabPersonnel">Tab Personnel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-user" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabUser">Tab User</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-rendezvous" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabRendezvous">Tab Rendezvous</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-specialite" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabSpecialite">Tab Specialite</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-historique-patient" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabHistoriquePatient">Tab Historique Patient</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-profil" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabProfil">Tab Profil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-user-profil" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabUserProfil">Tab User Profil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-consultation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabConsultation">Tab Consultation</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-param-vitaux" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabParamVitaux">Tab Param Vitaux</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-biologie" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabBiologie">Tab Biologie</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-cons-obst" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabConsObst">Tab Cons Obst</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-urgence" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabUrgence">Tab Urgence</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-hospital" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabHospital">Tab Hospital</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-gynecologie" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabGynecologie">Tab Gynecologie</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-accouchement" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabAccouchement">Tab Accouchement</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-exam-phys" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabExamPhys">Tab Exam Phys</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="tab-comptabilite" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.tabComptabilite">Tab Comptabilite</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>

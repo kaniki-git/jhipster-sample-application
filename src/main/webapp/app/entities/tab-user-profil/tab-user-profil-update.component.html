@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-user-profil-heading" jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.home.createOrEditLabel">Create or edit a Tab User Profil</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.estActif" for="field_estActif">Est Actif</label>
+                    <input type="checkbox" class="form-control" name="estActif" id="field_estActif"
+                           formControlName="estActif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.matriculeCreation" for="field_matriculeCreation">Matricule Creation</label>
+                    <input type="text" class="form-control" name="matriculeCreation" id="field_matriculeCreation"
+                           formControlName="matriculeCreation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.dateCreation" for="field_dateCreation">Date Creation</label>
+                    <input type="text" class="form-control" name="dateCreation" id="field_dateCreation"
+                           formControlName="dateCreation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.matriculeModif" for="field_matriculeModif">Matricule Modif</label>
+                    <input type="text" class="form-control" name="matriculeModif" id="field_matriculeModif"
+                           formControlName="matriculeModif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.dateModif" for="field_dateModif">Date Modif</label>
+                    <input type="text" class="form-control" name="dateModif" id="field_dateModif"
+                           formControlName="dateModif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.tabUser" for="field_tabUser">Tab User</label>
+                    <select class="form-control" id="field_tabUser" name="tabUser" formControlName="tabUser">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabUserOption.id === editForm.get('tabUser')!.value?.id ? editForm.get('tabUser')!.value : tabUserOption" *ngFor="let tabUserOption of tabusers; trackBy: trackById">{{ tabUserOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.tabProfil" for="field_tabProfil">Tab Profil</label>
+                    <select class="form-control" id="field_tabProfil" name="tabProfil" formControlName="tabProfil">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabProfilOption.id === editForm.get('tabProfil')!.value?.id ? editForm.get('tabProfil')!.value : tabProfilOption" *ngFor="let tabProfilOption of tabprofils; trackBy: trackById">{{ tabProfilOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

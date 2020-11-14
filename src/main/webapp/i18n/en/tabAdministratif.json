@@ -1,0 +1,38 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabAdministratif": {
+      "home": {
+        "title": "Tab Administratifs",
+        "createLabel": "Create a new Tab Administratif",
+        "createOrEditLabel": "Create or edit a Tab Administratif",
+        "notFound": "No Tab Administratifs found"
+      },
+      "created": "A new Tab Administratif is created with identifier {{ param }}",
+      "updated": "A Tab Administratif is updated with identifier {{ param }}",
+      "deleted": "A Tab Administratif is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Administratif {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Administratif"
+      },
+      "provenancePatient": "Provenance Patient",
+      "numeroChambre": "Numero Chambre",
+      "batiment": "Batiment",
+      "dateEntree": "Date Entree",
+      "dateSortie": "Date Sortie",
+      "commentaire": "Commentaire",
+      "couverture": "Couverture",
+      "numerosecu": "Numerosecu",
+      "nomassurrance": "Nomassurrance",
+      "coordonneesecu": "Coordonneesecu",
+      "nomMedecinPerso": "Nom Medecin Perso",
+      "matriculecreation": "Matriculecreation",
+      "datecreation": "Datecreation",
+      "matriculemodif": "Matriculemodif",
+      "datemodif": "Datemodif",
+      "tabCoordonnee": "Tab Coordonnee",
+      "tabUrgence": "Tab Urgence"
+    }
+  }
+}

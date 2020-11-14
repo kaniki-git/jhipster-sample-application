@@ -1,0 +1,80 @@
+{
+  "name": "TabAccouchement",
+  "fields": [
+    {
+      "fieldName": "dateAccouche",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "matriculeBebe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sexeBebe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomBebe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenon1Bebe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenon2Bebe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomMere",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ageBebe",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "ta1Bebe",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "ta2Bebe",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "poidsBebe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tailleBebe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "allaitement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "conclusion",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabGynecologie",
+      "otherEntityRelationshipName": "tabAccouchement",
+      "relationshipName": "tabGynecologie"
+    }
+  ],
+  "changelogDate": "20201114111814",
+  "entityTableName": "tab_accouchement",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
