@@ -1,0 +1,400 @@
+
+entity TabPatient {
+	
+ //MEttre id_personnel medecin dans le dossier du patient
+ //-- ref_id_personnel INTEGER, -- medecin traitant du patient (interne ou externe)
+  matricule String,  
+  sexe String,
+  etatCivil String,
+  nombreEnfant Integer,
+  nombreGrossesse String,
+  nom String,
+  prenom1 String,
+  prenom2 String,
+  datenaissance ZonedDateTime,
+  lieunaissance String,
+  nationalite String,
+  activite String,
+  photoUrl String,
+  matriculecreation String, 
+  datecreation ZonedDateTime,
+  matriculemodif String, 
+  datemodif ZonedDateTime
+}
+
+entity TabAdministratif {
+  provenancePatient ProvenancePatient,
+  numeroChambre String,
+  batiment String,
+  dateEntree ZonedDateTime,
+  dateSortie ZonedDateTime,
+  commentaire String,
+  couverture String,
+  numerosecu String,
+  nomassurrance String,
+  coordonneesecu String,
+  nomMedecinPerso String,
+  matriculecreation String, 
+  datecreation ZonedDateTime,
+  matriculemodif String, 
+  datemodif ZonedDateTime
+	    
+}
+entity TabCoordonnee {
+  quartier String,
+  commune String,
+  ville String,
+  codeVille String,
+  rue String,
+  numero Integer,
+  telephone String,
+  portable String,
+  prevenir String,
+  fax String,
+  adresseMail String,
+  adressePrevenir String,
+  adresseLibelleLong String,
+   matriculecreation String, 
+  datecreation ZonedDateTime,
+  matriculemodif String, 
+  datemodif ZonedDateTime
+  
+  }
+
+// ref TabSpecialite, TabPatient, TabCoordonnee
+entity TabPersonnel{
+  matricule String,  
+  etatCivil String,
+  typePersonnel String, 
+  activite String, 
+  grade String,
+  dateentreeservice ZonedDateTime,
+  nomstatut String,
+  matriculecreation String, 
+  datecreation ZonedDateTime,
+  matriculemodif String, 
+  datemodif ZonedDateTime
+}
+
+entity TabUser {
+	login String,
+    mdp String,
+    nom String,
+    prenom String,
+    dateNaissance String,
+    genre String,
+    sexe String,
+    telephone String,
+    email String,
+    estActif Boolean,
+    dmajMdp String,
+    staConnex Boolean,
+    matriculeCreation String,
+    matriculeModif String,
+    dateCreation String,
+    dateModif String,
+    langue String
+    
+}
+entity TabRendezvous {
+	titre String,
+    ville String,
+	dateDebut ZonedDateTime,
+	dateFin ZonedDateTime,
+	jourEntier Boolean,
+	groupId String,
+	arrierePlanCouleur String,
+	texteCouleur String,
+    salle String,
+	commentaire String,
+	matriculecreation String, 
+    datecreation ZonedDateTime,
+    matriculemodif String, 
+    datemodif ZonedDateTime
+}
+entity TabSpecialite {
+	libelle String,
+	nomPersonnel String
+	
+}
+entity TabHistoriquePatient {
+  numeroDossier String,
+  nom String,
+  prenom String,
+  matriculeUtilisateur String, 
+  matriculecreation String, 
+  datecreation ZonedDateTime,
+  matriculemodif String, 
+  datemodif ZonedDateTime
+}
+entity TabProfil {
+	libelle String,
+	estActif Boolean,
+	
+}
+entity TabUserProfil {
+	estActif Boolean,
+	matriculeCreation String,
+	dateCreation String,
+    matriculeModif String,
+    dateModif String
+}
+
+
+
+//************ Ambulatoire   ****************************
+
+// Consultation
+// en lien avec: TabParamVitaux , TabBiologie 
+entity TabConsultation {
+	dateConsulte ZonedDateTime,
+    provenancePatient ProvenancePatient,
+    motif String,
+    affectActuel String,
+    antecedent String,
+    traiteHabituel String,
+    allergie String,
+    tabac Boolean,
+    alcool Boolean,
+    facteurRisque String,
+    hypotheseDiag String,
+    avisMedical String,
+    ordreMedical String,
+    traitePropose String,
+    ledevenirPatient LedevenirPatient,
+    tarifConsult ZonedDateTime,
+    rapport String 
+}
+
+entity TabParamVitaux {
+	 dateExam ZonedDateTime,
+     ta1 Float,
+     ta2 Float,
+     pouls Float,
+     temperature Float,
+     frequence Float,
+     taille Float,
+     sa02 Float,
+     sous Float,
+     poids Float,
+          
+}
+entity TabBiologie{
+	dateBiologie ZonedDateTime, 
+    nomBiologie String,
+    nomSerologie String,
+    gSanguin String,
+    grSangGeni String,
+    caryotype String,
+    tarifBiologie Float,
+    autresBiologie String
+}
+
+// La concultation Obstérique 
+// Suivi de la grossesse
+// en lien avec: TabBiologie, TabParamVitaux
+entity TabConsObst {
+ 	 dateConsObst ZonedDateTime,
+     agePatient String,
+     poids Float,
+     tas Float,
+     tad Float,
+     a Float,
+     s String,
+     n String,
+     hu String,
+     bc String,
+     sb String,
+     oe String,
+     pres String,
+     conclusion String,
+     traitement String,
+     suiviPar String
+     
+    }
+    
+/** Service Urgence */
+//en lien avec:  TabConsultation, TabParamVitaux
+entity TabUrgence {
+	dateArriveeUrgence ZonedDateTime,
+    provenancePatient ProvenancePatient,
+    ledevenirPatient LedevenirPatient,
+    rapportUrgence String
+}
+
+// *********  Hospitalisation  *********************
+
+// ref: TabConsultation, TabParamVitaux, TabExamTech
+// ref : TabAdministration, TabPersonnel,TabExamPhys
+entity TabHospital{
+    dateAdmission ZonedDateTime,
+    motifAdmission String,
+    provenancePatient ProvenancePatient,
+    evolJour String,
+    evolSynthese String,
+    plantTherapeute String,
+    ledevenirPatient LedevenirPatient,
+    prochainRdv ZonedDateTime,
+    lieuRdv  String, 
+    conclusionSejour String,
+    nomConsultant String
+    bilanAdmission String,
+    rapport String
+    
+    }
+
+// Gynecologie
+// en lien avec: TabPatient, TabConsObst,TabBiologie, TabExamPhys
+entity TabGynecologie{
+	dateConsult ZonedDateTime, 
+    ddr String,
+    termeUs String,
+    termCorrige String,
+    termDdr String,
+    cycle String,
+    dateOvulation ZonedDateTime,
+    ageGestationel String,
+    dateFin ZonedDateTime,
+    testPeri String,
+    ecouvillon String,
+    perine String,
+    bassin String,
+    ogtt String,
+    imc String,
+    poidsMereInitial Float,
+    poidsMereTheoriBebe Float,
+    tailleMere Float,
+    tailleTheoriBebe Float,
+    gSgMari String,
+    laboTri21 String,
+    caryotype String,
+    suiviPar String,
+    pediatre String,
+    risqueOrl String,
+    resumeGrossesse String,
+    conduiteAccouche String,
+    rapport String
+       
+}
+
+// ref TabBiologie, TabParamVitaux
+entity TabAccouchement {
+	dateAccouche ZonedDateTime, 
+    matriculeBebe String,  
+    sexeBebe String,
+    nomBebe String,
+    prenon1Bebe String,
+    prenon2Bebe String,
+    nomMere String,
+    ageBebe Float,
+    ta1Bebe Float,
+    ta2Bebe Float,
+    poidsBebe String,
+    tailleBebe String,
+    allaitement String,
+    conclusion String
+    
+}
+
+entity TabExamPhys {
+	dateExamPhys ZonedDateTime,
+    nomAppareil String, // IRM, RADIO, ECHOGRAPHIE, ...
+    tete String,
+    cou String,
+    bouche String,
+    thorax String,
+    ausculationCard String,
+    ausculationPulmo String,
+    souffle String,
+    rate String,
+    bonchospame String,
+    percussionThorax String,
+    abdomen String,
+    poulsFemoralG Boolean,
+    poulsFemoralD Boolean,
+    poulsPopliteG Boolean,
+    poulsPopliteD Boolean,
+    poulsPedieuxG Boolean,
+    poulsPedieuxD Boolean,
+    poulstibialPostG Boolean,
+    poulstibialPostD Boolean,
+    souffleAbdo Boolean,
+    souffleFemoralG Boolean,
+    souffleFemoralD Boolean,
+    spectPeau String,
+    examNeuro String,
+    rapport String
+    
+}
+
+entity TabComptabilite{
+	nomAppareil String,
+    tarifAppareil Float,
+    tarifSpecialite Float,
+    tarifConsultation Float,
+    tarifChambre Float,
+    tarifSejour Float,
+    facturePatient Float,
+    recette Float
+}
+
+/* Relations entre entites */
+relationship OneToOne { 
+      
+     TabUserProfil{TabUser} to TabUser,
+     TabUserProfil{TabProfil} to TabProfil,
+     TabUser{TabPersonnel} to TabPersonnel,
+     
+    TabPersonnel{TabPatient} to  TabPatient,   
+    TabPersonnel{TabCoordonnee} to TabCoordonnee,
+    
+    TabPatient{TabAdministratif} to TabAdministratif,
+    TabPatient{TabHistoriquePatient} to TabHistoriquePatient,
+    
+    TabAdministratif{TabCoordonnee} to TabCoordonnee,
+   
+}
+
+relationship ManyToOne {
+     TabRendezvous{TabPatient} to TabPatient,
+     TabRendezvous{TabPersonnel} to TabPersonnel,
+     TabPersonnel{TabSpecialite} to TabSpecialite
+  } 
+  
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	TabAdministratif{TabUrgence} to TabUrgence,
+    
+    TabConsultation{TabParamVitaux} to TabParamVitaux,
+    TabConsultation{TabBiologie} to TabBiologie,
+    TabConsultation{TabUrgence} to TabUrgence,
+    TabConsultation{TabExamPhys} to TabExamPhys,
+    
+    TabGynecologie{TabParamVitaux} to TabParamVitaux,
+    TabGynecologie{TabBiologie} to TabBiologie,
+    TabGynecologie{TabConsObst} to TabConsObst,
+    
+    TabHospital{TabConsultation} to TabConsultation,
+    
+    TabAccouchement{TabGynecologie} to TabGynecologie,
+   
+    TabPatient{TabComptabilite} to TabComptabilite
+ 
+}
+
+relationship ManyToMany {
+	
+    TabHospital{TabPersonnel} to TabPersonnel{TabHospital},
+    TabConsultation{TabPersonnel} to TabPersonnel{TabConsultation}
+
+	}
+
+enum LedevenirPatient {
+    TransHopi, TransAutreHopi, Externe, Decede
+    }
+ 
+enum ProvenancePatient {
+    Domicile, Urgence, Extra, Intra
+    }
+    
+
