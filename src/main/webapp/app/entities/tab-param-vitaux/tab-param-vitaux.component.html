@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.home.title">Tab Param Vitauxes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-param-vitaux" [routerLink]="['/tab-param-vitaux/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.home.createLabel">
+            Create a new Tab Param Vitaux
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabParamVitauxes?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.home.notFound">No tabParamVitauxes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabParamVitauxes && tabParamVitauxes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.dateExam">Date Exam</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.ta1">Ta 1</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.ta2">Ta 2</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.pouls">Pouls</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.temperature">Temperature</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.frequence">Frequence</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.taille">Taille</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.sa02">Sa 02</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.sous">Sous</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.poids">Poids</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.tabConsultation">Tab Consultation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.tabGynecologie">Tab Gynecologie</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabParamVitaux of tabParamVitauxes ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-param-vitaux', tabParamVitaux.id, 'view']">{{ tabParamVitaux.id }}</a></td>
+                    <td>{{ tabParamVitaux.dateExam | date:'medium' }}</td>
+                    <td>{{ tabParamVitaux.ta1 }}</td>
+                    <td>{{ tabParamVitaux.ta2 }}</td>
+                    <td>{{ tabParamVitaux.pouls }}</td>
+                    <td>{{ tabParamVitaux.temperature }}</td>
+                    <td>{{ tabParamVitaux.frequence }}</td>
+                    <td>{{ tabParamVitaux.taille }}</td>
+                    <td>{{ tabParamVitaux.sa02 }}</td>
+                    <td>{{ tabParamVitaux.sous }}</td>
+                    <td>{{ tabParamVitaux.poids }}</td>
+                    <td>
+                        <div *ngIf="tabParamVitaux.tabConsultation">
+                            <a [routerLink]="['/tab-consultation', tabParamVitaux.tabConsultation?.id, 'view']" >{{ tabParamVitaux.tabConsultation?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="tabParamVitaux.tabGynecologie">
+                            <a [routerLink]="['/tab-gynecologie', tabParamVitaux.tabGynecologie?.id, 'view']" >{{ tabParamVitaux.tabGynecologie?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-param-vitaux', tabParamVitaux.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-param-vitaux', tabParamVitaux.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabParamVitaux)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

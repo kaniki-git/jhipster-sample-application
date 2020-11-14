@@ -1,0 +1,132 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-administratif-heading" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.home.createOrEditLabel">Create or edit a Tab Administratif</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.provenancePatient" for="field_provenancePatient">Provenance Patient</label>
+                    <select class="form-control" name="provenancePatient" formControlName="provenancePatient" id="field_provenancePatient">
+                        <option value="Domicile">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Domicile' | translate }}</option>
+                        <option value="Urgence">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Urgence' | translate }}</option>
+                        <option value="Extra">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Extra' | translate }}</option>
+                        <option value="Intra">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Intra' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.numeroChambre" for="field_numeroChambre">Numero Chambre</label>
+                    <input type="text" class="form-control" name="numeroChambre" id="field_numeroChambre"
+                           formControlName="numeroChambre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.batiment" for="field_batiment">Batiment</label>
+                    <input type="text" class="form-control" name="batiment" id="field_batiment"
+                           formControlName="batiment"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.dateEntree" for="field_dateEntree">Date Entree</label>
+                    <div class="d-flex">
+                        <input id="field_dateEntree" type="datetime-local" class="form-control" name="dateEntree" formControlName="dateEntree" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.dateSortie" for="field_dateSortie">Date Sortie</label>
+                    <div class="d-flex">
+                        <input id="field_dateSortie" type="datetime-local" class="form-control" name="dateSortie" formControlName="dateSortie" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.commentaire" for="field_commentaire">Commentaire</label>
+                    <input type="text" class="form-control" name="commentaire" id="field_commentaire"
+                           formControlName="commentaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.couverture" for="field_couverture">Couverture</label>
+                    <input type="text" class="form-control" name="couverture" id="field_couverture"
+                           formControlName="couverture"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.numerosecu" for="field_numerosecu">Numerosecu</label>
+                    <input type="text" class="form-control" name="numerosecu" id="field_numerosecu"
+                           formControlName="numerosecu"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.nomassurrance" for="field_nomassurrance">Nomassurrance</label>
+                    <input type="text" class="form-control" name="nomassurrance" id="field_nomassurrance"
+                           formControlName="nomassurrance"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.coordonneesecu" for="field_coordonneesecu">Coordonneesecu</label>
+                    <input type="text" class="form-control" name="coordonneesecu" id="field_coordonneesecu"
+                           formControlName="coordonneesecu"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.nomMedecinPerso" for="field_nomMedecinPerso">Nom Medecin Perso</label>
+                    <input type="text" class="form-control" name="nomMedecinPerso" id="field_nomMedecinPerso"
+                           formControlName="nomMedecinPerso"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.matriculecreation" for="field_matriculecreation">Matriculecreation</label>
+                    <input type="text" class="form-control" name="matriculecreation" id="field_matriculecreation"
+                           formControlName="matriculecreation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.datecreation" for="field_datecreation">Datecreation</label>
+                    <div class="d-flex">
+                        <input id="field_datecreation" type="datetime-local" class="form-control" name="datecreation" formControlName="datecreation" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.matriculemodif" for="field_matriculemodif">Matriculemodif</label>
+                    <input type="text" class="form-control" name="matriculemodif" id="field_matriculemodif"
+                           formControlName="matriculemodif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.datemodif" for="field_datemodif">Datemodif</label>
+                    <div class="d-flex">
+                        <input id="field_datemodif" type="datetime-local" class="form-control" name="datemodif" formControlName="datemodif" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.tabCoordonnee" for="field_tabCoordonnee">Tab Coordonnee</label>
+                    <select class="form-control" id="field_tabCoordonnee" name="tabCoordonnee" formControlName="tabCoordonnee">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabCoordonneeOption.id === editForm.get('tabCoordonnee')!.value?.id ? editForm.get('tabCoordonnee')!.value : tabCoordonneeOption" *ngFor="let tabCoordonneeOption of tabcoordonnees; trackBy: trackById">{{ tabCoordonneeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

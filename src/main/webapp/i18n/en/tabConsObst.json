@@ -1,0 +1,38 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabConsObst": {
+      "home": {
+        "title": "Tab Cons Obsts",
+        "createLabel": "Create a new Tab Cons Obst",
+        "createOrEditLabel": "Create or edit a Tab Cons Obst",
+        "notFound": "No Tab Cons Obsts found"
+      },
+      "created": "A new Tab Cons Obst is created with identifier {{ param }}",
+      "updated": "A Tab Cons Obst is updated with identifier {{ param }}",
+      "deleted": "A Tab Cons Obst is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Cons Obst {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Cons Obst"
+      },
+      "dateConsObst": "Date Cons Obst",
+      "agePatient": "Age Patient",
+      "poids": "Poids",
+      "tas": "Tas",
+      "tad": "Tad",
+      "a": "A",
+      "s": "S",
+      "n": "N",
+      "hu": "Hu",
+      "bc": "Bc",
+      "sb": "Sb",
+      "oe": "Oe",
+      "pres": "Pres",
+      "conclusion": "Conclusion",
+      "traitement": "Traitement",
+      "suiviPar": "Suivi Par",
+      "tabGynecologie": "Tab Gynecologie"
+    }
+  }
+}

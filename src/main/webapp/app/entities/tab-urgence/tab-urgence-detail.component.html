@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabUrgence">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.detail.title">Tab Urgence</span> {{ tabUrgence.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.dateArriveeUrgence">Date Arrivee Urgence</span></dt>
+                <dd>
+                    <span>{{ tabUrgence.dateArriveeUrgence }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.provenancePatient">Provenance Patient</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.ProvenancePatient.' + tabUrgence.provenancePatient }}">{{ tabUrgence.provenancePatient }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.ledevenirPatient">Ledevenir Patient</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.LedevenirPatient.' + tabUrgence.ledevenirPatient }}">{{ tabUrgence.ledevenirPatient }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.rapportUrgence">Rapport Urgence</span></dt>
+                <dd>
+                    <span>{{ tabUrgence.rapportUrgence }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.tabAdministratif">Tab Administratif</span></dt>
+                <dd>
+                    <div *ngIf="tabUrgence.tabAdministratif">
+                        <a [routerLink]="['/tab-administratif', tabUrgence.tabAdministratif?.id, 'view']">{{ tabUrgence.tabAdministratif?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.tabConsultation">Tab Consultation</span></dt>
+                <dd>
+                    <div *ngIf="tabUrgence.tabConsultation">
+                        <a [routerLink]="['/tab-consultation', tabUrgence.tabConsultation?.id, 'view']">{{ tabUrgence.tabConsultation?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-urgence', tabUrgence.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

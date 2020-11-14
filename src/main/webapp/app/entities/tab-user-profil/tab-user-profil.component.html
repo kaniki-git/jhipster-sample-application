@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.home.title">Tab User Profils</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-user-profil" [routerLink]="['/tab-user-profil/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.home.createLabel">
+            Create a new Tab User Profil
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabUserProfils?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.home.notFound">No tabUserProfils found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabUserProfils && tabUserProfils.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.estActif">Est Actif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.matriculeCreation">Matricule Creation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.dateCreation">Date Creation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.matriculeModif">Matricule Modif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.dateModif">Date Modif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.tabUser">Tab User</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabUserProfil.tabProfil">Tab Profil</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabUserProfil of tabUserProfils ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-user-profil', tabUserProfil.id, 'view']">{{ tabUserProfil.id }}</a></td>
+                    <td>{{ tabUserProfil.estActif }}</td>
+                    <td>{{ tabUserProfil.matriculeCreation }}</td>
+                    <td>{{ tabUserProfil.dateCreation }}</td>
+                    <td>{{ tabUserProfil.matriculeModif }}</td>
+                    <td>{{ tabUserProfil.dateModif }}</td>
+                    <td>
+                        <div *ngIf="tabUserProfil.tabUser">
+                            <a [routerLink]="['/tab-user', tabUserProfil.tabUser?.id, 'view']" >{{ tabUserProfil.tabUser?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="tabUserProfil.tabProfil">
+                            <a [routerLink]="['/tab-profil', tabUserProfil.tabProfil?.id, 'view']" >{{ tabUserProfil.tabProfil?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-user-profil', tabUserProfil.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-user-profil', tabUserProfil.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabUserProfil)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

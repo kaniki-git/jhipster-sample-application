@@ -1,0 +1,28 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabUserProfil": {
+      "home": {
+        "title": "Tab User Profils",
+        "createLabel": "Create a new Tab User Profil",
+        "createOrEditLabel": "Create or edit a Tab User Profil",
+        "notFound": "No Tab User Profils found"
+      },
+      "created": "A new Tab User Profil is created with identifier {{ param }}",
+      "updated": "A Tab User Profil is updated with identifier {{ param }}",
+      "deleted": "A Tab User Profil is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab User Profil {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab User Profil"
+      },
+      "estActif": "Est Actif",
+      "matriculeCreation": "Matricule Creation",
+      "dateCreation": "Date Creation",
+      "matriculeModif": "Matricule Modif",
+      "dateModif": "Date Modif",
+      "tabUser": "Tab User",
+      "tabProfil": "Tab Profil"
+    }
+  }
+}

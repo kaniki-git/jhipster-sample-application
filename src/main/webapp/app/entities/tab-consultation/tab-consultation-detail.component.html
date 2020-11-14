@@ -1,0 +1,106 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabConsultation">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.detail.title">Tab Consultation</span> {{ tabConsultation.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.dateConsulte">Date Consulte</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.dateConsulte }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.provenancePatient">Provenance Patient</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.ProvenancePatient.' + tabConsultation.provenancePatient }}">{{ tabConsultation.provenancePatient }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.motif">Motif</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.motif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.affectActuel">Affect Actuel</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.affectActuel }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.antecedent">Antecedent</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.antecedent }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.traiteHabituel">Traite Habituel</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.traiteHabituel }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.allergie">Allergie</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.allergie }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tabac">Tabac</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.tabac }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.alcool">Alcool</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.alcool }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.facteurRisque">Facteur Risque</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.facteurRisque }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.hypotheseDiag">Hypothese Diag</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.hypotheseDiag }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.avisMedical">Avis Medical</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.avisMedical }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.ordreMedical">Ordre Medical</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.ordreMedical }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.traitePropose">Traite Propose</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.traitePropose }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.ledevenirPatient">Ledevenir Patient</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.LedevenirPatient.' + tabConsultation.ledevenirPatient }}">{{ tabConsultation.ledevenirPatient }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tarifConsult">Tarif Consult</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.tarifConsult }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.rapport">Rapport</span></dt>
+                <dd>
+                    <span>{{ tabConsultation.rapport }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tabPersonnel">Tab Personnel</span></dt>
+                <dd>
+                    <span *ngFor="let tabPersonnel of tabConsultation.tabPersonnels; let last = last">
+                        <a [routerLink]="['/tab-personnel', tabPersonnel?.id, 'view']">{{ tabPersonnel.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsultation.tabHospital">Tab Hospital</span></dt>
+                <dd>
+                    <div *ngIf="tabConsultation.tabHospital">
+                        <a [routerLink]="['/tab-hospital', tabConsultation.tabHospital?.id, 'view']">{{ tabConsultation.tabHospital?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-consultation', tabConsultation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-param-vitaux-heading" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.home.createOrEditLabel">Create or edit a Tab Param Vitaux</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.dateExam" for="field_dateExam">Date Exam</label>
+                    <div class="d-flex">
+                        <input id="field_dateExam" type="datetime-local" class="form-control" name="dateExam" formControlName="dateExam" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.ta1" for="field_ta1">Ta 1</label>
+                    <input type="number" class="form-control" name="ta1" id="field_ta1"
+                           formControlName="ta1"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.ta2" for="field_ta2">Ta 2</label>
+                    <input type="number" class="form-control" name="ta2" id="field_ta2"
+                           formControlName="ta2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.pouls" for="field_pouls">Pouls</label>
+                    <input type="number" class="form-control" name="pouls" id="field_pouls"
+                           formControlName="pouls"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.temperature" for="field_temperature">Temperature</label>
+                    <input type="number" class="form-control" name="temperature" id="field_temperature"
+                           formControlName="temperature"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.frequence" for="field_frequence">Frequence</label>
+                    <input type="number" class="form-control" name="frequence" id="field_frequence"
+                           formControlName="frequence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.taille" for="field_taille">Taille</label>
+                    <input type="number" class="form-control" name="taille" id="field_taille"
+                           formControlName="taille"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.sa02" for="field_sa02">Sa 02</label>
+                    <input type="number" class="form-control" name="sa02" id="field_sa02"
+                           formControlName="sa02"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.sous" for="field_sous">Sous</label>
+                    <input type="number" class="form-control" name="sous" id="field_sous"
+                           formControlName="sous"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.poids" for="field_poids">Poids</label>
+                    <input type="number" class="form-control" name="poids" id="field_poids"
+                           formControlName="poids"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.tabConsultation" for="field_tabConsultation">Tab Consultation</label>
+                    <select class="form-control" id="field_tabConsultation" name="tabConsultation" formControlName="tabConsultation">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabConsultationOption.id === editForm.get('tabConsultation')!.value?.id ? editForm.get('tabConsultation')!.value : tabConsultationOption" *ngFor="let tabConsultationOption of tabconsultations; trackBy: trackById">{{ tabConsultationOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabParamVitaux.tabGynecologie" for="field_tabGynecologie">Tab Gynecologie</label>
+                    <select class="form-control" id="field_tabGynecologie" name="tabGynecologie" formControlName="tabGynecologie">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabGynecologieOption.id === editForm.get('tabGynecologie')!.value?.id ? editForm.get('tabGynecologie')!.value : tabGynecologieOption" *ngFor="let tabGynecologieOption of tabgynecologies; trackBy: trackById">{{ tabGynecologieOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

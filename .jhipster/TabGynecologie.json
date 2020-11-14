@@ -1,0 +1,155 @@
+{
+  "name": "TabGynecologie",
+  "fields": [
+    {
+      "fieldName": "dateConsult",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "ddr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "termeUs",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "termCorrige",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "termDdr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cycle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOvulation",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "ageGestationel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateFin",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "testPeri",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ecouvillon",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "perine",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bassin",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ogtt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "poidsMereInitial",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "poidsMereTheoriBebe",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tailleMere",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tailleTheoriBebe",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "gSgMari",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "laboTri21",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "caryotype",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "suiviPar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pediatre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "risqueOrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "resumeGrossesse",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "conduiteAccouche",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rapport",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabParamVitaux",
+      "otherEntityRelationshipName": "tabGynecologie",
+      "relationshipName": "tabParamVitaux"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabBiologie",
+      "otherEntityRelationshipName": "tabGynecologie",
+      "relationshipName": "tabBiologie"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabConsObst",
+      "otherEntityRelationshipName": "tabGynecologie",
+      "relationshipName": "tabConsObst"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabAccouchement",
+      "otherEntityRelationshipName": "tabGynecologie",
+      "relationshipName": "tabAccouchement",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201114110912",
+  "entityTableName": "tab_gynecologie",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,31 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabBiologie": {
+      "home": {
+        "title": "Tab Biologies",
+        "createLabel": "Create a new Tab Biologie",
+        "createOrEditLabel": "Create or edit a Tab Biologie",
+        "notFound": "No Tab Biologies found"
+      },
+      "created": "A new Tab Biologie is created with identifier {{ param }}",
+      "updated": "A Tab Biologie is updated with identifier {{ param }}",
+      "deleted": "A Tab Biologie is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Biologie {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Biologie"
+      },
+      "dateBiologie": "Date Biologie",
+      "nomBiologie": "Nom Biologie",
+      "nomSerologie": "Nom Serologie",
+      "gSanguin": "G Sanguin",
+      "grSangGeni": "Gr Sang Geni",
+      "caryotype": "Caryotype",
+      "tarifBiologie": "Tarif Biologie",
+      "autresBiologie": "Autres Biologie",
+      "tabConsultation": "Tab Consultation",
+      "tabGynecologie": "Tab Gynecologie"
+    }
+  }
+}

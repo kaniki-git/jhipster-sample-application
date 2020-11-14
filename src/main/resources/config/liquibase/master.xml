@@ -14,7 +14,42 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114105312_added_entity_TabPatient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114105412_added_entity_TabAdministratif.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114105512_added_entity_TabCoordonnee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114105612_added_entity_TabPersonnel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114105712_added_entity_TabUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114105812_added_entity_TabRendezvous.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114105912_added_entity_TabSpecialite.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110012_added_entity_TabHistoriquePatient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110112_added_entity_TabProfil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110212_added_entity_TabUserProfil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110312_added_entity_TabConsultation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110412_added_entity_TabParamVitaux.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110512_added_entity_TabBiologie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110612_added_entity_TabConsObst.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110712_added_entity_TabUrgence.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110812_added_entity_TabHospital.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110912_added_entity_TabGynecologie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114111012_added_entity_TabAccouchement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114111112_added_entity_TabExamPhys.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114111212_added_entity_TabComptabilite.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20201114105312_added_entity_constraints_TabPatient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114105412_added_entity_constraints_TabAdministratif.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114105612_added_entity_constraints_TabPersonnel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114105712_added_entity_constraints_TabUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114105812_added_entity_constraints_TabRendezvous.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110212_added_entity_constraints_TabUserProfil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110312_added_entity_constraints_TabConsultation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110412_added_entity_constraints_TabParamVitaux.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110512_added_entity_constraints_TabBiologie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110612_added_entity_constraints_TabConsObst.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110712_added_entity_constraints_TabUrgence.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110812_added_entity_constraints_TabHospital.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114110912_added_entity_constraints_TabGynecologie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114111112_added_entity_constraints_TabExamPhys.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201114111212_added_entity_constraints_TabComptabilite.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

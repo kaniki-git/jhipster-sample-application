@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabBiologie">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.detail.title">Tab Biologie</span> {{ tabBiologie.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.dateBiologie">Date Biologie</span></dt>
+                <dd>
+                    <span>{{ tabBiologie.dateBiologie }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.nomBiologie">Nom Biologie</span></dt>
+                <dd>
+                    <span>{{ tabBiologie.nomBiologie }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.nomSerologie">Nom Serologie</span></dt>
+                <dd>
+                    <span>{{ tabBiologie.nomSerologie }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.gSanguin">G Sanguin</span></dt>
+                <dd>
+                    <span>{{ tabBiologie.gSanguin }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.grSangGeni">Gr Sang Geni</span></dt>
+                <dd>
+                    <span>{{ tabBiologie.grSangGeni }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.caryotype">Caryotype</span></dt>
+                <dd>
+                    <span>{{ tabBiologie.caryotype }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.tarifBiologie">Tarif Biologie</span></dt>
+                <dd>
+                    <span>{{ tabBiologie.tarifBiologie }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.autresBiologie">Autres Biologie</span></dt>
+                <dd>
+                    <span>{{ tabBiologie.autresBiologie }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.tabConsultation">Tab Consultation</span></dt>
+                <dd>
+                    <div *ngIf="tabBiologie.tabConsultation">
+                        <a [routerLink]="['/tab-consultation', tabBiologie.tabConsultation?.id, 'view']">{{ tabBiologie.tabConsultation?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.tabGynecologie">Tab Gynecologie</span></dt>
+                <dd>
+                    <div *ngIf="tabBiologie.tabGynecologie">
+                        <a [routerLink]="['/tab-gynecologie', tabBiologie.tabGynecologie?.id, 'view']">{{ tabBiologie.tabGynecologie?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-biologie', tabBiologie.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

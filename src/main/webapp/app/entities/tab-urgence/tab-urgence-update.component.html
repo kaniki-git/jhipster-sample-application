@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-urgence-heading" jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.home.createOrEditLabel">Create or edit a Tab Urgence</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.dateArriveeUrgence" for="field_dateArriveeUrgence">Date Arrivee Urgence</label>
+                    <div class="d-flex">
+                        <input id="field_dateArriveeUrgence" type="datetime-local" class="form-control" name="dateArriveeUrgence" formControlName="dateArriveeUrgence" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.provenancePatient" for="field_provenancePatient">Provenance Patient</label>
+                    <select class="form-control" name="provenancePatient" formControlName="provenancePatient" id="field_provenancePatient">
+                        <option value="Domicile">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Domicile' | translate }}</option>
+                        <option value="Urgence">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Urgence' | translate }}</option>
+                        <option value="Extra">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Extra' | translate }}</option>
+                        <option value="Intra">{{ 'jhipsterSampleApplicationApp.ProvenancePatient.Intra' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.ledevenirPatient" for="field_ledevenirPatient">Ledevenir Patient</label>
+                    <select class="form-control" name="ledevenirPatient" formControlName="ledevenirPatient" id="field_ledevenirPatient">
+                        <option value="TransHopi">{{ 'jhipsterSampleApplicationApp.LedevenirPatient.TransHopi' | translate }}</option>
+                        <option value="TransAutreHopi">{{ 'jhipsterSampleApplicationApp.LedevenirPatient.TransAutreHopi' | translate }}</option>
+                        <option value="Externe">{{ 'jhipsterSampleApplicationApp.LedevenirPatient.Externe' | translate }}</option>
+                        <option value="Decede">{{ 'jhipsterSampleApplicationApp.LedevenirPatient.Decede' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.rapportUrgence" for="field_rapportUrgence">Rapport Urgence</label>
+                    <input type="text" class="form-control" name="rapportUrgence" id="field_rapportUrgence"
+                           formControlName="rapportUrgence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.tabAdministratif" for="field_tabAdministratif">Tab Administratif</label>
+                    <select class="form-control" id="field_tabAdministratif" name="tabAdministratif" formControlName="tabAdministratif">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabAdministratifOption.id === editForm.get('tabAdministratif')!.value?.id ? editForm.get('tabAdministratif')!.value : tabAdministratifOption" *ngFor="let tabAdministratifOption of tabadministratifs; trackBy: trackById">{{ tabAdministratifOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabUrgence.tabConsultation" for="field_tabConsultation">Tab Consultation</label>
+                    <select class="form-control" id="field_tabConsultation" name="tabConsultation" formControlName="tabConsultation">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabConsultationOption.id === editForm.get('tabConsultation')!.value?.id ? editForm.get('tabConsultation')!.value : tabConsultationOption" *ngFor="let tabConsultationOption of tabconsultations; trackBy: trackById">{{ tabConsultationOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabHistoriquePatient": {
+      "home": {
+        "title": "Tab Historique Patients",
+        "createLabel": "Create a new Tab Historique Patient",
+        "createOrEditLabel": "Create or edit a Tab Historique Patient",
+        "notFound": "No Tab Historique Patients found"
+      },
+      "created": "A new Tab Historique Patient is created with identifier {{ param }}",
+      "updated": "A Tab Historique Patient is updated with identifier {{ param }}",
+      "deleted": "A Tab Historique Patient is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Historique Patient {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Historique Patient"
+      },
+      "numeroDossier": "Numero Dossier",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "matriculeUtilisateur": "Matricule Utilisateur",
+      "matriculecreation": "Matriculecreation",
+      "datecreation": "Datecreation",
+      "matriculemodif": "Matriculemodif",
+      "datemodif": "Datemodif"
+    }
+  }
+}

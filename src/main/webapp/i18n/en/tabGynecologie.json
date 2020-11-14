@@ -1,0 +1,53 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabGynecologie": {
+      "home": {
+        "title": "Tab Gynecologies",
+        "createLabel": "Create a new Tab Gynecologie",
+        "createOrEditLabel": "Create or edit a Tab Gynecologie",
+        "notFound": "No Tab Gynecologies found"
+      },
+      "created": "A new Tab Gynecologie is created with identifier {{ param }}",
+      "updated": "A Tab Gynecologie is updated with identifier {{ param }}",
+      "deleted": "A Tab Gynecologie is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Gynecologie {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Gynecologie"
+      },
+      "dateConsult": "Date Consult",
+      "ddr": "Ddr",
+      "termeUs": "Terme Us",
+      "termCorrige": "Term Corrige",
+      "termDdr": "Term Ddr",
+      "cycle": "Cycle",
+      "dateOvulation": "Date Ovulation",
+      "ageGestationel": "Age Gestationel",
+      "dateFin": "Date Fin",
+      "testPeri": "Test Peri",
+      "ecouvillon": "Ecouvillon",
+      "perine": "Perine",
+      "bassin": "Bassin",
+      "ogtt": "Ogtt",
+      "imc": "Imc",
+      "poidsMereInitial": "Poids Mere Initial",
+      "poidsMereTheoriBebe": "Poids Mere Theori Bebe",
+      "tailleMere": "Taille Mere",
+      "tailleTheoriBebe": "Taille Theori Bebe",
+      "gSgMari": "G Sg Mari",
+      "laboTri21": "Labo Tri 21",
+      "caryotype": "Caryotype",
+      "suiviPar": "Suivi Par",
+      "pediatre": "Pediatre",
+      "risqueOrl": "Risque Orl",
+      "resumeGrossesse": "Resume Grossesse",
+      "conduiteAccouche": "Conduite Accouche",
+      "rapport": "Rapport",
+      "tabParamVitaux": "Tab Param Vitaux",
+      "tabBiologie": "Tab Biologie",
+      "tabConsObst": "Tab Cons Obst",
+      "tabAccouchement": "Tab Accouchement"
+    }
+  }
+}

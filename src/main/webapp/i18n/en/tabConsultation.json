@@ -1,0 +1,44 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabConsultation": {
+      "home": {
+        "title": "Tab Consultations",
+        "createLabel": "Create a new Tab Consultation",
+        "createOrEditLabel": "Create or edit a Tab Consultation",
+        "notFound": "No Tab Consultations found"
+      },
+      "created": "A new Tab Consultation is created with identifier {{ param }}",
+      "updated": "A Tab Consultation is updated with identifier {{ param }}",
+      "deleted": "A Tab Consultation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Consultation {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Consultation"
+      },
+      "dateConsulte": "Date Consulte",
+      "provenancePatient": "Provenance Patient",
+      "motif": "Motif",
+      "affectActuel": "Affect Actuel",
+      "antecedent": "Antecedent",
+      "traiteHabituel": "Traite Habituel",
+      "allergie": "Allergie",
+      "tabac": "Tabac",
+      "alcool": "Alcool",
+      "facteurRisque": "Facteur Risque",
+      "hypotheseDiag": "Hypothese Diag",
+      "avisMedical": "Avis Medical",
+      "ordreMedical": "Ordre Medical",
+      "traitePropose": "Traite Propose",
+      "ledevenirPatient": "Ledevenir Patient",
+      "tarifConsult": "Tarif Consult",
+      "rapport": "Rapport",
+      "tabParamVitaux": "Tab Param Vitaux",
+      "tabBiologie": "Tab Biologie",
+      "tabUrgence": "Tab Urgence",
+      "tabExamPhys": "Tab Exam Phys",
+      "tabPersonnel": "Tab Personnel",
+      "tabHospital": "Tab Hospital"
+    }
+  }
+}

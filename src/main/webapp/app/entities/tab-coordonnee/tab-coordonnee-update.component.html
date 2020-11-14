@@ -1,0 +1,130 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-coordonnee-heading" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.home.createOrEditLabel">Create or edit a Tab Coordonnee</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.quartier" for="field_quartier">Quartier</label>
+                    <input type="text" class="form-control" name="quartier" id="field_quartier"
+                           formControlName="quartier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.commune" for="field_commune">Commune</label>
+                    <input type="text" class="form-control" name="commune" id="field_commune"
+                           formControlName="commune"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.ville" for="field_ville">Ville</label>
+                    <input type="text" class="form-control" name="ville" id="field_ville"
+                           formControlName="ville"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.codeVille" for="field_codeVille">Code Ville</label>
+                    <input type="text" class="form-control" name="codeVille" id="field_codeVille"
+                           formControlName="codeVille"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.rue" for="field_rue">Rue</label>
+                    <input type="text" class="form-control" name="rue" id="field_rue"
+                           formControlName="rue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.numero" for="field_numero">Numero</label>
+                    <input type="number" class="form-control" name="numero" id="field_numero"
+                           formControlName="numero"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.telephone" for="field_telephone">Telephone</label>
+                    <input type="text" class="form-control" name="telephone" id="field_telephone"
+                           formControlName="telephone"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.portable" for="field_portable">Portable</label>
+                    <input type="text" class="form-control" name="portable" id="field_portable"
+                           formControlName="portable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.prevenir" for="field_prevenir">Prevenir</label>
+                    <input type="text" class="form-control" name="prevenir" id="field_prevenir"
+                           formControlName="prevenir"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.fax" for="field_fax">Fax</label>
+                    <input type="text" class="form-control" name="fax" id="field_fax"
+                           formControlName="fax"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.adresseMail" for="field_adresseMail">Adresse Mail</label>
+                    <input type="text" class="form-control" name="adresseMail" id="field_adresseMail"
+                           formControlName="adresseMail"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.adressePrevenir" for="field_adressePrevenir">Adresse Prevenir</label>
+                    <input type="text" class="form-control" name="adressePrevenir" id="field_adressePrevenir"
+                           formControlName="adressePrevenir"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.adresseLibelleLong" for="field_adresseLibelleLong">Adresse Libelle Long</label>
+                    <input type="text" class="form-control" name="adresseLibelleLong" id="field_adresseLibelleLong"
+                           formControlName="adresseLibelleLong"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.matriculecreation" for="field_matriculecreation">Matriculecreation</label>
+                    <input type="text" class="form-control" name="matriculecreation" id="field_matriculecreation"
+                           formControlName="matriculecreation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.datecreation" for="field_datecreation">Datecreation</label>
+                    <div class="d-flex">
+                        <input id="field_datecreation" type="datetime-local" class="form-control" name="datecreation" formControlName="datecreation" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.matriculemodif" for="field_matriculemodif">Matriculemodif</label>
+                    <input type="text" class="form-control" name="matriculemodif" id="field_matriculemodif"
+                           formControlName="matriculemodif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabCoordonnee.datemodif" for="field_datemodif">Datemodif</label>
+                    <div class="d-flex">
+                        <input id="field_datemodif" type="datetime-local" class="form-control" name="datemodif" formControlName="datemodif" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

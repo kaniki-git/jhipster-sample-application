@@ -1,0 +1,57 @@
+{
+  "name": "TabComptabilite",
+  "fields": [
+    {
+      "fieldName": "nomAppareil",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tarifAppareil",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tarifSpecialite",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tarifConsultation",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tarifChambre",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tarifSejour",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "facturePatient",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "recette",
+      "fieldType": "Float"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabPatient",
+      "otherEntityRelationshipName": "tabComptabilite",
+      "relationshipName": "tabPatient",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201114111212",
+  "entityTableName": "tab_comptabilite",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

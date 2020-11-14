@@ -1,0 +1,86 @@
+{
+  "name": "TabHospital",
+  "fields": [
+    {
+      "fieldName": "dateAdmission",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "motifAdmission",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "provenancePatient",
+      "fieldType": "ProvenancePatient",
+      "fieldValues": "Domicile,Urgence,Extra,Intra"
+    },
+    {
+      "fieldName": "evolJour",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "evolSynthese",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "plantTherapeute",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ledevenirPatient",
+      "fieldType": "LedevenirPatient",
+      "fieldValues": "TransHopi,TransAutreHopi,Externe,Decede"
+    },
+    {
+      "fieldName": "prochainRdv",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lieuRdv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "conclusionSejour",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomConsultant",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bilanAdmission",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rapport",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tabConsultation",
+      "otherEntityRelationshipName": "tabHospital",
+      "relationshipName": "tabConsultation"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "tabPersonnel",
+      "otherEntityRelationshipName": "tabHospital",
+      "relationshipName": "tabPersonnel",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201114110812",
+  "entityTableName": "tab_hospital",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

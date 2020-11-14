@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabUrgence": {
+      "home": {
+        "title": "Tab Urgences",
+        "createLabel": "Create a new Tab Urgence",
+        "createOrEditLabel": "Create or edit a Tab Urgence",
+        "notFound": "No Tab Urgences found"
+      },
+      "created": "A new Tab Urgence is created with identifier {{ param }}",
+      "updated": "A Tab Urgence is updated with identifier {{ param }}",
+      "deleted": "A Tab Urgence is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Urgence {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Urgence"
+      },
+      "dateArriveeUrgence": "Date Arrivee Urgence",
+      "provenancePatient": "Provenance Patient",
+      "ledevenirPatient": "Ledevenir Patient",
+      "rapportUrgence": "Rapport Urgence",
+      "tabAdministratif": "Tab Administratif",
+      "tabConsultation": "Tab Consultation"
+    }
+  }
+}

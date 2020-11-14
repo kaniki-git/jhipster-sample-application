@@ -1,0 +1,41 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabPatient": {
+      "home": {
+        "title": "Tab Patients",
+        "createLabel": "Create a new Tab Patient",
+        "createOrEditLabel": "Create or edit a Tab Patient",
+        "notFound": "No Tab Patients found"
+      },
+      "created": "A new Tab Patient is created with identifier {{ param }}",
+      "updated": "A Tab Patient is updated with identifier {{ param }}",
+      "deleted": "A Tab Patient is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Patient {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Patient"
+      },
+      "matricule": "Matricule",
+      "sexe": "Sexe",
+      "etatCivil": "Etat Civil",
+      "nombreEnfant": "Nombre Enfant",
+      "nombreGrossesse": "Nombre Grossesse",
+      "nom": "Nom",
+      "prenom1": "Prenom 1",
+      "prenom2": "Prenom 2",
+      "datenaissance": "Datenaissance",
+      "lieunaissance": "Lieunaissance",
+      "nationalite": "Nationalite",
+      "activite": "Activite",
+      "photoUrl": "Photo Url",
+      "matriculecreation": "Matriculecreation",
+      "datecreation": "Datecreation",
+      "matriculemodif": "Matriculemodif",
+      "datemodif": "Datemodif",
+      "tabAdministratif": "Tab Administratif",
+      "tabHistoriquePatient": "Tab Historique Patient",
+      "tabComptabilite": "Tab Comptabilite"
+    }
+  }
+}

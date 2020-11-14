@@ -1,0 +1,92 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabAdministratif">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.detail.title">Tab Administratif</span> {{ tabAdministratif.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.provenancePatient">Provenance Patient</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.ProvenancePatient.' + tabAdministratif.provenancePatient }}">{{ tabAdministratif.provenancePatient }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.numeroChambre">Numero Chambre</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.numeroChambre }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.batiment">Batiment</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.batiment }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.dateEntree">Date Entree</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.dateEntree }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.dateSortie">Date Sortie</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.dateSortie }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.commentaire">Commentaire</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.commentaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.couverture">Couverture</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.couverture }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.numerosecu">Numerosecu</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.numerosecu }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.nomassurrance">Nomassurrance</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.nomassurrance }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.coordonneesecu">Coordonneesecu</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.coordonneesecu }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.nomMedecinPerso">Nom Medecin Perso</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.nomMedecinPerso }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.matriculecreation">Matriculecreation</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.matriculecreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.datecreation">Datecreation</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.datecreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.matriculemodif">Matriculemodif</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.matriculemodif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.datemodif">Datemodif</span></dt>
+                <dd>
+                    <span>{{ tabAdministratif.datemodif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAdministratif.tabCoordonnee">Tab Coordonnee</span></dt>
+                <dd>
+                    <div *ngIf="tabAdministratif.tabCoordonnee">
+                        <a [routerLink]="['/tab-coordonnee', tabAdministratif.tabCoordonnee?.id, 'view']">{{ tabAdministratif.tabCoordonnee?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-administratif', tabAdministratif.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

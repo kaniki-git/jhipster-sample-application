@@ -1,0 +1,100 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabUser">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.detail.title">Tab User</span> {{ tabUser.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.login">Login</span></dt>
+                <dd>
+                    <span>{{ tabUser.login }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.mdp">Mdp</span></dt>
+                <dd>
+                    <span>{{ tabUser.mdp }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ tabUser.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{ tabUser.prenom }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.dateNaissance">Date Naissance</span></dt>
+                <dd>
+                    <span>{{ tabUser.dateNaissance }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.genre">Genre</span></dt>
+                <dd>
+                    <span>{{ tabUser.genre }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.sexe">Sexe</span></dt>
+                <dd>
+                    <span>{{ tabUser.sexe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ tabUser.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.email">Email</span></dt>
+                <dd>
+                    <span>{{ tabUser.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.estActif">Est Actif</span></dt>
+                <dd>
+                    <span>{{ tabUser.estActif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.dmajMdp">Dmaj Mdp</span></dt>
+                <dd>
+                    <span>{{ tabUser.dmajMdp }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.staConnex">Sta Connex</span></dt>
+                <dd>
+                    <span>{{ tabUser.staConnex }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.matriculeCreation">Matricule Creation</span></dt>
+                <dd>
+                    <span>{{ tabUser.matriculeCreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.matriculeModif">Matricule Modif</span></dt>
+                <dd>
+                    <span>{{ tabUser.matriculeModif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.dateCreation">Date Creation</span></dt>
+                <dd>
+                    <span>{{ tabUser.dateCreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.dateModif">Date Modif</span></dt>
+                <dd>
+                    <span>{{ tabUser.dateModif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.langue">Langue</span></dt>
+                <dd>
+                    <span>{{ tabUser.langue }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabUser.tabPersonnel">Tab Personnel</span></dt>
+                <dd>
+                    <div *ngIf="tabUser.tabPersonnel">
+                        <a [routerLink]="['/tab-personnel', tabUser.tabPersonnel?.id, 'view']">{{ tabUser.tabPersonnel?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-user', tabUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

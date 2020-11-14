@@ -1,0 +1,96 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabConsObst">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.detail.title">Tab Cons Obst</span> {{ tabConsObst.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.dateConsObst">Date Cons Obst</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.dateConsObst }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.agePatient">Age Patient</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.agePatient }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.poids">Poids</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.poids }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tas">Tas</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.tas }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tad">Tad</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.tad }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.a">A</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.a }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.s">S</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.s }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.n">N</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.n }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.hu">Hu</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.hu }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.bc">Bc</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.bc }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.sb">Sb</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.sb }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.oe">Oe</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.oe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.pres">Pres</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.pres }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.conclusion">Conclusion</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.conclusion }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.traitement">Traitement</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.traitement }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.suiviPar">Suivi Par</span></dt>
+                <dd>
+                    <span>{{ tabConsObst.suiviPar }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabConsObst.tabGynecologie">Tab Gynecologie</span></dt>
+                <dd>
+                    <div *ngIf="tabConsObst.tabGynecologie">
+                        <a [routerLink]="['/tab-gynecologie', tabConsObst.tabGynecologie?.id, 'view']">{{ tabConsObst.tabGynecologie?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-cons-obst', tabConsObst.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
