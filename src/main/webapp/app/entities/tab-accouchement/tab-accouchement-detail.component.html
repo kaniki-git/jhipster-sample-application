@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabAccouchement">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.detail.title">Tab Accouchement</span> {{ tabAccouchement.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.dateAccouche">Date Accouche</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.dateAccouche }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.matriculeBebe">Matricule Bebe</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.matriculeBebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.sexeBebe">Sexe Bebe</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.sexeBebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.nomBebe">Nom Bebe</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.nomBebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.prenon1Bebe">Prenon 1 Bebe</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.prenon1Bebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.prenon2Bebe">Prenon 2 Bebe</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.prenon2Bebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.nomMere">Nom Mere</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.nomMere }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.ageBebe">Age Bebe</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.ageBebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.ta1Bebe">Ta 1 Bebe</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.ta1Bebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.ta2Bebe">Ta 2 Bebe</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.ta2Bebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.poidsBebe">Poids Bebe</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.poidsBebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.tailleBebe">Taille Bebe</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.tailleBebe }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.allaitement">Allaitement</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.allaitement }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.conclusion">Conclusion</span></dt>
+                <dd>
+                    <span>{{ tabAccouchement.conclusion }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-accouchement', tabAccouchement.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

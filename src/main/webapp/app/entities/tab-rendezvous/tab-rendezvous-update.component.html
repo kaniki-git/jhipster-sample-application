@@ -1,0 +1,130 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-rendezvous-heading" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.home.createOrEditLabel">Create or edit a Tab Rendezvous</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.titre" for="field_titre">Titre</label>
+                    <input type="text" class="form-control" name="titre" id="field_titre"
+                           formControlName="titre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.ville" for="field_ville">Ville</label>
+                    <input type="text" class="form-control" name="ville" id="field_ville"
+                           formControlName="ville"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.dateDebut" for="field_dateDebut">Date Debut</label>
+                    <div class="d-flex">
+                        <input id="field_dateDebut" type="datetime-local" class="form-control" name="dateDebut" formControlName="dateDebut" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.dateFin" for="field_dateFin">Date Fin</label>
+                    <div class="d-flex">
+                        <input id="field_dateFin" type="datetime-local" class="form-control" name="dateFin" formControlName="dateFin" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.jourEntier" for="field_jourEntier">Jour Entier</label>
+                    <input type="checkbox" class="form-control" name="jourEntier" id="field_jourEntier"
+                           formControlName="jourEntier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.groupId" for="field_groupId">Group Id</label>
+                    <input type="text" class="form-control" name="groupId" id="field_groupId"
+                           formControlName="groupId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.arrierePlanCouleur" for="field_arrierePlanCouleur">Arriere Plan Couleur</label>
+                    <input type="text" class="form-control" name="arrierePlanCouleur" id="field_arrierePlanCouleur"
+                           formControlName="arrierePlanCouleur"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.texteCouleur" for="field_texteCouleur">Texte Couleur</label>
+                    <input type="text" class="form-control" name="texteCouleur" id="field_texteCouleur"
+                           formControlName="texteCouleur"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.salle" for="field_salle">Salle</label>
+                    <input type="text" class="form-control" name="salle" id="field_salle"
+                           formControlName="salle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.commentaire" for="field_commentaire">Commentaire</label>
+                    <input type="text" class="form-control" name="commentaire" id="field_commentaire"
+                           formControlName="commentaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.matriculecreation" for="field_matriculecreation">Matriculecreation</label>
+                    <input type="text" class="form-control" name="matriculecreation" id="field_matriculecreation"
+                           formControlName="matriculecreation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.datecreation" for="field_datecreation">Datecreation</label>
+                    <div class="d-flex">
+                        <input id="field_datecreation" type="datetime-local" class="form-control" name="datecreation" formControlName="datecreation" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.matriculemodif" for="field_matriculemodif">Matriculemodif</label>
+                    <input type="text" class="form-control" name="matriculemodif" id="field_matriculemodif"
+                           formControlName="matriculemodif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.datemodif" for="field_datemodif">Datemodif</label>
+                    <div class="d-flex">
+                        <input id="field_datemodif" type="datetime-local" class="form-control" name="datemodif" formControlName="datemodif" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.tabPatient" for="field_tabPatient">Tab Patient</label>
+                    <select class="form-control" id="field_tabPatient" name="tabPatient" formControlName="tabPatient">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabPatientOption.id === editForm.get('tabPatient')!.value?.id ? editForm.get('tabPatient')!.value : tabPatientOption" *ngFor="let tabPatientOption of tabpatients; trackBy: trackById">{{ tabPatientOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabRendezvous.tabPersonnel" for="field_tabPersonnel">Tab Personnel</label>
+                    <select class="form-control" id="field_tabPersonnel" name="tabPersonnel" formControlName="tabPersonnel">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabPersonnelOption.id === editForm.get('tabPersonnel')!.value?.id ? editForm.get('tabPersonnel')!.value : tabPersonnelOption" *ngFor="let tabPersonnelOption of tabpersonnels; trackBy: trackById">{{ tabPersonnelOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+{
+  "name": "TabCoordonnee",
+  "fields": [
+    {
+      "fieldName": "quartier",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "commune",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ville",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codeVille",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numero",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "portable",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prevenir",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fax",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresseMail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adressePrevenir",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresseLibelleLong",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "matriculecreation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datecreation",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "matriculemodif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "datemodif",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201115111708",
+  "entityTableName": "tab_coordonnee",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,36 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabAccouchement": {
+      "home": {
+        "title": "Tab Accouchements",
+        "createLabel": "Create a new Tab Accouchement",
+        "createOrEditLabel": "Create or edit a Tab Accouchement",
+        "notFound": "No Tab Accouchements found"
+      },
+      "created": "A new Tab Accouchement is created with identifier {{ param }}",
+      "updated": "A Tab Accouchement is updated with identifier {{ param }}",
+      "deleted": "A Tab Accouchement is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Accouchement {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Accouchement"
+      },
+      "dateAccouche": "Date Accouche",
+      "matriculeBebe": "Matricule Bebe",
+      "sexeBebe": "Sexe Bebe",
+      "nomBebe": "Nom Bebe",
+      "prenon1Bebe": "Prenon 1 Bebe",
+      "prenon2Bebe": "Prenon 2 Bebe",
+      "nomMere": "Nom Mere",
+      "ageBebe": "Age Bebe",
+      "ta1Bebe": "Ta 1 Bebe",
+      "ta2Bebe": "Ta 2 Bebe",
+      "poidsBebe": "Poids Bebe",
+      "tailleBebe": "Taille Bebe",
+      "allaitement": "Allaitement",
+      "conclusion": "Conclusion",
+      "tabGynecologie": "Tab Gynecologie"
+    }
+  }
+}

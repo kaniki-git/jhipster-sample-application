@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tab-biologie-heading" jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.home.createOrEditLabel">Create or edit a Tab Biologie</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.dateBiologie" for="field_dateBiologie">Date Biologie</label>
+                    <div class="d-flex">
+                        <input id="field_dateBiologie" type="datetime-local" class="form-control" name="dateBiologie" formControlName="dateBiologie" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.nomBiologie" for="field_nomBiologie">Nom Biologie</label>
+                    <input type="text" class="form-control" name="nomBiologie" id="field_nomBiologie"
+                           formControlName="nomBiologie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.nomSerologie" for="field_nomSerologie">Nom Serologie</label>
+                    <input type="text" class="form-control" name="nomSerologie" id="field_nomSerologie"
+                           formControlName="nomSerologie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.gSanguin" for="field_gSanguin">G Sanguin</label>
+                    <input type="text" class="form-control" name="gSanguin" id="field_gSanguin"
+                           formControlName="gSanguin"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.grSangGeni" for="field_grSangGeni">Gr Sang Geni</label>
+                    <input type="text" class="form-control" name="grSangGeni" id="field_grSangGeni"
+                           formControlName="grSangGeni"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.caryotype" for="field_caryotype">Caryotype</label>
+                    <input type="text" class="form-control" name="caryotype" id="field_caryotype"
+                           formControlName="caryotype"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.tarifBiologie" for="field_tarifBiologie">Tarif Biologie</label>
+                    <input type="number" class="form-control" name="tarifBiologie" id="field_tarifBiologie"
+                           formControlName="tarifBiologie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.autresBiologie" for="field_autresBiologie">Autres Biologie</label>
+                    <input type="text" class="form-control" name="autresBiologie" id="field_autresBiologie"
+                           formControlName="autresBiologie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.tabConsultation" for="field_tabConsultation">Tab Consultation</label>
+                    <select class="form-control" id="field_tabConsultation" name="tabConsultation" formControlName="tabConsultation">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabConsultationOption.id === editForm.get('tabConsultation')!.value?.id ? editForm.get('tabConsultation')!.value : tabConsultationOption" *ngFor="let tabConsultationOption of tabconsultations; trackBy: trackById">{{ tabConsultationOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.tabBiologie.tabGynecologie" for="field_tabGynecologie">Tab Gynecologie</label>
+                    <select class="form-control" id="field_tabGynecologie" name="tabGynecologie" formControlName="tabGynecologie">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="tabGynecologieOption.id === editForm.get('tabGynecologie')!.value?.id ? editForm.get('tabGynecologie')!.value : tabGynecologieOption" *ngFor="let tabGynecologieOption of tabgynecologies; trackBy: trackById">{{ tabGynecologieOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

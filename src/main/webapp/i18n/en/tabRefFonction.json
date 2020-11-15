@@ -1,0 +1,23 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabRefFonction": {
+      "home": {
+        "title": "Tab Ref Fonctions",
+        "createLabel": "Create a new Tab Ref Fonction",
+        "createOrEditLabel": "Create or edit a Tab Ref Fonction",
+        "notFound": "No Tab Ref Fonctions found"
+      },
+      "created": "A new Tab Ref Fonction is created with identifier {{ param }}",
+      "updated": "A Tab Ref Fonction is updated with identifier {{ param }}",
+      "deleted": "A Tab Ref Fonction is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Ref Fonction {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Ref Fonction"
+      },
+      "idFonction": "Id Fonction",
+      "libelle": "Libelle"
+    }
+  }
+}

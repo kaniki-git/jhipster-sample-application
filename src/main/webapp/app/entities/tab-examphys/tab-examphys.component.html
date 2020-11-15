@@ -1,0 +1,119 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.home.title">Tab Examphys</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-examphys" [routerLink]="['/tab-examphys/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.home.createLabel">
+            Create a new Tab Examphys
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabExamphys?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.home.notFound">No tabExamphys found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabExamphys && tabExamphys.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.dateExamPhys">Date Exam Phys</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.nomAppareil">Nom Appareil</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.tete">Tete</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.cou">Cou</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.bouche">Bouche</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.thorax">Thorax</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.ausculationCard">Ausculation Card</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.ausculationPulmo">Ausculation Pulmo</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.souffle">Souffle</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.rate">Rate</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.bonchospame">Bonchospame</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.percussionThorax">Percussion Thorax</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.abdomen">Abdomen</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsFemoralG">Pouls Femoral G</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsFemoralD">Pouls Femoral D</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsPopliteG">Pouls Poplite G</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsPopliteD">Pouls Poplite D</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsPedieuxG">Pouls Pedieux G</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsPedieuxD">Pouls Pedieux D</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulstibialPostG">Poulstibial Post G</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulstibialPostD">Poulstibial Post D</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.souffleAbdo">Souffle Abdo</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.souffleFemoralG">Souffle Femoral G</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.souffleFemoralD">Souffle Femoral D</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.spectPeau">Spect Peau</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.examNeuro">Exam Neuro</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.rapport">Rapport</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.tabConsultation">Tab Consultation</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabExamphys of tabExamphys ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-examphys', tabExamphys.id, 'view']">{{ tabExamphys.id }}</a></td>
+                    <td>{{ tabExamphys.dateExamPhys | date:'medium' }}</td>
+                    <td>{{ tabExamphys.nomAppareil }}</td>
+                    <td>{{ tabExamphys.tete }}</td>
+                    <td>{{ tabExamphys.cou }}</td>
+                    <td>{{ tabExamphys.bouche }}</td>
+                    <td>{{ tabExamphys.thorax }}</td>
+                    <td>{{ tabExamphys.ausculationCard }}</td>
+                    <td>{{ tabExamphys.ausculationPulmo }}</td>
+                    <td>{{ tabExamphys.souffle }}</td>
+                    <td>{{ tabExamphys.rate }}</td>
+                    <td>{{ tabExamphys.bonchospame }}</td>
+                    <td>{{ tabExamphys.percussionThorax }}</td>
+                    <td>{{ tabExamphys.abdomen }}</td>
+                    <td>{{ tabExamphys.poulsFemoralG }}</td>
+                    <td>{{ tabExamphys.poulsFemoralD }}</td>
+                    <td>{{ tabExamphys.poulsPopliteG }}</td>
+                    <td>{{ tabExamphys.poulsPopliteD }}</td>
+                    <td>{{ tabExamphys.poulsPedieuxG }}</td>
+                    <td>{{ tabExamphys.poulsPedieuxD }}</td>
+                    <td>{{ tabExamphys.poulstibialPostG }}</td>
+                    <td>{{ tabExamphys.poulstibialPostD }}</td>
+                    <td>{{ tabExamphys.souffleAbdo }}</td>
+                    <td>{{ tabExamphys.souffleFemoralG }}</td>
+                    <td>{{ tabExamphys.souffleFemoralD }}</td>
+                    <td>{{ tabExamphys.spectPeau }}</td>
+                    <td>{{ tabExamphys.examNeuro }}</td>
+                    <td>{{ tabExamphys.rapport }}</td>
+                    <td>
+                        <div *ngIf="tabExamphys.tabConsultation">
+                            <a [routerLink]="['/tab-consultation', tabExamphys.tabConsultation?.id, 'view']" >{{ tabExamphys.tabConsultation?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-examphys', tabExamphys.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-examphys', tabExamphys.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabExamphys)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

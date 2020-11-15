@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabRefFonction.home.title">Tab Ref Fonctions</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-ref-fonction" [routerLink]="['/tab-ref-fonction/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabRefFonction.home.createLabel">
+            Create a new Tab Ref Fonction
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabRefFonctions?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabRefFonction.home.notFound">No tabRefFonctions found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabRefFonctions && tabRefFonctions.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRefFonction.idFonction">Id Fonction</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabRefFonction.libelle">Libelle</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabRefFonction of tabRefFonctions ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-ref-fonction', tabRefFonction.id, 'view']">{{ tabRefFonction.id }}</a></td>
+                    <td>{{ tabRefFonction.idFonction }}</td>
+                    <td>{{ tabRefFonction.libelle }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-ref-fonction', tabRefFonction.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-ref-fonction', tabRefFonction.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabRefFonction)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

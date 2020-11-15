@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabHospital">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.detail.title">Tab Hospital</span> {{ tabHospital.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.dateAdmission">Date Admission</span></dt>
+                <dd>
+                    <span>{{ tabHospital.dateAdmission }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.motifAdmission">Motif Admission</span></dt>
+                <dd>
+                    <span>{{ tabHospital.motifAdmission }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.provenancePatient">Provenance Patient</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.ProvenancePatient.' + tabHospital.provenancePatient }}">{{ tabHospital.provenancePatient }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.evolJour">Evol Jour</span></dt>
+                <dd>
+                    <span>{{ tabHospital.evolJour }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.evolSynthese">Evol Synthese</span></dt>
+                <dd>
+                    <span>{{ tabHospital.evolSynthese }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.plantTherapeute">Plant Therapeute</span></dt>
+                <dd>
+                    <span>{{ tabHospital.plantTherapeute }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.ledevenirPatient">Ledevenir Patient</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterSampleApplicationApp.LedevenirPatient.' + tabHospital.ledevenirPatient }}">{{ tabHospital.ledevenirPatient }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.prochainRdv">Prochain Rdv</span></dt>
+                <dd>
+                    <span>{{ tabHospital.prochainRdv }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.lieuRdv">Lieu Rdv</span></dt>
+                <dd>
+                    <span>{{ tabHospital.lieuRdv }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.conclusionSejour">Conclusion Sejour</span></dt>
+                <dd>
+                    <span>{{ tabHospital.conclusionSejour }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.nomConsultant">Nom Consultant</span></dt>
+                <dd>
+                    <span>{{ tabHospital.nomConsultant }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.bilanAdmission">Bilan Admission</span></dt>
+                <dd>
+                    <span>{{ tabHospital.bilanAdmission }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.rapport">Rapport</span></dt>
+                <dd>
+                    <span>{{ tabHospital.rapport }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabHospital.tabPersonnel">Tab Personnel</span></dt>
+                <dd>
+                    <span *ngFor="let tabPersonnel of tabHospital.tabPersonnels; let last = last">
+                        <a [routerLink]="['/tab-personnel', tabPersonnel?.id, 'view']">{{ tabPersonnel.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-hospital', tabHospital.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabExamphys": {
+      "home": {
+        "title": "Tab Examphys",
+        "createLabel": "Create a new Tab Examphys",
+        "createOrEditLabel": "Create or edit a Tab Examphys",
+        "notFound": "No Tab Examphys found"
+      },
+      "created": "A new Tab Examphys is created with identifier {{ param }}",
+      "updated": "A Tab Examphys is updated with identifier {{ param }}",
+      "deleted": "A Tab Examphys is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Examphys {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Examphys"
+      },
+      "dateExamPhys": "Date Exam Phys",
+      "nomAppareil": "Nom Appareil",
+      "tete": "Tete",
+      "cou": "Cou",
+      "bouche": "Bouche",
+      "thorax": "Thorax",
+      "ausculationCard": "Ausculation Card",
+      "ausculationPulmo": "Ausculation Pulmo",
+      "souffle": "Souffle",
+      "rate": "Rate",
+      "bonchospame": "Bonchospame",
+      "percussionThorax": "Percussion Thorax",
+      "abdomen": "Abdomen",
+      "poulsFemoralG": "Pouls Femoral G",
+      "poulsFemoralD": "Pouls Femoral D",
+      "poulsPopliteG": "Pouls Poplite G",
+      "poulsPopliteD": "Pouls Poplite D",
+      "poulsPedieuxG": "Pouls Pedieux G",
+      "poulsPedieuxD": "Pouls Pedieux D",
+      "poulstibialPostG": "Poulstibial Post G",
+      "poulstibialPostD": "Poulstibial Post D",
+      "souffleAbdo": "Souffle Abdo",
+      "souffleFemoralG": "Souffle Femoral G",
+      "souffleFemoralD": "Souffle Femoral D",
+      "spectPeau": "Spect Peau",
+      "examNeuro": "Exam Neuro",
+      "rapport": "Rapport",
+      "tabConsultation": "Tab Consultation"
+    }
+  }
+}

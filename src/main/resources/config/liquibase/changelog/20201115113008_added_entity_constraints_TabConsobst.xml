@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity TabConsobst.
+    -->
+    <changeSet id="20201115113008-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="tab_gynecologie_id"
+                                 baseTableName="tab_consobst"
+                                 constraintName="fk_tab_consobst_tab_gynecologie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tab_gynecologie"/>
+
+    </changeSet>
+</databaseChangeLog>

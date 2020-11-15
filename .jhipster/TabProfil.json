@@ -1,0 +1,29 @@
+{
+  "name": "TabProfil",
+  "fields": [
+    {
+      "fieldName": "profileId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estActif",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201115112308",
+  "entityTableName": "tab_profil",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

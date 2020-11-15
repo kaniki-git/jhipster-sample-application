@@ -1,0 +1,89 @@
+{
+  "name": "TabConsobst",
+  "fields": [
+    {
+      "fieldName": "dateConsObst",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "agePatient",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "poids",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tas",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tad",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "a",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "s",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "n",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sb",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "oe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pres",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "conclusion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "traitement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "suiviPar",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabGynecologie",
+      "otherEntityRelationshipName": "tabConsobst",
+      "relationshipName": "tabGynecologie",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201115113008",
+  "entityTableName": "tab_consobst",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

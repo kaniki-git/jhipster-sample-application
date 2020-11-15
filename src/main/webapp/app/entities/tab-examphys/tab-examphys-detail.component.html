@@ -1,0 +1,140 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabExamphys">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.detail.title">Tab Examphys</span> {{ tabExamphys.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.dateExamPhys">Date Exam Phys</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.dateExamPhys }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.nomAppareil">Nom Appareil</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.nomAppareil }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.tete">Tete</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.tete }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.cou">Cou</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.cou }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.bouche">Bouche</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.bouche }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.thorax">Thorax</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.thorax }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.ausculationCard">Ausculation Card</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.ausculationCard }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.ausculationPulmo">Ausculation Pulmo</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.ausculationPulmo }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.souffle">Souffle</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.souffle }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.rate">Rate</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.rate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.bonchospame">Bonchospame</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.bonchospame }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.percussionThorax">Percussion Thorax</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.percussionThorax }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.abdomen">Abdomen</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.abdomen }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsFemoralG">Pouls Femoral G</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.poulsFemoralG }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsFemoralD">Pouls Femoral D</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.poulsFemoralD }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsPopliteG">Pouls Poplite G</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.poulsPopliteG }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsPopliteD">Pouls Poplite D</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.poulsPopliteD }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsPedieuxG">Pouls Pedieux G</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.poulsPedieuxG }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulsPedieuxD">Pouls Pedieux D</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.poulsPedieuxD }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulstibialPostG">Poulstibial Post G</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.poulstibialPostG }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.poulstibialPostD">Poulstibial Post D</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.poulstibialPostD }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.souffleAbdo">Souffle Abdo</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.souffleAbdo }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.souffleFemoralG">Souffle Femoral G</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.souffleFemoralG }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.souffleFemoralD">Souffle Femoral D</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.souffleFemoralD }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.spectPeau">Spect Peau</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.spectPeau }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.examNeuro">Exam Neuro</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.examNeuro }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.rapport">Rapport</span></dt>
+                <dd>
+                    <span>{{ tabExamphys.rapport }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.tabExamphys.tabConsultation">Tab Consultation</span></dt>
+                <dd>
+                    <div *ngIf="tabExamphys.tabConsultation">
+                        <a [routerLink]="['/tab-consultation', tabExamphys.tabConsultation?.id, 'view']">{{ tabExamphys.tabConsultation?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tab-examphys', tabExamphys.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

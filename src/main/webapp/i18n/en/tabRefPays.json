@@ -1,0 +1,23 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabRefPays": {
+      "home": {
+        "title": "Tab Ref Pays",
+        "createLabel": "Create a new Tab Ref Pays",
+        "createOrEditLabel": "Create or edit a Tab Ref Pays",
+        "notFound": "No Tab Ref Pays found"
+      },
+      "created": "A new Tab Ref Pays is created with identifier {{ param }}",
+      "updated": "A Tab Ref Pays is updated with identifier {{ param }}",
+      "deleted": "A Tab Ref Pays is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Ref Pays {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Ref Pays"
+      },
+      "idPays": "Id Pays",
+      "libelle": "Libelle"
+    }
+  }
+}

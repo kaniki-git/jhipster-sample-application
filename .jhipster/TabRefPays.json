@@ -1,0 +1,25 @@
+{
+  "name": "TabRefPays",
+  "fields": [
+    {
+      "fieldName": "idPays",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20201115112508",
+  "entityTableName": "tab_ref_pays",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,33 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabParamvitaux": {
+      "home": {
+        "title": "Tab Paramvitauxes",
+        "createLabel": "Create a new Tab Paramvitaux",
+        "createOrEditLabel": "Create or edit a Tab Paramvitaux",
+        "notFound": "No Tab Paramvitauxes found"
+      },
+      "created": "A new Tab Paramvitaux is created with identifier {{ param }}",
+      "updated": "A Tab Paramvitaux is updated with identifier {{ param }}",
+      "deleted": "A Tab Paramvitaux is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Paramvitaux {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Paramvitaux"
+      },
+      "dateExam": "Date Exam",
+      "ta1": "Ta 1",
+      "ta2": "Ta 2",
+      "pouls": "Pouls",
+      "temperature": "Temperature",
+      "frequence": "Frequence",
+      "taille": "Taille",
+      "sa02": "Sa 02",
+      "sous": "Sous",
+      "poids": "Poids",
+      "tabConsultation": "Tab Consultation",
+      "tabGynecologie": "Tab Gynecologie"
+    }
+  }
+}

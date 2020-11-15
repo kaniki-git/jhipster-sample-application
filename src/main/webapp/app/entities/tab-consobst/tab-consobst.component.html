@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.home.title">Tab Consobsts</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-consobst" [routerLink]="['/tab-consobst/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.home.createLabel">
+            Create a new Tab Consobst
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabConsobsts?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.home.notFound">No tabConsobsts found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabConsobsts && tabConsobsts.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.dateConsObst">Date Cons Obst</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.agePatient">Age Patient</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.poids">Poids</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.tas">Tas</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.tad">Tad</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.a">A</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.s">S</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.n">N</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.hu">Hu</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.bc">Bc</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.sb">Sb</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.oe">Oe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.pres">Pres</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.conclusion">Conclusion</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.traitement">Traitement</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.suiviPar">Suivi Par</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabConsobst.tabGynecologie">Tab Gynecologie</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabConsobst of tabConsobsts ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-consobst', tabConsobst.id, 'view']">{{ tabConsobst.id }}</a></td>
+                    <td>{{ tabConsobst.dateConsObst | date:'medium' }}</td>
+                    <td>{{ tabConsobst.agePatient }}</td>
+                    <td>{{ tabConsobst.poids }}</td>
+                    <td>{{ tabConsobst.tas }}</td>
+                    <td>{{ tabConsobst.tad }}</td>
+                    <td>{{ tabConsobst.a }}</td>
+                    <td>{{ tabConsobst.s }}</td>
+                    <td>{{ tabConsobst.n }}</td>
+                    <td>{{ tabConsobst.hu }}</td>
+                    <td>{{ tabConsobst.bc }}</td>
+                    <td>{{ tabConsobst.sb }}</td>
+                    <td>{{ tabConsobst.oe }}</td>
+                    <td>{{ tabConsobst.pres }}</td>
+                    <td>{{ tabConsobst.conclusion }}</td>
+                    <td>{{ tabConsobst.traitement }}</td>
+                    <td>{{ tabConsobst.suiviPar }}</td>
+                    <td>
+                        <div *ngIf="tabConsobst.tabGynecologie">
+                            <a [routerLink]="['/tab-gynecologie', tabConsobst.tabGynecologie?.id, 'view']" >{{ tabConsobst.tabGynecologie?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-consobst', tabConsobst.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-consobst', tabConsobst.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabConsobst)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

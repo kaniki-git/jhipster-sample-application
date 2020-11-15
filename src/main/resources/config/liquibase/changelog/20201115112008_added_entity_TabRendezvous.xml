@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity TabRendezvous.
+    -->
+    <changeSet id="20201115112008-1" author="jhipster">
+        <createTable tableName="tab_rendezvous">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="titre" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ville" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_debut" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_fin" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="jour_entier" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="group_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="arriere_plan_couleur" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="texte_couleur" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="salle" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="commentaire" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="matriculecreation" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datecreation" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="matriculemodif" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="datemodif" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="tab_patient_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="tab_personnel_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="tab_rendezvous" columnName="date_debut" columnDataType="datetime"/>
+        <dropDefaultValue tableName="tab_rendezvous" columnName="date_fin" columnDataType="datetime"/>
+        <dropDefaultValue tableName="tab_rendezvous" columnName="datecreation" columnDataType="datetime"/>
+        <dropDefaultValue tableName="tab_rendezvous" columnName="datemodif" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20201115112008-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20201115112008-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/tab_rendezvous.csv"
+                  separator=";"
+                  tableName="tab_rendezvous">
+            <column name="id" type="numeric"/>
+            <column name="titre" type="string"/>
+            <column name="ville" type="string"/>
+            <column name="date_debut" type="datetime"/>
+            <column name="date_fin" type="datetime"/>
+            <column name="jour_entier" type="boolean"/>
+            <column name="group_id" type="string"/>
+            <column name="arriere_plan_couleur" type="string"/>
+            <column name="texte_couleur" type="string"/>
+            <column name="salle" type="string"/>
+            <column name="commentaire" type="string"/>
+            <column name="matriculecreation" type="string"/>
+            <column name="datecreation" type="datetime"/>
+            <column name="matriculemodif" type="string"/>
+            <column name="datemodif" type="datetime"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

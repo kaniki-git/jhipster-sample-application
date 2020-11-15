@@ -1,0 +1,133 @@
+{
+  "name": "TabExamphys",
+  "fields": [
+    {
+      "fieldName": "dateExamPhys",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "nomAppareil",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tete",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cou",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bouche",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thorax",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ausculationCard",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ausculationPulmo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "souffle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bonchospame",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "percussionThorax",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "abdomen",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "poulsFemoralG",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "poulsFemoralD",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "poulsPopliteG",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "poulsPopliteD",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "poulsPedieuxG",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "poulsPedieuxD",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "poulstibialPostG",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "poulstibialPostD",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "souffleAbdo",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "souffleFemoralG",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "souffleFemoralD",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "spectPeau",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "examNeuro",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rapport",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tabConsultation",
+      "otherEntityRelationshipName": "tabExamphys",
+      "relationshipName": "tabConsultation",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201115113508",
+  "entityTableName": "tab_examphys",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

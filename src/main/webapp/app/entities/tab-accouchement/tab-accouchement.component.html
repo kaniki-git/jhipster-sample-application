@@ -1,0 +1,87 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.home.title">Tab Accouchements</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tab-accouchement" [routerLink]="['/tab-accouchement/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.home.createLabel">
+            Create a new Tab Accouchement
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tabAccouchements?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.home.notFound">No tabAccouchements found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tabAccouchements && tabAccouchements.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.dateAccouche">Date Accouche</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.matriculeBebe">Matricule Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.sexeBebe">Sexe Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.nomBebe">Nom Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.prenon1Bebe">Prenon 1 Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.prenon2Bebe">Prenon 2 Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.nomMere">Nom Mere</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.ageBebe">Age Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.ta1Bebe">Ta 1 Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.ta2Bebe">Ta 2 Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.poidsBebe">Poids Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.tailleBebe">Taille Bebe</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.allaitement">Allaitement</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.tabAccouchement.conclusion">Conclusion</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tabAccouchement of tabAccouchements ;trackBy: trackId">
+                    <td><a [routerLink]="['/tab-accouchement', tabAccouchement.id, 'view']">{{ tabAccouchement.id }}</a></td>
+                    <td>{{ tabAccouchement.dateAccouche | date:'medium' }}</td>
+                    <td>{{ tabAccouchement.matriculeBebe }}</td>
+                    <td>{{ tabAccouchement.sexeBebe }}</td>
+                    <td>{{ tabAccouchement.nomBebe }}</td>
+                    <td>{{ tabAccouchement.prenon1Bebe }}</td>
+                    <td>{{ tabAccouchement.prenon2Bebe }}</td>
+                    <td>{{ tabAccouchement.nomMere }}</td>
+                    <td>{{ tabAccouchement.ageBebe }}</td>
+                    <td>{{ tabAccouchement.ta1Bebe }}</td>
+                    <td>{{ tabAccouchement.ta2Bebe }}</td>
+                    <td>{{ tabAccouchement.poidsBebe }}</td>
+                    <td>{{ tabAccouchement.tailleBebe }}</td>
+                    <td>{{ tabAccouchement.allaitement }}</td>
+                    <td>{{ tabAccouchement.conclusion }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tab-accouchement', tabAccouchement.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tab-accouchement', tabAccouchement.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tabAccouchement)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

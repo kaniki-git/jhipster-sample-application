@@ -1,0 +1,37 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tabRendezvous": {
+      "home": {
+        "title": "Tab Rendezvous",
+        "createLabel": "Create a new Tab Rendezvous",
+        "createOrEditLabel": "Create or edit a Tab Rendezvous",
+        "notFound": "No Tab Rendezvous found"
+      },
+      "created": "A new Tab Rendezvous is created with identifier {{ param }}",
+      "updated": "A Tab Rendezvous is updated with identifier {{ param }}",
+      "deleted": "A Tab Rendezvous is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tab Rendezvous {{ id }}?"
+      },
+      "detail": {
+        "title": "Tab Rendezvous"
+      },
+      "titre": "Titre",
+      "ville": "Ville",
+      "dateDebut": "Date Debut",
+      "dateFin": "Date Fin",
+      "jourEntier": "Jour Entier",
+      "groupId": "Group Id",
+      "arrierePlanCouleur": "Arriere Plan Couleur",
+      "texteCouleur": "Texte Couleur",
+      "salle": "Salle",
+      "commentaire": "Commentaire",
+      "matriculecreation": "Matriculecreation",
+      "datecreation": "Datecreation",
+      "matriculemodif": "Matriculemodif",
+      "datemodif": "Datemodif",
+      "tabPatient": "Tab Patient",
+      "tabPersonnel": "Tab Personnel"
+    }
+  }
+}
